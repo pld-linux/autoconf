@@ -1,6 +1,7 @@
 #
 # Conditional build:
 # _without_emacs - without emacs autoconf-mode
+# _without_xemacs - without XEmacs autoconf-mode
 
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
@@ -14,7 +15,7 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.57
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Building
 # stable releases:
@@ -28,13 +29,14 @@ Patch3:		%{name}-AC_EGREP.patch
 URL:		http://www.gnu.org/software/autoconf/
 Requires:	diffutils
 Requires:	/bin/awk
-Requires:	m4
+Requires:	m4 >= 1:1.4p-0.pre2.2
 Requires:	mktemp
 Conflicts:	gettext < 0.10.38-3
-BuildRequires:	m4
+BuildRequires:	m4 >= 1:1.4p-0.pre2.2
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.2
 %{!?_without_emacs:BuildRequires:	emacs}
+%{!?_without_xemacs:BuildRequires:	xemacs}
 BuildConflicts:	m4 = 1.4o
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -177,6 +179,18 @@ Emacs autoconf-mode.
 %description -n emacs-autoconf-mode-pkg -l pl
 Tryb edycji autoconf dla emacsa.
 
+%package -n xemacs-autoconf-mode-pkg
+Summary:	xemacs autoconf-mode
+Summary(pl):	Tryb autoconf dla emacsa
+Group:		Applications/Editors/Emacs
+Requires:	xemacs
+
+%description -n xemacs-autoconf-mode-pkg
+Emacs autoconf-mode.
+
+%description -n xemacs-autoconf-mode-pkg -l pl
+Tryb edycji autoconf dla emacsa.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -185,13 +199,18 @@ Tryb edycji autoconf dla emacsa.
 %patch3 -p1
 
 %build
-%configure
+%configure EMACS=xemacs
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+rm lib/emacs/*.elc
+%{__make} -C lib/emacs install-dist_lispLISP \
+	DESTDIR=$RPM_BUILD_ROOT \
+	EMACS=emacs \
+	lispdir=%{_emacs_lispdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -215,5 +234,11 @@ rm -rf $RPM_BUILD_ROOT
 %if%{!?_without_emacs:1}%{?_without_emacs:0}
 %files -n emacs-autoconf-mode-pkg
 %defattr(644,root,root,755)
-%{_datadir}/emacs/site-lisp/*.elc
+%{_emacs_lispdir}/*.elc
+%endif
+
+%if%{!?_without_xemacs:1}%{?_without_xemacs:0}
+%files -n xemacs-autoconf-mode-pkg
+%defattr(644,root,root,755)
+%{_xemacs_lispdir}/*.elc
 %endif
