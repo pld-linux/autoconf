@@ -11,7 +11,7 @@ Version:	2.53a
 Release:	1
 License:	GPL
 Group:		Development/Building
-Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.gz
+Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-mawk.patch
 Patch2:		%{name}-fhs.patch
