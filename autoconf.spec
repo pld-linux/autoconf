@@ -23,6 +23,7 @@ URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	/bin/awk
 Requires:	m4
 Requires:	mktemp
+Requires:	diffutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 BuildConflicts:	m4 = 1.4o
