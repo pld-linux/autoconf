@@ -3,19 +3,22 @@
 # _without_emacs - without emacs autoconf-mode
 # _without_xemacs - without XEmacs autoconf-mode
 
+%define		_without_emacs	yes
+
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
 Summary(de):	Ein GNU-Hilfsmittel fЭr Quellencode automatisch konfigurieren
 Summary(es):	Una herramienta de GNU para automАticamente configurar cСdigo de fuente
 Summary(fr):	Un outil de GNU pour configurer automatiquement le code source
 Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
+Summary(ko):	╫╨╫╨╥н х╞╟Ф©║ ╣Ш╤С ╪р╫╨ дз╣Е╦╕ ╦бцГаж╢б GNU ╣╣╠╦
 Summary(pl):	GNU autoconf - narzЙdzie do automatycznego konfigurowania ╪rСdeЁ
 Summary(pt_BR):	GNU autoconf - ferramentas de configuraГЦo de fontes
 Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.57
-Release:	4
+Release:	5 
 License:	GPL
 Group:		Development/Building
 # stable releases:
@@ -199,13 +202,26 @@ Tryb edycji autoconf dla emacsa.
 %patch3 -p1
 
 %build
-%configure %{!?_without_xemacs:EMACS=xemacs}
+%configure \
+	%{!?_without_xemacs:EMACS=xemacs}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+%if 0%{!?_without_xemacs:1}
+	lispdir=%{_datadir}/xemacs-packages/autoconf
+%endif
+
+%if 0%{!?_without_xemacs:1}
+xemacs -batch -no-autoloads -l autoload -f batch-update-directory \
+	$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/autoconf
+xemacs -batch -vanilla -f batch-byte-compile \
+	$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/autoconf/auto-autoloads.el \
+%endif
+
 %if 0%{!?_without_emacs:%{!?_without_xemacs:1}}
 rm lib/emacs/*.elc
 %{__make} -C lib/emacs install-dist_lispLISP \
@@ -236,11 +252,12 @@ rm -rf $RPM_BUILD_ROOT
 %if 0%{!?_without_emacs:1}
 %files -n emacs-autoconf-mode-pkg
 %defattr(644,root,root,755)
-%{_emacs_lispdir}/*.elc
+%{_emacs_lispdir}/autoconf/*.elc
 %endif
 
 %if 0%{!?_without_xemacs:1}
 %files -n xemacs-autoconf-mode-pkg
 %defattr(644,root,root,755)
-%{_xemacs_lispdir}/*.elc
+%dir %{_datadir}/xemacs-packages/autoconf
+%{_datadir}/xemacs-packages/autoconf/*.elc
 %endif
