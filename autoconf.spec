@@ -1,33 +1,51 @@
+#
+# Conditional build:
+# _without_emacs	- without emacs autoconf-mode
+# _without_xemacs	- without XEmacs autoconf-mode
+#
+%define		_without_emacs	yes
+
+%include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
-Summary(fr):	Un outil de GNU pour configurer automatiquement le code source
 Summary(de):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
 Summary(es):	Una herramienta de GNU para automáticamente configurar código de fuente
+Summary(fr):	Un outil de GNU pour configurer automatiquement le code source
 Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
+Summary(ko):	½º½º·Î È¯°æ¿¡ µû¶ó ¼Ò½º ÄÚµå¸¦ ¸ÂÃçÁÖ´Â GNU µµ±¸
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
+Summary(pt_BR):	GNU autoconf - ferramentas de configuração de fontes
+Summary(ru):	GNU autoconf - Á×ÔÏËÏÎÆÉÇÕÒÁÔÏÒ ÉÓÈÏÄÎÙÈ ÔÅËÓÔÏ×
+Summary(uk):	GNU autoconf - Á×ÔÏËÏÎÆ¦ÇÕÒÁÔÏÒ ×ÉÈ¦ÄÎÉÈ ÔÅËÓÔ¦×
 Name:		autoconf
-Version:	2.13
-Release:	12
+Version:	2.57
+Release:	6
 License:	GPL
 Group:		Development/Building
-Group(pl):	Programowanie/Budowanie
-Source0:	ftp://prep.ai.mit.edu/pub/gnu/autoconf/%{name}-%{version}.tar.gz
-Patch0:		%{name}-tmprace.patch
-Patch1:		%{name}-info.patch
-Patch2:		%{name}-mawk.patch
-Patch3:		%{name}-man.patch
-Patch4:		%{name}-notmp.patch
-Patch5:		%{name}-pinard.patch
-Patch6:		%{name}-fhs.patch
-Patch7:		%{name}-DESTDIR.patch
-URL:		http://sourceware.cygnus.com/autoconf/
-Requires:	/bin/awk
-Requires:	m4
-Requires:	mktemp
-Requires:	diffutils
-BuildRequires:	m4
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Buildarch:	noarch
+# stable releases:
+Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
+# Source0-md5: 407ea53787ce13f5ca427e9a51e05bc2
+# devel releases:
+#Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-mawk.patch
+Patch1:		%{name}-version.patch
+Patch2:		%{name}-info.patch
+Patch3:		%{name}-AC_EGREP.patch
+URL:		http://www.gnu.org/software/autoconf/
 BuildConflicts:	m4 = 1.4o
+%{!?_without_emacs:BuildRequires:	emacs}
+BuildRequires:	m4 >= 1:1.4n
+BuildRequires:	rpm-perlprov
+BuildRequires:	texinfo >= 4.2
+%{!?_without_xemacs:BuildRequires:	xemacs}
+Conflicts:	gettext < 0.10.38-3
+Requires:	/bin/awk
+Requires:	diffutils
+Requires:	m4 >= 1:1.4n
+Requires:	mktemp
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	autoconf252
+Obsoletes:	autoconf253
 
 %define		_libdir		%{_datadir}
 
@@ -122,11 +140,60 @@ konfigurowania kodów ¼ród³owych pakietów programów oraz do generowania
 na podstawie automatycznie rozpoznanego ¶rodowiska plików Makefile i
 innych zale¿nych od zawarto¶ci systemu, w którym ma przebiegaæ proces
 kompilacji. Pomaga programi¶cie w konfigurowaniu i tworzeniu
-opragramowania daj±cego siê przenie¶æ na ró¿ne platformy. Umo¿liwia
+oprogramowania daj±cego siê przenie¶æ na ró¿ne platformy. Umo¿liwia
 wybór wielu opcji podczas procesu przygotowania do kompilacji.
 
 GNU autoconf nie jest generalnie potrzebny koñcowemu u¿ytkownikowi, a
 tylko podczas generowania samych skryptów autokonfiguracyjnych.
+
+%description -l pt_BR
+GNU "autoconf" é uma ferramenta para configuração de fontes e
+Makefiles. Ele ajuda o programador na criação de pacotes portáveis e
+configuráveis, permitindo que a pessoa que programa o pacote
+especifique várias opções de configuração. Autoconf é necessário
+somente para gerar scripts de configuração.
+
+%description -l ru
+GNU autoconf - ÉÎÓÔÒÕÍÅÎÔ ÄÌÑ Á×ÔÏËÏÎÆÉÇÕÒÁÃÉÉ ÉÓÈÏÄÎÙÈ ÔÅËÓÔÏ× É
+ÇÅÎÅÒÁÃÉÉ Makefile'Ï×. ðÏÍÏÇÁÅÔ ÐÒÏÇÒÁÍÍÉÓÔÕ ÓÏÚÄÁ×ÁÔØ ÐÏÒÔÉÒÕÅÍÙÅ É
+ËÏÎÆÉÇÕÒÉÒÕÅÍÙÅ ÐÁËÅÔÙ, ÐÏÚ×ÏÌÑÑ ÔÏÍÕ, ËÔÏ ÜÔÉ ÐÁËÅÔÙ ÓÏÂÉÒÁÅÔ,
+ÚÁÄÁ×ÁÔØ ÒÁÚÌÉÞÎÙÅ ÏÐÃÉÉ ËÏÎÆÉÇÕÒÁÃÉÉ.
+
+"autoconf" ÎÅ Ñ×ÌÑÅÔÓÑ ÎÅÏÂÈÏÄÉÍÙÍ ÄÌÑ ËÏÎÅÞÎÏÇÏ ÐÏÌØÚÏ×ÁÔÅÌÑ, ÅÇÏ
+ÉÓÐÏÌØÚÕÀÔ ÔÏÌØËÏ ÄÌÑ ÇÅÎÅÒÁÃÉÉ ËÏÎÆÉÇÕÒÁÃÉÏÎÎÙÈ ÓËÒÉÐÔÏ×.
+
+%description -l uk
+GNU autoconf - ÃÅ ¦ÎÓÔÒÕÍÅÎÔ ÄÌÑ Á×ÔÏÍÁÔÉÞÎÏ§ ËÏÎÆ¦ÇÕÒÁÃ¦§ ×ÉÈ¦ÄÎÉÈ
+ÔÅËÓÔ¦× ÔÁ ÇÅÎÅÒÁÃ¦§ Makefile'¦×. äÏÐÏÍÏÇÁ¤ ÐÒÏÇÒÁÍ¦ÓÔÕ ÓÔ×ÏÒÀ×ÁÔÉ
+ÍÏÂ¦ÌØÎ¦ ÐÁËÅÔÉ, ÝÏ ÄÏÚ×ÏÌÑÀÔØ ËÏÎÆ¦ÇÕÒÁÃ¦À. ãÅ ÄÏÚ×ÏÌÑ¤ ÔÏÍÕ, ÈÔÏ
+ÚÁÊÍÁ¤ÔØÓÑ ÚÂÏÒËÏÀ ÔÁËÉÈ ÐÁËÅÔ¦×, ÚÁÄÁ×ÁÔÉ Ò¦ÚÎ¦ ÏÐÃ¦§ ËÏÎÆ¦ÇÕÒÁÃ¦§.
+
+"autoconf" ÎÅ ¤ ÎÅÏÂÈ¦ÄÎÉÍ ÄÌÑ Ë¦ÎÃÅ×ÏÇÏ ËÏÒÉÓÔÕ×ÁÞÁ, ÊÏÇÏ
+×ÉËÏÒÉÓÔÏ×ÕÀÔØ Ô¦ÌØËÉ ÄÌÑ ÇÅÎÅÒÁÃ¦§ ËÏÎÆ¦ÇÕÒÁÃ¦ÊÎÉÈ ÓËÒÉÐÔ¦×.
+
+%package -n emacs-autoconf-mode-pkg
+Summary:	emacs autoconf-mode
+Summary(pl):	Tryb autoconf dla emacsa
+Group:		Applications/Editors/Emacs
+Requires:	emacs
+
+%description -n emacs-autoconf-mode-pkg
+Emacs autoconf-mode.
+
+%description -n emacs-autoconf-mode-pkg -l pl
+Tryb edycji autoconf dla emacsa.
+
+%package -n xemacs-autoconf-mode-pkg
+Summary:	xemacs autoconf-mode
+Summary(pl):	Tryb autoconf dla emacsa
+Group:		Applications/Editors/Emacs
+Requires:	xemacs
+
+%description -n xemacs-autoconf-mode-pkg
+Emacs autoconf-mode.
+
+%description -n xemacs-autoconf-mode-pkg -l pl
+Tryb edycji autoconf dla emacsa.
 
 %prep
 %setup -q
@@ -134,28 +201,38 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
 
 %build
-%configure
+%configure \
+	%{!?_without_xemacs:EMACS=xemacs}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+%if 0%{!?_without_xemacs:1}
+	lispdir=%{_datadir}/xemacs-packages/autoconf
+%endif
 
-install install-sh $RPM_BUILD_ROOT%{_libdir}/autoconf
+%if 0%{!?_without_xemacs:1}
+xemacs -batch -no-autoloads -l autoload -f batch-update-directory \
+	$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/autoconf
+xemacs -batch -vanilla -f batch-byte-compile \
+	$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/autoconf/auto-autoloads.el
+%endif
 
-install {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1 \
-	$RPM_BUILD_ROOT%{_mandir}/man1
+%if 0%{!?_without_emacs:%{!?_without_xemacs:1}}
+rm lib/emacs/*.elc
+%{__make} -C lib/emacs install-dist_lispLISP \
+	DESTDIR=$RPM_BUILD_ROOT \
+	EMACS=emacs \
+	lispdir=%{_emacs_lispdir}
+%endif
 
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/autoconf.info* \
-	$RPM_BUILD_ROOT%{_mandir}/man1/*
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -163,14 +240,23 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/autoconf.info* \
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS BUGS ChangeLog ChangeLog.2 NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/*
-
-%{_infodir}/autoconf.info*
+%{_libdir}/autoconf
+%{_infodir}/*.info*
 %{_mandir}/man1/*
 
-%{_libdir}/autoconf
+%if 0%{!?_without_emacs:1}
+%files -n emacs-autoconf-mode-pkg
+%defattr(644,root,root,755)
+%{_emacs_lispdir}/autoconf/*.elc
+%endif
+
+%if 0%{!?_without_xemacs:1}
+%files -n xemacs-autoconf-mode-pkg
+%defattr(644,root,root,755)
+%dir %{_datadir}/xemacs-packages/autoconf
+%{_datadir}/xemacs-packages/autoconf/*.elc
+%endif

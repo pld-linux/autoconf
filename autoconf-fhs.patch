@@ -1,19 +1,24 @@
-diff -Nru autoconf-2.13/acgeneral.m4 autoconf-2.13.new/acgeneral.m4
---- autoconf-2.13/acgeneral.m4	Wed Aug 16 19:24:11 2000
-+++ autoconf-2.13.new/acgeneral.m4	Wed Aug 16 19:25:11 2000
-@@ -198,12 +198,12 @@
- datadir='${prefix}/share'
- sysconfdir='${prefix}/etc'
- sharedstatedir='${prefix}/com'
--localstatedir='${prefix}/var'
-+localstatedir='/var/lib'
- libdir='${exec_prefix}/lib'
- includedir='${prefix}/include'
- oldincludedir='/usr/include'
--infodir='${prefix}/info'
--mandir='${prefix}/man'
-+infodir='${prefix}/share/info'
-+mandir='${prefix}/share/man'
+--- autoconf-2.53.orig/lib/autoconf/general.m4	Mon Mar  4 16:14:52 2002
++++ autoconf-2.53/lib/autoconf/general.m4	Sat Mar 16 13:19:22 2002
+@@ -574,16 +574,16 @@
+ # Use braces instead of parens because sh, perl, etc. also accept them.
+ AC_SUBST([bindir],         ['${exec_prefix}/bin'])dnl
+ AC_SUBST([sbindir],        ['${exec_prefix}/sbin'])dnl
+-AC_SUBST([libexecdir],     ['${exec_prefix}/libexec'])dnl
++AC_SUBST([libexecdir],     ['${exec_prefix}/lib'])dnl
+ AC_SUBST([datadir],        ['${prefix}/share'])dnl
+ AC_SUBST([sysconfdir],     ['${prefix}/etc'])dnl
+-AC_SUBST([sharedstatedir], ['${prefix}/com'])dnl
+-AC_SUBST([localstatedir],  ['${prefix}/var'])dnl
++AC_SUBST([sharedstatedir], ['/var/lib'])dnl
++AC_SUBST([localstatedir],  ['/var/lib'])dnl
+ AC_SUBST([libdir],         ['${exec_prefix}/lib'])dnl
+ AC_SUBST([includedir],     ['${prefix}/include'])dnl
+ AC_SUBST([oldincludedir],  ['/usr/include'])dnl
+-AC_SUBST([infodir],        ['${prefix}/info'])dnl
+-AC_SUBST([mandir],         ['${prefix}/man'])dnl
++AC_SUBST([infodir],        ['/usr/share/info'])dnl
++AC_SUBST([mandir],         ['/usr/share/man'])dnl
  
- # Initialize some other variables.
- subdirs=
+ ac_prev=
+ for ac_option
