@@ -20,7 +20,7 @@ Patch5:		autoconf-pinard.patch
 Patch6:		autoconf-fhs.patch
 Patch7:		autoconf-DESTDIR.patch
 URL:		http://sourceware.cygnus.com/autoconf/
-Requires:	gawk
+Requires:	awk
 Requires:	m4
 Requires:	mktemp
 Prereq:		/usr/sbin/fix-info-dir
