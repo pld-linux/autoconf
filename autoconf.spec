@@ -1,17 +1,18 @@
-Summary:     GNU autoconf - source configuration tools
-Summary(pl): GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
-Name:        autoconf
-Version:     2.13
-Release:     1
-Copyright:   GPL
-Group:       Development/Building
-Source:      ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
-Patch0:      autoconf-tmprace.patch
-Patch1:      autoconf-info.patch
-Requires:    gawk, m4, mktemp, perl
-Prereq:      /sbin/install-info
-BuildRoot:   /tmp/%{name}-%{version}-root
-Buildarch:   noarch
+Summary:	GNU autoconf - source configuration tools
+Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
+Name:		autoconf
+Version:	2.13
+Release:	1d
+Copyright:	GPL
+Group:		Development/Building
+Group(pl):	Programowanie/Budowanie
+Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Patch0:		autoconf-tmprace.patch
+Patch1:		autoconf-info.patch
+Requires:	gawk, m4, mktemp, perl
+Prereq:		/sbin/install-info
+BuildRoot:	/tmp/%{name}-%{version}-root
+Buildarch:	noarch
 
 %description
 GNU's "autoconf" is a tool for source and Makefile configuration. It
@@ -71,6 +72,10 @@ fi
 /usr/lib/autoconf
 
 %changelog
+* Wed Jan 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [2.13-1d]
+- added Group(pl).
+
 * Wed Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [2.12-7]
 - standarized {un}registering info pages 
