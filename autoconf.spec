@@ -57,7 +57,7 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 	--prefix=/usr \
 	--infodir=%{_infodir} \
 	--mandir=%{_mandir}
-make datadir=/usr/lib
+make datadir=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -65,10 +65,10 @@ install -d $RPM_BUILD_ROOT/usr/share/{info,man/man1}
 
 make install \
 	prefix=$RPM_BUILD_ROOT/usr \
-	datadir=$RPM_BUILD_ROOT/usr/lib \
+	datadir=$RPM_BUILD_ROOT%{_libdir} \
 	infodir=$RPM_BUILD_ROOT%{_infodir} \
 	mandir=$RPM_BUILD_ROOT%{_mandir} \
-install install-sh $RPM_BUILD_ROOT/usr/lib/autoconf
+install install-sh $RPM_BUILD_ROOT%{_libdir}/autoconf
 
 install {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1 \
 	$RPM_BUILD_ROOT%{_mandir}/man1
@@ -94,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/autoconf.info*
 %{_mandir}/man1/*
 
-/usr/lib/autoconf
+%{_libdir}/autoconf
 
 %changelog
 * Fri Apr 30 1999 Artur Frysiak <wiget@pld.org.pl>
