@@ -33,14 +33,14 @@ Patch3:		%{name}-AC_EGREP.patch
 URL:		http://www.gnu.org/software/autoconf/
 BuildConflicts:	m4 = 1.4o
 %{!?_without_emacs:BuildRequires:	emacs}
-BuildRequires:	m4 >= 1:1.4p-0.pre2.2
+BuildRequires:	m4 >= 1:1.4n
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.2
 %{!?_without_xemacs:BuildRequires:	xemacs}
 Conflicts:	gettext < 0.10.38-3
 Requires:	/bin/awk
 Requires:	diffutils
-Requires:	m4 >= 1:1.4p-0.pre2.2
+Requires:	m4 >= 1:1.4n
 Requires:	mktemp
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
