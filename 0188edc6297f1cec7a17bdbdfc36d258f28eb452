@@ -1,0 +1,4 @@
+- Autoconf uses cmp, rpm said
+  rpm -qf /usr/bin/cmp
+  diffutils-2.7-18
+  ;-)
