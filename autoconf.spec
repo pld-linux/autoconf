@@ -6,7 +6,7 @@ Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codi
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.50
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -21,6 +21,7 @@ Requires:	diffutils
 Requires:	/bin/awk
 Requires:	m4
 Requires:	mktemp
+Conflicts:	gettext < 0.10.38-3
 BuildRequires:	m4
 BuildRequires:	texinfo
 BuildConflicts:	m4 = 1.4o
