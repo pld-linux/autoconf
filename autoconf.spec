@@ -14,7 +14,7 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.57
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Building
 # stable releases:
@@ -24,6 +24,7 @@ Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
 Patch1:		%{name}-version.patch
 Patch2:		%{name}-info.patch
+Patch3:		%{name}-AC_EGREP.patch
 URL:		http://www.gnu.org/software/autoconf/
 Requires:	diffutils
 Requires:	/bin/awk
@@ -181,6 +182,7 @@ Tryb edycji autoconf dla emacsa.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %configure
