@@ -9,7 +9,10 @@ Group(pl):	Programowanie/Budowanie
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		autoconf-tmprace.patch
 Patch1:		autoconf-info.patch
-Requires:	gawk, m4, mktemp, perl
+Patch2:		autoconf-mawk.patch
+Patch3:		autoconf-man.patch
+Patch4:		autoconf-notmp.patch
+#Requires:	gawk, m4, mktemp, perl
 Prereq:		/sbin/install-info
 BuildRoot:	/tmp/%{name}-%{version}-root
 Buildarch:	noarch
@@ -26,9 +29,9 @@ generate the configuration scripts.
 %description -l pl
 GNU autoconf jest narzêdziem wykorzystywanym do automatycznego
 konfigurowania kodów ¼ród³owych pakietów programów oraz do generowania na
-podstawie automatycznie rozpoznanego ¶rodowiska plików Makefile i innych
+podstawie automatycznie rozoznanego ¶rodowiska plików Makefile i innch
 zale¿nych od zawarto¶ci systemu w którym ma przebiegaæ proces kompilacji.
-Pomaga programi¶cie w konfigurowaniu i tworzeniu oprogramowania daj±cego siê
+Pomaga programi¶cie w konfigurowaniu i tworzeniu opragramowania daj±cego siê
 przenie¶æ na ró¿ne platformy. Umo¿liwia wybór wielu opcji podczas procesu
 przygotowania do kompilacji.
 
@@ -39,6 +42,9 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 ./configure \
@@ -66,9 +72,9 @@ if [ "$1" = "0" ]; then
 fi
 
 %files
-%defattr(644,root,root,755)
+%defattr(644, root, root, 755)
 /usr/info/autoconf.info*
-%attr(755,root,root) /usr/bin/*
+%attr(755, root, root) /usr/bin/*
 /usr/lib/autoconf
 
 %changelog
