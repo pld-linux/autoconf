@@ -36,7 +36,7 @@ diff -Nur autoconf-2.58.orig/doc/autoconf.texi autoconf-2.58/doc/autoconf.texi
 +* autoreconf: (autoconf)autoreconf.	Remaking multiple @command{configure} scripts
 +* autoheader: (autoconf)autoheader.	How to create configuration templates
 +* autom4te: (autoconf)autom4te.		The Autoconf executables backbone
-+* configure: (autoconf)configure.	Configuring a package.
++* configure: (autoconf)configure.	Configuring a package
 +* autoupdate: (autoconf)autoupdate.	Automatic update of @file{configure.ac}
 +* config.status: (autoconf)config.status.  Recreating configurations
 +* testsuite: (autoconf)testsuite.	Running an Autotest test suite
