@@ -199,18 +199,20 @@ Tryb edycji autoconf dla emacsa.
 %patch3 -p1
 
 %build
-%configure EMACS=xemacs
+%configure %{!?_without_xemacs:EMACS=xemacs}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+%if 0%{!?_without_emacs:%{!?_without_xemacs:1}}
 rm lib/emacs/*.elc
 %{__make} -C lib/emacs install-dist_lispLISP \
 	DESTDIR=$RPM_BUILD_ROOT \
 	EMACS=emacs \
 	lispdir=%{_emacs_lispdir}
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -231,13 +233,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_libdir}/autoconf
 
-%if%{!?_without_emacs:1}%{?_without_emacs:0}
+%if 0%{!?_without_emacs:1}
 %files -n emacs-autoconf-mode-pkg
 %defattr(644,root,root,755)
 %{_emacs_lispdir}/*.elc
 %endif
 
-%if%{!?_without_xemacs:1}%{?_without_xemacs:0}
+%if 0%{!?_without_xemacs:1}
 %files -n xemacs-autoconf-mode-pkg
 %defattr(644,root,root,755)
 %{_xemacs_lispdir}/*.elc
