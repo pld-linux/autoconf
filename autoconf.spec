@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
 Summary(de):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
 Summary(es):	Una herramienta de GNU para automáticamente configurar código de fuente
@@ -6,16 +7,15 @@ Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codi
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Summary(pt_BR):	GNU autoconf - ferramentas de configuração de fontes
 Name:		autoconf
-Version:	2.52
-Release:	7
+Version:	2.53
+Release:	1
 License:	GPL
 Group:		Development/Building
-Source0:	ftp://ftp.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-mawk.patch
-Patch2:		%{name}-man.patch
-Patch3:		%{name}-fhs.patch
-Patch4:		%{name}-version.patch
+Patch2:		%{name}-fhs.patch
+Patch3:		%{name}-version.patch
 URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	diffutils
 Requires:	/bin/awk
@@ -23,9 +23,10 @@ Requires:	m4
 Requires:	mktemp
 Conflicts:	gettext < 0.10.38-3
 BuildRequires:	m4
-BuildRequires:	/usr/bin/makeinfo
+BuildRequires:	rpm-perlprov
+BuildRequires:	texinfo
 BuildConflicts:	m4 = 1.4o
-Buildarch:	noarch
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	autoconf252
 
@@ -141,7 +142,6 @@ somente para gerar scripts de configuração.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 %configure
