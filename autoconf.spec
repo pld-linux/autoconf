@@ -26,9 +26,9 @@ generate the configuration scripts.
 %description -l pl
 GNU autoconf jest narzêdziem wykorzystywanym do automatycznego
 konfigurowania kodów ¼ród³owych pakietów programów oraz do generowania na
-podstawie automatycznie rozoznanego ¶rodowiska plików Makefile i innch
+podstawie automatycznie rozpoznanego ¶rodowiska plików Makefile i innych
 zale¿nych od zawarto¶ci systemu w którym ma przebiegaæ proces kompilacji.
-Pomaga programi¶cie w konfigurowaniu i tworzeniu opragramowania daj±cego siê
+Pomaga programi¶cie w konfigurowaniu i tworzeniu oprogramowania daj±cego siê
 przenie¶æ na ró¿ne platformy. Umo¿liwia wybór wielu opcji podczas procesu
 przygotowania do kompilacji.
 
@@ -66,9 +66,9 @@ if [ "$1" = "0" ]; then
 fi
 
 %files
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 /usr/info/autoconf.info*
-%attr(755, root, root) /usr/bin/*
+%attr(755,root,root) /usr/bin/*
 /usr/lib/autoconf
 
 %changelog
