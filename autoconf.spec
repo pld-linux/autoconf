@@ -9,18 +9,17 @@ Summary(pt_BR):	GNU autoconf - ferramentas de configuraГЦo de fontes
 Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
-Version:	2.53a
+Version:	2.54
 Release:	1
 License:	GPL
 Group:		Development/Building
 # full releases:
-#Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 # devel releases:
-Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-info.patch
-Patch1:		%{name}-mawk.patch
-Patch2:		%{name}-fhs.patch
-Patch3:		%{name}-version.patch
+#Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-mawk.patch
+Patch1:		%{name}-fhs.patch
+Patch2:		%{name}-version.patch
 URL:		http://www.gnu.org/software/autoconf/
 Requires:	diffutils
 Requires:	/bin/awk
@@ -165,7 +164,6 @@ GNU autoconf - це ╕нструмент для автоматично╖ конф╕гурац╕╖ вих╕дних
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 %configure
