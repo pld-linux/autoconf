@@ -6,7 +6,7 @@ Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codi
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.50
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -16,16 +16,16 @@ Patch1:		%{name}-mawk.patch
 Patch2:		%{name}-man.patch
 Patch3:		%{name}-fhs.patch
 Patch4:		%{name}-version.patch
-#Patch5:		%{name}-pinard.patch
 URL:		http://sourceware.cygnus.com/autoconf/
+Requires:	diffutils
 Requires:	/bin/awk
 Requires:	m4
 Requires:	mktemp
-Requires:	diffutils
 BuildRequires:	m4
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Buildarch:	noarch
+BuildRequires:	texinfo
 BuildConflicts:	m4 = 1.4o
+Buildarch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libdir		%{_datadir}
 
@@ -133,7 +133,6 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
-#%patch5 -p1
 
 %build
 %configure2_50
@@ -141,7 +140,6 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
