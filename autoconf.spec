@@ -9,8 +9,8 @@ Summary(pt_BR):	GNU autoconf - ferramentas de configuraГЦo de fontes
 Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
-Version:	2.54
-Release:	4
+Version:	2.56
+Release:	0.1
 License:	GPL
 Group:		Development/Building
 # full releases:
@@ -29,6 +29,7 @@ Conflicts:	gettext < 0.10.38-3
 BuildRequires:	m4
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.2
+BuildRequires:	emacs
 BuildConflicts:	m4 = 1.4o
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -159,11 +160,23 @@ GNU autoconf - це ╕нструмент для автоматично╖ конф╕гурац╕╖ вих╕дних
 "autoconf" не ╓ необх╕дним для к╕нцевого користувача, його
 використовують т╕льки для генерац╕╖ конф╕гурац╕йних скрипт╕в.
 
+%package -n emacs-autoconf-mode-pkg
+Summary:        emacs autoconf-mode
+Summary(pl):    Tryb autoconf dla emacsa
+Group:          Applications/Editors/Emacs
+Requires:       emacs
+
+%description -n emacs-autoconf-mode-pkg
+Emacs autoconf-mode.
+
+%description -n emacs-autoconf-mode-pkg -l pl
+Tryb edycji autoconf dla emacsa.
+
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+#%patch2 -p1
 
 %build
 %configure
@@ -192,3 +205,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 
 %{_libdir}/autoconf
+
+%files -n emacs-autoconf-mode-pkg
+%defattr(644,root,root,755)
+%{_datadir}/emacs/site-lisp/*.elc
