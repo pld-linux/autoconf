@@ -19,7 +19,7 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.58
-Release:	1.2
+Release:	2
 License:	GPL
 Group:		Development/Building
 # stable releases:
@@ -201,7 +201,7 @@ Tryb edycji autoconf dla emacsa.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-#%patch2 -p1
+%patch2 -p1
 %patch3 -p1
 %patch4 -p1
 
