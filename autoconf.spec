@@ -28,7 +28,7 @@ Requires:	mktemp
 Conflicts:	gettext < 0.10.38-3
 BuildRequires:	m4
 BuildRequires:	rpm-perlprov
-BuildRequires:	texinfo
+BuildRequires:	texinfo >= 4.2
 BuildConflicts:	m4 = 1.4o
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
