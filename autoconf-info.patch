@@ -1,9 +1,18 @@
---- autoconf-2.52/doc/autoconf.texi.orig	Tue Jul 17 18:34:55 2001
-+++ autoconf-2.52/doc/autoconf.texi	Wed Jul 18 23:56:19 2001
-@@ -34,18 +34,15 @@
+diff -Nur autoconf-2.52.orig/doc/autoconf.texi autoconf-2.52/doc/autoconf.texi
+--- autoconf-2.52.orig/doc/autoconf.texi	Sat Aug  4 12:37:32 2001
++++ autoconf-2.52/doc/autoconf.texi	Sat Aug  4 12:41:44 2001
+@@ -27,25 +27,16 @@
+ @end ifnothtml
  
- @dircategory Individual utilities
+ 
+-@dircategory GNU admin
++@dircategory Programming tools:
  @direntry
+-* Autoconf: (autoconf).         Create source code configuration scripts
+-@end direntry
+-
+-@dircategory Individual utilities
+-@direntry
 -* autoscan: (autoconf)autoscan Invocation.
 -                                Semi-automatic @file{configure.ac} writing
 -* ifnames: (autoconf)ifnames Invocation.
@@ -16,19 +25,18 @@
 -                                Configuring a package
 -* config.status: (autoconf)config.status Invocation.
 -                                Recreating a configuration
-+* autoscan: (autoconf)autoscan.		Semi-automatic @file{configure.ac}
-+					writing
++* Autoconf: (autoconf).			Create source code configuration scripts
++* autoscan: (autoconf)autoscan.		Semi-automatic @file{configure.ac} writing
 +* ifnames: (autoconf)ifnames.		Listing the conditionals in source code
 +* autoconf: (autoconf)autoconf.		How to create configuration scripts
 +* autoreconf: (autoconf)autoreconf.	Remaking multiple @code{configure}
 +					scripts
 +* configure: (autoconf)configure.	Configuring a package
-+* config.status: (autoconf)config.status.
-+					Recreating a configuration
++* config.status: (autoconf)config.status. Recreating a configuration
  @end direntry
  
  @ifinfo
-@@ -146,7 +143,7 @@
+@@ -146,7 +137,7 @@
  * Manual Configuration::        Selecting features that can't be guessed
  * Site Configuration::          Local defaults for @code{configure}
  * Running configure scripts::   How to use the Autoconf output
@@ -37,7 +45,7 @@
  * Obsolete Constructs::         Kept for backward compatibility
  * Questions::                   Questions about Autoconf, with answers
  * History::                     History of Autoconf
-@@ -168,10 +165,10 @@
+@@ -168,10 +159,10 @@
  Making @code{configure} Scripts
  
  * Writing configure.ac::        What to put in an Autoconf input file
@@ -52,7 +60,7 @@
  
  Writing @file{configure.ac}
  
-@@ -369,7 +366,7 @@
+@@ -369,7 +360,7 @@
  * System Type::                 Specifying the system type
  * Sharing Defaults::            Setting site-wide defaults for @code{configure}
  * Environment Variables::       Defining environment variables.
@@ -61,7 +69,7 @@
  
  Obsolete Constructs
  
-@@ -680,7 +677,7 @@
+@@ -680,7 +671,7 @@
  
  @item
  a shell script called @file{config.status} that, when run, will recreate
@@ -70,7 +78,7 @@
  
  @item
  an optional shell script normally called @file{config.cache}
-@@ -740,13 +737,13 @@
+@@ -740,13 +731,13 @@
  
  @menu
  * Writing configure.ac::        What to put in an Autoconf input file
@@ -89,7 +97,7 @@
  @section Writing @file{configure.ac}
  
  To produce a @code{configure} script for a software package, create a
-@@ -759,7 +756,7 @@
+@@ -759,7 +750,7 @@
  or specialized features, @file{configure.ac} might need to contain some
  hand-crafted shell commands; see @ref{Portable Shell}.  The
  @code{autoscan} program can give you a good start in writing
@@ -98,7 +106,7 @@
  
  Previous versions of Autoconf promoted the name @file{configure.in},
  which is somewhat ambiguous (the tool needed to produce this file is not
-@@ -987,7 +984,7 @@
+@@ -987,7 +978,7 @@
  @end display
  
  
@@ -107,7 +115,7 @@
  @section Using @code{autoscan} to Create @file{configure.ac}
  @cindex @code{autoscan}
  
-@@ -1009,7 +1006,7 @@
+@@ -1009,7 +1000,7 @@
  use a configuration header file, you must add a call to
  @code{AC_CONFIG_HEADERS} (@pxref{Configuration Headers}).  You might
  also have to change or add some @code{#if} directives to your program in
@@ -116,7 +124,7 @@
  information about a program that can help with that job).
  
  When using @command{autoscan} to maintain a @file{configure.ac}, simply
-@@ -1051,7 +1048,7 @@
+@@ -1051,7 +1042,7 @@
  plays with different versions of Autoconf simultaneously.
  @end table
  
@@ -125,7 +133,7 @@
  @section Using @code{ifnames} to List Conditionals
  @cindex @code{ifnames}
  
-@@ -1060,8 +1057,7 @@
+@@ -1060,8 +1051,7 @@
  preprocessor conditionals.  If a package has already been set up to have
  some portability, @code{ifnames} can thus help you figure out what its
  @code{configure} needs to check for.  It may help fill in some gaps in a
@@ -135,7 +143,7 @@
  
  @code{ifnames} scans all of the C source files named on the command line
  (or the standard input, if none are given) and writes to the standard
-@@ -1083,7 +1079,7 @@
+@@ -1083,7 +1073,7 @@
  Print the version number of Autoconf and exit.
  @end table
  
@@ -144,7 +152,7 @@
  @section Using @code{autoconf} to Create @code{configure}
  @cindex @code{autoconf}
  
-@@ -1346,7 +1342,7 @@
+@@ -1346,7 +1336,7 @@
  @end group
  @end example
  
@@ -153,7 +161,7 @@
  @section Using @code{autoreconf} to Update @code{configure} Scripts
  @cindex @code{autoreconf}
  
-@@ -1568,8 +1564,8 @@
+@@ -1568,8 +1558,8 @@
  source directory; @code{configure} checks for this file's existence to
  make sure that the directory that it is told contains the source code in
  fact does.  Occasionally people accidentally specify the wrong directory
@@ -164,7 +172,7 @@
  @end defmac
  
  
-@@ -1755,7 +1751,7 @@
+@@ -1755,7 +1745,7 @@
  when used in @var{output}, or the standard input when used in the
  @var{inputs}.  You most probably don't need to use this in
  @file{configure.ac}, but it is convenient when using the command line
@@ -173,7 +181,7 @@
  for more details.
  
  The @var{inputs} may be absolute or relative filenames.  In the latter
-@@ -2223,7 +2219,7 @@
+@@ -2223,7 +2213,7 @@
  @file{config.h} is considered up to date.  @xref{Output}, for more
  information about @code{AC_OUTPUT}.
  
@@ -182,7 +190,7 @@
  configuration-related dependencies.
  
  @node Configuration Headers, Configuration Commands, Makefile Substitutions, Setup
-@@ -5621,7 +5617,7 @@
+@@ -5621,7 +5611,7 @@
  files will depend upon @command{bizarre-cc} being the C compiler.  If
  for some reason the user runs @command{/configure} again, or if it is
  run via @samp{./config.status --recheck}, (@xref{Automatic Remaking},
@@ -191,7 +199,7 @@
  inconsistent, composed of results depending upon two different
  compilers.
  
-@@ -5665,7 +5661,7 @@
+@@ -5665,7 +5655,7 @@
  
  @item
  @var{variable} is kept during automatic reconfiguration
@@ -200,7 +208,7 @@
  line argument, including when no cache is used:
  
  @example
-@@ -6670,7 +6666,7 @@
+@@ -6670,7 +6660,7 @@
  
  When the user runs @samp{autoconf -W error}, warnings from
  @code{AC_DIAGNOSE} and @code{AC_WARNING} are reported as error, see
@@ -209,7 +217,7 @@
  
  @node Dependencies Between Macros, Obsoleting Macros, Reporting Messages, Writing Autoconf Macros
  @section Dependencies Between Macros
-@@ -9445,7 +9441,7 @@
+@@ -9445,7 +9435,7 @@
  
  @c ============================================== Running configure Scripts.
  
@@ -218,7 +226,7 @@
  @chapter Running @code{configure} Scripts
  @cindex @code{configure}
  
-@@ -9463,7 +9459,7 @@
+@@ -9463,7 +9453,7 @@
  * System Type::                 Specifying the system type
  * Sharing Defaults::            Setting site-wide defaults for @code{configure}
  * Environment Variables::       Defining environment variables.
@@ -227,7 +235,7 @@
  @end menu
  
  @include install.texi
-@@ -9471,7 +9467,7 @@
+@@ -9471,7 +9461,7 @@
  
  @c ============================================== Recreating a Configuration
  
@@ -236,7 +244,7 @@
  @chapter Recreating a Configuration
  @cindex @code{config.status}
  
-@@ -9590,7 +9586,7 @@
+@@ -9590,7 +9580,7 @@
  
  @c =================================================== Obsolete Constructs
  
@@ -245,7 +253,7 @@
  @chapter Obsolete Constructs
  
  Autoconf changes, and throughout the years some constructs are obsoleted.
-@@ -9614,7 +9610,7 @@
+@@ -9614,7 +9604,7 @@
  @section Obsolete @file{config.status} Invocation
  
  @file{config.status} now supports arguments to specify the files to
@@ -254,7 +262,7 @@
  Before, environment variables had to be used.
  
  @defvar CONFIG_COMMANDS
-@@ -9645,7 +9641,7 @@
+@@ -9645,7 +9635,7 @@
  @file{config.status} ignores this variable.
  @end defvar
  
@@ -263,7 +271,7 @@
  would be:
  
  @example
-@@ -10572,7 +10568,7 @@
+@@ -10572,7 +10562,7 @@
  
  If you have an @file{aclocal.m4} installed with Autoconf (as opposed to
  in a particular package's source directory), you must rename it to
@@ -272,8 +280,9 @@
  
  If you distribute @file{install.sh} with your package, rename it to
  @file{install-sh} so @code{make} builtin rules won't inadvertently
---- autoconf-2.52/doc/install.texi.orig	Tue Jul 17 18:34:55 2001
-+++ autoconf-2.52/doc/install.texi	Wed Jul 18 23:53:41 2001
+diff -Nur autoconf-2.52.orig/doc/install.texi autoconf-2.52/doc/install.texi
+--- autoconf-2.52.orig/doc/install.texi	Tue Jul 17 18:34:55 2001
++++ autoconf-2.52/doc/install.texi	Sat Aug  4 12:37:51 2001
 @@ -215,8 +215,8 @@
  overridden in the site shell script).
  
@@ -285,3 +294,20 @@
  
  @code{configure} recognizes the following options to control how it
  operates.
+diff -Nur autoconf-2.52.orig/doc/standards.texi autoconf-2.52/doc/standards.texi
+--- autoconf-2.52.orig/doc/standards.texi	Tue Jul 17 18:34:55 2001
++++ autoconf-2.52/doc/standards.texi	Sat Aug  4 12:44:46 2001
+@@ -8,9 +8,10 @@
+ 
+ @ifinfo
+ @format
+-START-INFO-DIR-ENTRY
+-* Standards: (standards).        GNU coding standards.
+-END-INFO-DIR-ENTRY
++@dircategory Miscellaneous:
++@direntry
++* Standards: (standards).		GNU coding standards.
++@end direntry
+ @end format
+ @end ifinfo
+ 
