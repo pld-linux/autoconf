@@ -1,5 +1,5 @@
---- autoconf-2.54/doc/autoconf.texi.wiget	Fri Oct 18 10:49:14 2002
-+++ autoconf-2.54/doc/autoconf.texi	Fri Oct 18 10:50:52 2002
+--- autoconf-2.54/doc/autoconf.texi.wiget	Fri Oct 18 10:53:27 2002
++++ autoconf-2.54/doc/autoconf.texi	Fri Oct 18 11:01:49 2002
 @@ -94,33 +94,19 @@
  
  
@@ -396,8 +396,17 @@
  @section Running @command{testsuite} Scripts
  @cindex @command{testsuite}
  
+@@ -13706,7 +13691,7 @@
+ An Autotest test suite is to be configured in @var{directory}.  This
+ macro requires the instantiation of @file{@var{directory}/atconfig} from
+ @file{@var{directory}/atconfig.in}, and sets the default
+-@code{AUTOTEST_PATH} to @var{test-path} (@pxref{testsuite Invocation}).
++@code{AUTOTEST_PATH} to @var{test-path} (@pxref{testsuite}).
+ @end defmac
+ 
+ @item
 --- autoconf-2.54/doc/install.texi.wiget	Tue Aug 27 10:28:06 2002
-+++ autoconf-2.54/doc/install.texi	Fri Oct 18 10:49:15 2002
++++ autoconf-2.54/doc/install.texi	Fri Oct 18 10:53:29 2002
 @@ -225,7 +225,7 @@
  overridden in the site shell script).
  
@@ -408,7 +417,7 @@
  
  @command{configure} recognizes the following options to control how it
 --- autoconf-2.54/doc/standards.texi.wiget	Wed Apr 10 10:13:19 2002
-+++ autoconf-2.54/doc/standards.texi	Fri Oct 18 10:49:15 2002
++++ autoconf-2.54/doc/standards.texi	Fri Oct 18 10:53:29 2002
 @@ -8,9 +8,10 @@
  
  @ifinfo
