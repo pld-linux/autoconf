@@ -219,7 +219,7 @@ rm -rf $RPM_BUILD_ROOT
 xemacs -batch -no-autoloads -l autoload -f batch-update-directory \
 	$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/autoconf
 xemacs -batch -vanilla -f batch-byte-compile \
-	$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/autoconf/auto-autoloads.el \
+	$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/autoconf/auto-autoloads.el
 %endif
 
 %if 0%{!?_without_emacs:%{!?_without_xemacs:1}}
