@@ -1,6 +1,5 @@
-diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
---- autoconf-2.50.orig/doc/autoconf.texi	Fri Jun 15 14:57:50 2001
-+++ autoconf-2.50/doc/autoconf.texi	Fri Jun 15 15:21:46 2001
+--- autoconf-2.52/doc/autoconf.texi.orig	Tue Jul 17 18:34:55 2001
++++ autoconf-2.52/doc/autoconf.texi	Wed Jul 18 21:44:32 2001
 @@ -27,25 +27,20 @@
  @end ifnothtml
  
@@ -36,7 +35,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @end direntry
  
  @ifinfo
-@@ -142,7 +137,7 @@
+@@ -146,7 +141,7 @@
  * Manual Configuration::        Selecting features that can't be guessed
  * Site Configuration::          Local defaults for @code{configure}
  * Running configure scripts::   How to use the Autoconf output
@@ -45,7 +44,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  * Obsolete Constructs::         Kept for backward compatibility
  * Questions::                   Questions about Autoconf, with answers
  * History::                     History of Autoconf
-@@ -164,10 +159,10 @@
+@@ -168,10 +163,10 @@
  Making @code{configure} Scripts
  
  * Writing configure.ac::        What to put in an Autoconf input file
@@ -60,7 +59,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  
  Writing @file{configure.ac}
  
-@@ -199,7 +194,7 @@
+@@ -203,7 +198,7 @@
  Configuration Header Files
  
  * Header Templates::            Input for the configuration headers
@@ -69,7 +68,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  * Autoheader Macros::           How to specify CPP templates
  
  Existing Tests
-@@ -348,13 +343,13 @@
+@@ -369,13 +364,13 @@
  * System Type::                 Specifying the system type
  * Sharing Defaults::            Setting site-wide defaults for @code{configure}
  * Environment Variables::       Defining environment variables.
@@ -84,8 +83,8 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
 +* autoupdate::                  Automatic update of @file{configure.ac}
  * Obsolete Macros::             Backward compatibility macros
  * Autoconf 1::                  Tips for upgrading your files
- 
-@@ -652,7 +647,7 @@
+ * Autoconf 2.13::               Some fresher tips
+@@ -680,7 +675,7 @@
  
  @item
  a shell script called @file{config.status} that, when run, will recreate
@@ -94,7 +93,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  
  @item
  an optional shell script normally called @file{config.cache}
-@@ -712,13 +707,13 @@
+@@ -740,13 +735,13 @@
  
  @menu
  * Writing configure.ac::        What to put in an Autoconf input file
@@ -113,16 +112,16 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @section Writing @file{configure.ac}
  
  To produce a @code{configure} script for a software package, create a
-@@ -730,7 +725,7 @@
- @ref{Writing Tests}, for information about them.  For especially tricky
+@@ -759,7 +754,7 @@
  or specialized features, @file{configure.ac} might need to contain some
- hand-crafted shell commands.  The @code{autoscan} program can give you a
--good start in writing @file{configure.ac} (@pxref{autoscan Invocation},
-+good start in writing @file{configure.ac} (@pxref{autoscan},
- for more information).
+ hand-crafted shell commands; see @ref{Portable Shell}.  The
+ @code{autoscan} program can give you a good start in writing
+-@file{configure.ac} (@pxref{autoscan Invocation}, for more information).
++@file{configure.ac} (@pxref{autoscan}, for more information).
  
  Previous versions of Autoconf promoted the name @file{configure.in},
-@@ -959,7 +954,7 @@
+ which is somewhat ambiguous (the tool needed to produce this file is not
+@@ -987,7 +982,7 @@
  @end display
  
  
@@ -131,16 +130,16 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @section Using @code{autoscan} to Create @file{configure.ac}
  @cindex @code{autoscan}
  
-@@ -979,7 +974,7 @@
- configuration header file, you must add a call to
- @code{AC_CONFIG_HEADERS} (@pxref{Configuration Headers}).  You might also
- have to change or add some @code{#if} directives to your program in
+@@ -1009,7 +1004,7 @@
+ use a configuration header file, you must add a call to
+ @code{AC_CONFIG_HEADERS} (@pxref{Configuration Headers}).  You might
+ also have to change or add some @code{#if} directives to your program in
 -order to make it work with Autoconf (@pxref{ifnames Invocation}, for
 +order to make it work with Autoconf (@pxref{ifnames}, for
  information about a program that can help with that job).
  
- @code{autoscan} uses several data files (installed along with Autoconf)
-@@ -1017,7 +1012,7 @@
+ When using @command{autoscan} to maintain a @file{configure.ac}, simply
+@@ -1051,7 +1046,7 @@
  plays with different versions of Autoconf simultaneously.
  @end table
  
@@ -149,7 +148,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @section Using @code{ifnames} to List Conditionals
  @cindex @code{ifnames}
  
-@@ -1026,8 +1021,7 @@
+@@ -1060,8 +1055,7 @@
  preprocessor conditionals.  If a package has already been set up to have
  some portability, @code{ifnames} can thus help you figure out what its
  @code{configure} needs to check for.  It may help fill in some gaps in a
@@ -159,7 +158,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  
  @code{ifnames} scans all of the C source files named on the command line
  (or the standard input, if none are given) and writes to the standard
-@@ -1049,7 +1043,7 @@
+@@ -1083,7 +1077,7 @@
  Print the version number of Autoconf and exit.
  @end table
  
@@ -168,7 +167,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @section Using @code{autoconf} to Create @code{configure}
  @cindex @code{autoconf}
  
-@@ -1311,7 +1305,7 @@
+@@ -1346,7 +1340,7 @@
  @end group
  @end example
  
@@ -177,7 +176,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @section Using @code{autoreconf} to Update @code{configure} Scripts
  @cindex @code{autoreconf}
  
-@@ -1533,8 +1527,8 @@
+@@ -1568,8 +1562,8 @@
  source directory; @code{configure} checks for this file's existence to
  make sure that the directory that it is told contains the source code in
  fact does.  Occasionally people accidentally specify the wrong directory
@@ -188,7 +187,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @end defmac
  
  
-@@ -1719,7 +1713,7 @@
+@@ -1755,7 +1749,7 @@
  when used in @var{output}, or the standard input when used in the
  @var{inputs}.  You most probably don't need to use this in
  @file{configure.ac}, but it is convenient when using the command line
@@ -197,7 +196,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  for more details.
  
  The @var{inputs} may be absolute or relative filenames.  In the latter
-@@ -2185,7 +2179,7 @@
+@@ -2223,7 +2217,7 @@
  @file{config.h} is considered up to date.  @xref{Output}, for more
  information about @code{AC_OUTPUT}.
  
@@ -206,7 +205,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  configuration-related dependencies.
  
  @node Configuration Headers, Configuration Commands, Makefile Substitutions, Setup
-@@ -2246,11 +2240,11 @@
+@@ -2284,11 +2278,11 @@
  
  @menu
  * Header Templates::            Input for the configuration headers
@@ -220,7 +219,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @subsection Configuration Header Templates
  @cindex Configuration Header Template
  @cindex @file{config.h.in}
-@@ -2297,10 +2291,10 @@
+@@ -2335,10 +2329,10 @@
  @samp{#undef} is strongly discouraged.
  
  Since it is a tedious task to keep a template header up to date, you may
@@ -233,7 +232,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @subsection Using @code{autoheader} to Create @file{config.h.in}
  @cindex @code{autoheader}
  
-@@ -2405,7 +2399,7 @@
+@@ -2443,7 +2437,7 @@
  
  
  
@@ -242,16 +241,34 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @subsection Autoheader Macros
  
  @code{autoheader} scans @file{configure.ac} and figures out which C
-@@ -7854,7 +7848,7 @@
+@@ -5621,7 +5615,7 @@
+ files will depend upon @command{bizarre-cc} being the C compiler.  If
+ for some reason the user runs @command{/configure} again, or if it is
+ run via @samp{./config.status --recheck}, (@xref{Automatic Remaking},
+-and @pxref{config.status Invocation}), then the configuration can be
++and @pxref{config.status}), then the configuration can be
+ inconsistent, composed of results depending upon two different
+ compilers.
+ 
+@@ -5665,7 +5659,7 @@
+ 
+ @item
+ @var{variable} is kept during automatic reconfiguration
+-(@pxref{config.status Invocation}) as if it had been passed as a command
++(@pxref{config.status}) as if it had been passed as a command
+ line argument, including when no cache is used:
+ 
+ @example
+@@ -6670,7 +6664,7 @@
  
  When the user runs @samp{autoconf -W error}, warnings from
  @code{AC_DIAGNOSE} and @code{AC_WARNING} are reported as error, see
 -@ref{autoconf Invocation}.
 +@ref{autoconf}.
  
- @node Dependencies Between Macros, Obsoleting Macros, Reporting Messages, Writing Macros
+ @node Dependencies Between Macros, Obsoleting Macros, Reporting Messages, Writing Autoconf Macros
  @section Dependencies Between Macros
-@@ -8892,7 +8886,7 @@
+@@ -9445,7 +9439,7 @@
  
  @c ============================================== Running configure Scripts.
  
@@ -260,7 +277,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @chapter Running @code{configure} Scripts
  @cindex @code{configure}
  
-@@ -8910,7 +8904,7 @@
+@@ -9463,7 +9457,7 @@
  * System Type::                 Specifying the system type
  * Sharing Defaults::            Setting site-wide defaults for @code{configure}
  * Environment Variables::       Defining environment variables.
@@ -269,7 +286,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @end menu
  
  @include install.texi
-@@ -8918,7 +8912,7 @@
+@@ -9471,7 +9465,7 @@
  
  @c ============================================== Recreating a Configuration
  
@@ -278,7 +295,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @chapter Recreating a Configuration
  @cindex @code{config.status}
  
-@@ -9037,7 +9031,7 @@
+@@ -9590,7 +9584,7 @@
  
  @c =================================================== Obsolete Constructs
  
@@ -287,7 +304,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @chapter Obsolete Constructs
  
  Autoconf changes, and throughout the years some constructs are obsoleted.
-@@ -9051,7 +9045,7 @@
+@@ -9604,7 +9598,7 @@
  @menu
  * Obsolete config.status Use::  Different calling convention
  * acconfig.h::                  Additional entries in @file{config.h.in}
@@ -295,8 +312,8 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
 +* autoupdate::                  Automatic update of @file{configure.ac}
  * Obsolete Macros::             Backward compatibility macros
  * Autoconf 1::                  Tips for upgrading your files
- @end menu
-@@ -9060,7 +9054,7 @@
+ * Autoconf 2.13::               Some fresher tips
+@@ -9614,7 +9608,7 @@
  @section Obsolete @file{config.status} Invocation
  
  @file{config.status} now supports arguments to specify the files to
@@ -305,7 +322,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  Before, environment variables had to be used.
  
  @defvar CONFIG_COMMANDS
-@@ -9091,7 +9085,7 @@
+@@ -9645,7 +9639,7 @@
  @file{config.status} ignores this variable.
  @end defvar
  
@@ -314,7 +331,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  would be:
  
  @example
-@@ -9114,7 +9108,7 @@
+@@ -9668,7 +9662,7 @@
  for @code{CONFIG_COMMANDS} etc.)
  
  
@@ -323,7 +340,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @section @file{acconfig.h}
  
  @cindex @file{acconfig.h}
-@@ -9165,7 +9159,7 @@
+@@ -9719,7 +9713,7 @@
  self-contained, and should not depend upon @file{acconfig.h} etc.
  
  
@@ -332,7 +349,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @section Using @code{autoupdate} to Modernize @file{configure.ac}
  @cindex @code{autoupdate}
  
-@@ -9223,7 +9217,7 @@
+@@ -9777,7 +9771,7 @@
  instead of in the current directory.
  @end table
  
@@ -341,7 +358,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  @section Obsolete Macros
  
  Several macros are obsoleted in Autoconf, for various reasons (typically
-@@ -9987,7 +9981,7 @@
+@@ -10572,7 +10566,7 @@
  
  If you have an @file{aclocal.m4} installed with Autoconf (as opposed to
  in a particular package's source directory), you must rename it to
@@ -350,7 +367,7 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  
  If you distribute @file{install.sh} with your package, rename it to
  @file{install-sh} so @code{make} builtin rules won't inadvertently
-@@ -10042,7 +10036,7 @@
+@@ -10627,7 +10621,7 @@
  the documentation for them.  @xref{Obsolete Macros}, for a table showing the
  new names for the old macros.  Use the @code{autoupdate} program to
  convert your @file{configure.ac} to using the new macro names.
@@ -359,17 +376,3 @@ diff -Nur autoconf-2.50.orig/doc/autoconf.texi autoconf-2.50/doc/autoconf.texi
  
  Some macros have been superseded by similar ones that do the job better,
  but are not call-compatible.  If you get warnings about calling obsolete
-diff -Nur autoconf-2.50.orig/doc/install.texi autoconf-2.50/doc/install.texi
---- autoconf-2.50.orig/doc/install.texi	Mon Mar 19 15:28:42 2001
-+++ autoconf-2.50/doc/install.texi	Fri Jun 15 15:26:39 2001
-@@ -215,8 +215,8 @@
- overridden in the site shell script).
- 
- 
--@node configure Invocation
--@section @code{configure} Invocation
-+@node configure
-+@section @code{configure}
- 
- @code{configure} recognizes the following options to control how it
- operates.
