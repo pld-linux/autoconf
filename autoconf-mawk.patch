@@ -1,6 +1,6 @@
---- autoconf-2.50/doc/autoconf.texi.mawk	Tue May 22 15:33:52 2001
-+++ autoconf-2.50/doc/autoconf.texi	Tue May 22 15:36:55 2001
-@@ -2833,10 +2833,10 @@
+--- autoconf-2.50c/doc/autoconf.texi.wiget	Sat Jul 14 18:10:11 2001
++++ autoconf-2.50c/doc/autoconf.texi	Mon Jul 16 13:53:46 2001
+@@ -2883,10 +2883,10 @@
  @defmac AC_PROG_AWK
  @maindex PROG_AWK
  @ovindex AWK
@@ -14,8 +14,8 @@
  @end defmac
  
  
---- autoconf-2.50/acspecific.m4.mawk	Tue May 22 15:33:36 2001
-+++ autoconf-2.50/acspecific.m4	Tue May 22 15:35:43 2001
+--- autoconf-2.50c/acspecific.m4.wiget	Fri Jun 15 19:46:01 2001
++++ autoconf-2.50c/acspecific.m4	Mon Jul 16 13:53:46 2001
 @@ -113,9 +113,9 @@
  [AC_CHECK_TOOL(RANLIB, ranlib, :)])
  
@@ -28,12 +28,12 @@
  
  
  # AC_PROG_YACC
---- autoconf-2.50/configure.mawk	Tue May 22 15:34:06 2001
-+++ autoconf-2.50/configure	Tue May 22 15:34:47 2001
-@@ -1267,7 +1267,7 @@
+--- autoconf-2.50c/configure.wiget	Thu Jul 12 14:46:00 2001
++++ autoconf-2.50c/configure	Mon Jul 16 13:55:40 2001
+@@ -1215,7 +1215,7 @@
  # a AC-SUBST inside AC-PROG-GNU-M4.  Grmph!
  
- # `autoconf' and `ifnames' use AWK.
+ # `autoconf' and `ifnames' use AWK.  And we need decent RE support.
 -for ac_prog in mawk gawk nawk awk
 +for ac_prog in awk mawk gawk nawk
  do
