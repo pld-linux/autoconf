@@ -1,0 +1,2 @@
+- version patch added (now ./configure --version allways print autoconf
+  version)
