@@ -1,14 +1,15 @@
 diff -Nru autoconf-2.12/autoconf.texi autoconf-2.12.new/autoconf.texi
 --- autoconf-2.12/autoconf.texi	Tue Nov 26 19:09:46 1996
 +++ autoconf-2.12.new/autoconf.texi	Tue Dec 29 23:59:22 1998
-@@ -16,8 +16,9 @@
+@@ -16,8 +16,10 @@
  
  @ifinfo
  @format
 +INFO-DIR-SECTION Programming tools:
  START-INFO-DIR-ENTRY
 -* Autoconf: (autoconf).         Create source code configuration scripts.
-+* autoconf: (autoconf)			Create source code configuration scripts
++* autoconf: (autoconf).			Create source code 
++					configuration scripts
  END-INFO-DIR-ENTRY
  @end format
  
