@@ -9,7 +9,7 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
 Summary(de):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
-Summary(es):	Una herramienta de GNU para automáticamente configurar código de fuente
+Summary(es):	Una herramienta GNU para configurar automáticamente el código fuente
 Summary(fr):	Un outil de GNU pour configurer automatiquement le code source
 Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
 Summary(ko):	½º½º·Î È¯°æ¿¡ µû¶ó ¼Ò½º ÄÚµå¸¦ ¸ÂÃçÁÖ´Â GNU µµ±¸
@@ -87,21 +87,21 @@ konfigurieren kann; Autoconf wird nur für das Erzeugung der Indexe,
 nicht ihr Gebrauch angefordert.
 
 %description -l es
-GNÚs Autoconf es una herramienta para configurar código y makefiles de
-fuente. Usando Autoconf, los programadores pueden crear los conjuntos
-portables y configurables, puesto que se permite a la persona que
-construye el conjunto especificar varias opciones de la configuración.
+Autoconf de GNU es una herramienta para configurar código y makefiles
+de fuente. Usando Autoconf, los programadores pueden crear los
+conjuntos portables y configurables, puesto que se permite a la
+persona que construye el conjunto especificar varias opciones de la
+configuración.
 
-Usted debe instalar Autoconf si usted está desarrollando software
-lógica y usted quisiera utilizarlo para crear los shell scriptes que
-configurarán sus conjuntos del código de fuente. Si usted está
-instalando Autoconf, usted también necesitará instalar el conjunto de
-GNU m4.
+Usted debe instalar Autoconf si está desarrollando software y quisiera
+utilizarlo para crear los shell scriptes que configurarán sus
+conjuntos del código fuente. Si usted está instalando Autoconf,
+también necesitará instalar el conjunto de GNU m4.
 
 Observe que el conjunto de Autoconf no está requerido para el
-utilizador del extremo que puede configurar software lógica con una
-escritura Autoconf-generada; Autoconf se requiere solamente para la
-generación de las escrituras, no su uso.
+utilizador del extremo que puede configurar software con una escritura
+Autoconf-generada; Autoconf se requiere solamente para la generación
+de las escrituras, no su uso.
 
 %description -l fr
 GNU's Autoconf est un outil pour configurer le code source et les
