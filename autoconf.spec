@@ -2,7 +2,7 @@ Summary:	GNU autoconf - source configuration tools
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.13
-Release:	6
+Release:	7
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -12,7 +12,10 @@ Patch1:		autoconf-info.patch
 Patch2:		autoconf-mawk.patch
 Patch3:		autoconf-man.patch
 Patch4:		autoconf-notmp.patch
-Requires:	gawk, m4, mktemp
+Patch5:		autoconf-pinard.patch
+Requires:	gawk
+Requires:	m4
+Requires:	mktemp
 Prereq:		/sbin/install-info
 BuildRoot:	/tmp/%{name}-%{version}-root
 Buildarch:	noarch
@@ -85,6 +88,11 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/autoconf
 
 %changelog
+* Fri Apr 30 1999 Artur Frysiak <wiget@pld.org.pl>
+  [2.13-7]
+- added autoconf-pinard.patch from grep 2.3 
+  (fixed lookup for opendir and gethostbyname)  
+  
 * Tue Apr 27 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [2.13-6]
 - added patch with complet set autoconf man pages (from Debian),
