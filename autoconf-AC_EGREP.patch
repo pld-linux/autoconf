@@ -1,0 +1,12 @@
+--- autoconf-2.57/lib/autoconf/general.m4.wiget	Wed Feb 12 14:30:57 2003
++++ autoconf-2.57/lib/autoconf/general.m4	Wed Feb 12 14:33:21 2003
+@@ -2145,8 +2145,8 @@
+ AC_LANG_CONFTEST([AC_LANG_SOURCE([[$2]])])
+ dnl eval is necessary to expand ac_cpp.
+ dnl Ultrix and Pyramid sh refuse to redirect output of eval, so use subshell.
+ if (eval "$ac_cpp conftest.$ac_ext") 2>&AS_MESSAGE_LOG_FD |
+-dnl Quote $1 to prevent m4 from eating character classes
++dnl Quote first arg to prevent m4 from eating character classes
+   $EGREP "[$1]" >/dev/null 2>&1; then
+   m4_default([$3], :)
+ m4_ifvaln([$4], [else
