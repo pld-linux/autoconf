@@ -23,7 +23,6 @@ URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	/bin/awk
 Requires:	m4
 Requires:	mktemp
-Prereq:		/usr/sbin/fix-info-dir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
@@ -150,10 +149,10 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/autoconf.info* \
 	$RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %post
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
