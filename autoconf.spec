@@ -7,7 +7,7 @@ Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Summary(pt_BR):	GNU autoconf - ferramentas de configuração de fontes
 Name:		autoconf
 Version:	2.52
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
@@ -25,7 +25,7 @@ Requires:	m4
 Requires:	mktemp
 Conflicts:	gettext < 0.10.38-3
 BuildRequires:	m4
-BuildRequires:	texinfo
+BuildRequires:	/usr/bin/makeinfo
 BuildConflicts:	m4 = 1.4o
 Buildarch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
