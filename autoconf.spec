@@ -18,7 +18,7 @@ URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	gawk
 Requires:	m4
 Requires:	mktemp
-Prereq:		/sbin/install-info
+Prereq:		/usr/sbin/fix-info-dir
 BuildRoot:	/tmp/%{name}-%{version}-root
 Buildarch:	noarch
 
@@ -78,12 +78,10 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/autoconf.info* \
 	$RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %post
-/sbin/install-info %{_infodir}/autoconf.info.gz /etc/info-dir
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %preun
-if [ "$1" = "0" ]; then
-	/sbin/install-info --del %{_infodir}/autoconf.info.gz /etc/info-dir
-fi
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
