@@ -25,9 +25,9 @@ generate the configuration scripts.
 %description -l pl
 GNU autoconf jest narzêdziem wykorzystywanym do automatycznego
 konfigurowania kodów ¼ród³owych pakietów programów oraz do generowania na
-podstawie automatycznie roz[oznanego ¶rodowiska plików Makefile i innch
+podstawie automatycznie rozoznanego ¶rodowiska plików Makefile i innch
 zale¿nych od zawarto¶ci systemu w którym ma przebiegaæ proces kompilacji.
-d102 1
+Pomaga programi¶cie w konfigurowaniu i tworzeniu opragramowania daj±cego siê
 przenie¶æ na ró¿ne platformy. Umo¿liwia wybór wielu opcji podczas procesu
 przygotowania do kompilacji.
 
@@ -99,4 +99,4 @@ fi
 - uses install-info
 
 * Thu Jul 17 1997 Erik Troan <ewt@redhat.com>
-- built with glibc- built with glibc
+- built with glibc
