@@ -1,9 +1,10 @@
 Summary:	GNU autoconf - source configuration tools
-Summary(fr):	Un outil de GNU pour configurer automatiquement le code source
 Summary(de):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
 Summary(es):	Una herramienta de GNU para automáticamente configurar código de fuente
+Summary(fr):	Un outil de GNU pour configurer automatiquement le code source
 Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
+Summary(pt_BR):	GNU autoconf - ferramentas de configuração de fontes
 Name:		autoconf
 Version:	2.52
 Release:	2
@@ -127,6 +128,13 @@ wybór wielu opcji podczas procesu przygotowania do kompilacji.
 
 GNU autoconf nie jest generalnie potrzebny koñcowemu u¿ytkownikowi, a
 tylko podczas generowania samych skryptów autokonfiguracyjnych.
+
+%description -l pt_BR
+GNU "autoconf" é uma ferramenta para configuração de fontes e
+Makefiles. Ele ajuda o programador na criação de pacotes portáveis e
+configuráveis, permitindo que a pessoa que programa o pacote
+especifique várias opções de configuração. Autoconf é necessário
+somente para gerar scripts de configuração.
 
 %prep
 %setup -q
