@@ -2,7 +2,7 @@ Summary:	GNU autoconf - source configuration tools
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.13
-Release:	1d
+Release:	1
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -73,7 +73,7 @@ fi
 
 %changelog
 * Wed Jan 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [2.13-1d]
+  [2.13-1]
 - added Group(pl).
 
 * Wed Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
