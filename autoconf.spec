@@ -6,7 +6,7 @@ Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codi
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.13
-Release:	12
+Release:	13
 License:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -19,6 +19,7 @@ Patch4:		%{name}-notmp.patch
 Patch5:		%{name}-pinard.patch
 Patch6:		%{name}-fhs.patch
 Patch7:		%{name}-DESTDIR.patch
+Patch8:		%{name}-glibc22.patch
 URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	/bin/awk
 Requires:	m4
@@ -138,6 +139,7 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 %patch5 -p1
 %patch6 -p1
 %patch7 -p1
+%patch8 -p1
 
 %build
 %configure
