@@ -14,6 +14,7 @@ Patch3:		autoconf-man.patch
 Patch4:		autoconf-notmp.patch
 Patch5:		autoconf-pinard.patch
 Patch6:		autoconf-fhs.patch
+Patch7:		autoconf-canonical.patch
 URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	gawk
 Requires:	m4
@@ -52,6 +53,7 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 ./configure \
