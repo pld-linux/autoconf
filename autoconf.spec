@@ -14,6 +14,7 @@ Patch3:		autoconf-man.patch
 Patch4:		autoconf-notmp.patch
 Patch5:		autoconf-pinard.patch
 Patch6:		autoconf-fhs.patch
+URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	gawk
 Requires:	m4
 Requires:	mktemp
