@@ -6,11 +6,11 @@ Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codi
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.13
-Release:	9
-Copyright:	GPL
+Release:	10
+License:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
-Source:		ftp://prep.ai.mit.edu/pub/gnu/autoconf/%{name}-%{version}.tar.gz
+Source0:	ftp://prep.ai.mit.edu/pub/gnu/autoconf/%{name}-%{version}.tar.gz
 Patch0:		autoconf-tmprace.patch
 Patch1:		autoconf-info.patch
 Patch2:		autoconf-mawk.patch
@@ -34,8 +34,8 @@ Autoconf, programmers can create portable and configurable packages, since
 the person building the package is allowed to specify various configuration
 options.
 
-You should install Autoconf if you are developing software and you'd like to
-use it to create shell scripts which will configure your source code
+You should install Autoconf if you are developing software and you'd like
+to use it to create shell scripts which will configure your source code
 packages. If you are installing Autoconf, you will also need to install the
 GNU m4 package.
 
@@ -44,19 +44,20 @@ configuring software with an Autoconf-generated script; Autoconf is only
 required for the generation of the scripts, not their use.
 
 %description -l de
-GNU's Autoconf ist eines Hilfsmittels für das Konfigurieren des Quellencodes
-und der Makefiles. Mit Autoconf können Programmierer die beweglichen und
-konfigurierbaren Pakete erstellen, da der Person, die das Paket aufbaut,
-erlaubt wird, verschiedene Konfiguration Optionen zu spezifizieren.
+GNU's Autoconf ist eines Hilfsmittels für das Konfigurieren des
+Quellencodes und der Makefiles. Mit Autoconf können Programmierer die
+beweglichen und konfigurierbaren Pakete erstellen, da der Person, die das
+Paket aufbaut, erlaubt wird, verschiedene Konfiguration Optionen zu
+spezifizieren.
 
 Sie sollten Autoconf installieren, wenn Sie Software entwickeln und Sie sie
 benutzen möchten, um Shellindexe zu erstellen, die Ihre Quellencodepakete
-konfigurieren. Wenn Sie Autoconf installieren, müssen Sie auch das Paket GNU
-m4 installieren.
+konfigurieren. Wenn Sie Autoconf installieren, müssen Sie auch das Paket
+GNU m4 installieren.
 
 Beachten Sie, daß das Paket Autoconf nicht für den Endbenutzer angefordert
-wird, der Software mit einem Autoconf-festgelegten Index konfigurieren kann;
-Autoconf wird nur für das Erzeugung der Indexe, nicht ihr Gebrauch
+wird, der Software mit einem Autoconf-festgelegten Index konfigurieren
+kann; Autoconf wird nur für das Erzeugung der Indexe, nicht ihr Gebrauch
 angefordert.
 
 %description -l es
@@ -66,20 +67,20 @@ portables y configurables, puesto que se permite a la persona que construye
 el conjunto especificar varias opciones de la configuración.
 
 Usted debe instalar Autoconf si usted está desarrollando software lógica y
-usted quisiera utilizarlo para crear los shell scriptes que configurarán sus
-conjuntos del código de fuente. Si usted está instalando Autoconf, usted
-también necesitará instalar el conjunto de GNU m4.
+usted quisiera utilizarlo para crear los shell scriptes que configurarán
+sus conjuntos del código de fuente. Si usted está instalando Autoconf,
+usted también necesitará instalar el conjunto de GNU m4.
 
-Observe que el conjunto de Autoconf no está requerido para el utilizador del
-extremo que puede configurar software lógica con una escritura
+Observe que el conjunto de Autoconf no está requerido para el utilizador
+del extremo que puede configurar software lógica con una escritura
 Autoconf-generada; Autoconf se requiere solamente para la generación de las
 escrituras, no su uso.
 
 %description -l fr
 GNU's Autoconf est un outil pour configurer le code source et les fichiers
 makefile. En utilisant Autoconf, les programmeurs peuvent créer les modules
-portatifs et configurables, puisqu'on permet à la la personne établissant le
-module d'indiquer de diverses options de configuration.
+portatifs et configurables, puisqu'on permet à la la personne établissant
+le module d'indiquer de diverses options de configuration.
 
 Vous devriez installer Autoconf si vous développez le logiciel et vous
 voudriez l'employer pour créer les séquences type d'interpréteur de
@@ -112,13 +113,13 @@ GNU autoconf jest narzêdziem wykorzystywanym do automatycznego
 konfigurowania kodów ¼ród³owych pakietów programów oraz do generowania na
 podstawie automatycznie rozpoznanego ¶rodowiska plików Makefile i innych
 zale¿nych od zawarto¶ci systemu, w którym ma przebiegaæ proces kompilacji.
-Pomaga programi¶cie w konfigurowaniu i tworzeniu opragramowania daj±cego siê
-przenie¶æ na ró¿ne platformy. Umo¿liwia wybór wielu opcji podczas procesu
-przygotowania do kompilacji.
+Pomaga programi¶cie w konfigurowaniu i tworzeniu opragramowania daj±cego
+siê przenie¶æ na ró¿ne platformy. Umo¿liwia wybór wielu opcji podczas
+procesu przygotowania do kompilacji.
 
-GNU autoconf nie jest generalnie potrzebny koñcowemu u¿ytkownikowi, a
-tylko podczas generowania samych skryptów autokonfiguracyjnych.
- 
+GNU autoconf nie jest generalnie potrzebny koñcowemu u¿ytkownikowi, a tylko
+podczas generowania samych skryptów autokonfiguracyjnych.
+
 %prep
 %setup -q
 %patch0 -p1
