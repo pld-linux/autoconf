@@ -6,7 +6,7 @@ Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codi
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.13
-Release:	10
+Release:	11
 License:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -25,6 +25,7 @@ Requires:	m4
 Requires:	mktemp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
+BuildConflicts:	m4 = 1.4o
 
 %define		_libdir		%{_datadir}
 
