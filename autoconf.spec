@@ -14,10 +14,10 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.56
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Development/Building
-# full releases:
+# stable releases:
 Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 # devel releases:
 #Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
@@ -164,25 +164,23 @@ GNU autoconf - це ╕нструмент для автоматично╖ конф╕гурац╕╖ вих╕дних
 "autoconf" не ╓ необх╕дним для к╕нцевого користувача, його
 використовують т╕льки для генерац╕╖ конф╕гурац╕йних скрипт╕в.
 
-%if%{!?_without_emacs:1}%{?_without_emacs:0}
 %package -n emacs-autoconf-mode-pkg
-Summary:        emacs autoconf-mode
-Summary(pl):    Tryb autoconf dla emacsa
-Group:          Applications/Editors/Emacs
-Requires:       emacs
+Summary:	emacs autoconf-mode
+Summary(pl):	Tryb autoconf dla emacsa
+Group:		Applications/Editors/Emacs
+Requires:	emacs
 
 %description -n emacs-autoconf-mode-pkg
 Emacs autoconf-mode.
 
 %description -n emacs-autoconf-mode-pkg -l pl
 Tryb edycji autoconf dla emacsa.
-%endif
 
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
-#%patch2 -p1
+%patch2 -p1
 
 %build
 %configure
