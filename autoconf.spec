@@ -55,8 +55,8 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 %build
 ./configure \
 	--prefix=/usr \
-	--infodir=/usr/share/info \
-	--mandir=/usr/share/man
+	--infodir=%{_infodir} \
+	--mandir=%{_mandir}
 make datadir=/usr/lib
 
 %install
@@ -66,22 +66,22 @@ install -d $RPM_BUILD_ROOT/usr/share/{info,man/man1}
 make install \
 	prefix=$RPM_BUILD_ROOT/usr \
 	datadir=$RPM_BUILD_ROOT/usr/lib \
-	infodir=$RPM_BUILD_ROOT/usr/share/info \
-	mandir=$RPM_BUILD_ROOT/usr/share/man \
+	infodir=$RPM_BUILD_ROOT%{_infodir} \
+	mandir=$RPM_BUILD_ROOT%{_mandir} \
 install install-sh $RPM_BUILD_ROOT/usr/lib/autoconf
 
 install {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1 \
-	$RPM_BUILD_ROOT/usr/share/man/man1
+	$RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/share/info/autoconf.info* \
-	$RPM_BUILD_ROOT/usr/share/man/man1/*
+gzip -9nf $RPM_BUILD_ROOT%{_infodir}/autoconf.info* \
+	$RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %post
-/sbin/install-info /usr/share/info/autoconf.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/autoconf.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --del /usr/share/info/autoconf.info.gz /etc/info-dir
+	/sbin/install-info --del %{_infodir}/autoconf.info.gz /etc/info-dir
 fi
 
 %clean
@@ -91,8 +91,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) /usr/bin/*
 
-/usr/share/info/autoconf.info*
-/usr/share/man/man1/*
+%{_infodir}/autoconf.info*
+%{_mandir}/man1/*
 
 /usr/lib/autoconf
 
