@@ -1,5 +1,5 @@
---- autoconf-2.54/doc/autoconf.texi.orig	Fri Oct  4 23:19:09 2002
-+++ autoconf-2.54/doc/autoconf.texi	Fri Oct  4 23:24:43 2002
+--- autoconf-2.54/doc/autoconf.texi.wiget	Fri Oct 18 10:53:27 2002
++++ autoconf-2.54/doc/autoconf.texi	Fri Oct 18 11:01:49 2002
 @@ -94,33 +94,19 @@
  
  
@@ -79,6 +79,15 @@
  * Autoheader Macros::           How to specify CPP templates
  
  Existing Tests
+@@ -311,7 +297,7 @@
+ Programming in M4
+ 
+ * M4 Quotation::                Protecting macros from unwanted expansion
+-* Invoking autom4te::           The Autoconf executables backbone
++* autom4te::                    The Autoconf executables backbone
+ * Programming in M4sugar::      Convenient pure M4 macros
+ * Programming in M4sh::         Common shell constructs
+ 
 @@ -388,13 +374,13 @@
  * System Type::                 Specifying the system type
  * Sharing Defaults::            Setting site-wide defaults for @command{configure}
@@ -261,6 +270,24 @@
  line argument, including when no cache is used:
  
  @example
+@@ -6608,7 +6593,7 @@
+ 
+ @menu
+ * M4 Quotation::                Protecting macros from unwanted expansion
+-* Invoking autom4te::           The Autoconf executables backbone
++* autom4te::                    The Autoconf executables backbone
+ * Programming in M4sugar::      Convenient pure M4 macros
+ * Programming in M4sh::         Common shell Constructs
+ @end menu
+@@ -7111,7 +7096,7 @@
+ unexpanded macros.  The @command{autoconf} program checks for this problem
+ by doing @samp{grep AC_ configure}.
+ 
+-@node Invoking autom4te
++@node autom4te
+ @section Invoking @command{autom4te}
+ 
+ The Autoconf suite, including M4sugar, M4sh, and Autotest, in addition to
 @@ -7394,7 +7379,7 @@
  not.
  @end table
@@ -378,8 +405,8 @@
  @end defmac
  
  @item
---- autoconf-2.54/doc/install.texi.orig	Tue Aug 27 10:28:06 2002
-+++ autoconf-2.54/doc/install.texi	Fri Oct  4 23:27:28 2002
+--- autoconf-2.54/doc/install.texi.wiget	Tue Aug 27 10:28:06 2002
++++ autoconf-2.54/doc/install.texi	Fri Oct 18 10:53:29 2002
 @@ -225,7 +225,7 @@
  overridden in the site shell script).
  
@@ -389,3 +416,19 @@
  @section @command{configure} Invocation
  
  @command{configure} recognizes the following options to control how it
+--- autoconf-2.54/doc/standards.texi.wiget	Wed Apr 10 10:13:19 2002
++++ autoconf-2.54/doc/standards.texi	Fri Oct 18 10:53:29 2002
+@@ -8,9 +8,10 @@
+ 
+ @ifinfo
+ @format
+-START-INFO-DIR-ENTRY
+-* Standards: (standards).        GNU coding standards.
+-END-INFO-DIR-ENTRY
++@dircategory Miscellaneous:
++@direntry
++* Standards: (standards).		GNU coding standards.
++@end direntry
+ @end format
+ @end ifinfo
+ 
