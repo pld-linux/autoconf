@@ -4,6 +4,7 @@
 # _without_xemacs	- without XEmacs autoconf-mode
 #
 %define		_without_emacs	yes
+%define		_without_xemacs	yes
 
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
@@ -18,7 +19,7 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.57
-Release:	6
+Release:	7
 License:	GPL
 Group:		Development/Building
 # stable releases:
