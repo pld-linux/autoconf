@@ -19,7 +19,7 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.58
-Release:	1
+Release:	1.1
 License:	GPL
 Group:		Development/Building
 # stable releases:
