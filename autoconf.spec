@@ -11,16 +11,12 @@ License:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
 Source0:	ftp://ftp.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.gz
-#Patch0:		%{name}-tmprace.patch
-Patch1:		%{name}-info.patch
-Patch2:		%{name}-mawk.patch
-Patch3:		%{name}-man.patch
-#Patch4:		%{name}-notmp.patch
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-mawk.patch
+Patch2:		%{name}-man.patch
+Patch3:		%{name}-fhs.patch
+Patch4:		%{name}-version.patch
 #Patch5:		%{name}-pinard.patch
-Patch6:		%{name}-fhs.patch
-#Patch7:		%{name}-DESTDIR.patch
-#Patch8:		%{name}-glibc22.patch
-Patch9:		%{name}-version.patch
 URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	/bin/awk
 Requires:	m4
@@ -132,16 +128,12 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
+%patch0 -p1
+%patch1 -p1
 %patch2 -p1
 %patch3 -p1
-#%patch4 -p1
+%patch4 -p1
 #%patch5 -p1
-%patch6 -p1
-#%patch7 -p1
-#%patch8 -p1
-%patch9 -p1
 
 %build
 %configure2_50
