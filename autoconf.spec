@@ -2,7 +2,7 @@ Summary:	GNU autoconf - source configuration tools
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.13
-Release:	7
+Release:	8
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -13,6 +13,7 @@ Patch2:		autoconf-mawk.patch
 Patch3:		autoconf-man.patch
 Patch4:		autoconf-notmp.patch
 Patch5:		autoconf-pinard.patch
+Patch6:		autoconf-fhs.patch
 Requires:	gawk
 Requires:	m4
 Requires:	mktemp
@@ -48,31 +49,39 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
+%patch6 -p1
 
 %build
 ./configure \
-	--prefix=/usr
+	--prefix=/usr \
+	--infodir=/usr/share/info \
+	--mandir=/usr/share/man
 make datadir=/usr/lib
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/{info,man/man1}
+install -d $RPM_BUILD_ROOT/usr/share/{info,man/man1}
 
-make prefix=$RPM_BUILD_ROOT/usr datadir=$RPM_BUILD_ROOT/usr/lib install
+make install \
+	prefix=$RPM_BUILD_ROOT/usr \
+	datadir=$RPM_BUILD_ROOT/usr/lib \
+	infodir=$RPM_BUILD_ROOT/usr/share/info \
+	mandir=$RPM_BUILD_ROOT/usr/share/man \
 install install-sh $RPM_BUILD_ROOT/usr/lib/autoconf
 
 install {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1 \
-	$RPM_BUILD_ROOT/usr/man/man1
+	$RPM_BUILD_ROOT/usr/share/man/man1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/info/autoconf.info* \
-	$RPM_BUILD_ROOT/usr/man/man1/*
+gzip -9nf $RPM_BUILD_ROOT/usr/share/info/autoconf.info* \
+	$RPM_BUILD_ROOT/usr/share/man/man1/*
 
 %post
-/sbin/install-info /usr/info/autoconf.info.gz /etc/info-dir
+/sbin/install-info /usr/share/info/autoconf.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --del /usr/info/autoconf.info.gz /etc/info-dir
+	/sbin/install-info --del /usr/share/info/autoconf.info.gz /etc/info-dir
 fi
 
 %clean
@@ -82,8 +91,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) /usr/bin/*
 
-/usr/info/autoconf.info*
-/usr/man/man1/*
+/usr/share/info/autoconf.info*
+/usr/share/man/man1/*
 
 /usr/lib/autoconf
 
