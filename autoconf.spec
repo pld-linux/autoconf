@@ -13,12 +13,12 @@ Version:	2.53a
 Release:	1
 License:	GPL
 Group:		Development/Building
-Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-mawk.patch
 Patch2:		%{name}-fhs.patch
 Patch3:		%{name}-version.patch
-URL:		http://sourceware.cygnus.com/autoconf/
+URL:		http://www.gnu.org/software/autoconf/
 Requires:	diffutils
 Requires:	/bin/awk
 Requires:	m4
