@@ -5,8 +5,8 @@ Summary(es):	Una herramienta de GNU para automáticamente configurar código de fu
 Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
-Version:	2.50
-Release:	2
+Version:	2.52
+Release:	1
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
