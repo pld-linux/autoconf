@@ -23,6 +23,7 @@ License:	GPL
 Group:		Development/Building
 # stable releases:
 Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
+# Source0-md5: 407ea53787ce13f5ca427e9a51e05bc2
 # devel releases:
 #Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
