@@ -137,7 +137,7 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 %patch4 -p1
 
 %build
-%configure2_50
+%configure
 %{__make}
 
 %install
