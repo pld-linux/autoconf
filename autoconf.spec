@@ -2,7 +2,7 @@ Summary:	GNU autoconf - source configuration tools
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.13
-Release:	2
+Release:	6
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -12,7 +12,7 @@ Patch1:		autoconf-info.patch
 Patch2:		autoconf-mawk.patch
 Patch3:		autoconf-man.patch
 Patch4:		autoconf-notmp.patch
-#Requires:	gawk, m4, mktemp, perl
+Requires:	gawk, m4, mktemp
 Prereq:		/sbin/install-info
 BuildRoot:	/tmp/%{name}-%{version}-root
 Buildarch:	noarch
@@ -53,15 +53,16 @@ make datadir=/usr/lib
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/info
+install -d $RPM_BUILD_ROOT/usr/{info,man/man1}
 
 make prefix=$RPM_BUILD_ROOT/usr datadir=$RPM_BUILD_ROOT/usr/lib install
 install install-sh $RPM_BUILD_ROOT/usr/lib/autoconf
 
-gzip -9nf $RPM_BUILD_ROOT/usr/info/autoconf.info*
+install {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1 \
+	$RPM_BUILD_ROOT/usr/man/man1
 
-%clean
-rm -rf $RPM_BUILD_ROOT
+gzip -9nf $RPM_BUILD_ROOT/usr/info/autoconf.info* \
+	$RPM_BUILD_ROOT/usr/man/man1/*
 
 %post
 /sbin/install-info /usr/info/autoconf.info.gz /etc/info-dir
@@ -71,13 +72,28 @@ if [ "$1" = "0" ]; then
 	/sbin/install-info --del /usr/info/autoconf.info.gz /etc/info-dir
 fi
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %files
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
+%attr(755,root,root) /usr/bin/*
+
 /usr/info/autoconf.info*
-%attr(755, root, root) /usr/bin/*
+/usr/man/man1/*
+
 /usr/lib/autoconf
 
 %changelog
+* Tue Apr 27 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [2.13-6]
+- added patch with complet set autoconf man pages (from Debian),
+- added patch for looking for gawk before mawk in ./configure
+  (autoconf-mawk.patch from rawhide),
+- added patch wich adds removing temporary files used by auconf
+  scripts (autoconf-notmp.patch from rawhide),
+- recompiled on new rpm.
+
 * Wed Jan 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [2.13-1d]
 - added Group(pl).
