@@ -31,17 +31,17 @@ Patch1:		%{name}-version.patch
 Patch2:		%{name}-info.patch
 Patch3:		%{name}-AC_EGREP.patch
 URL:		http://www.gnu.org/software/autoconf/
-Requires:	diffutils
-Requires:	/bin/awk
-Requires:	m4 >= 1:1.4p-0.pre2.2
-Requires:	mktemp
-Conflicts:	gettext < 0.10.38-3
+BuildConflicts:	m4 = 1.4o
+%{!?_without_emacs:BuildRequires:	emacs}
 BuildRequires:	m4 >= 1:1.4p-0.pre2.2
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.2
-%{!?_without_emacs:BuildRequires:	emacs}
 %{!?_without_xemacs:BuildRequires:	xemacs}
-BuildConflicts:	m4 = 1.4o
+Conflicts:	gettext < 0.10.38-3
+Requires:	/bin/awk
+Requires:	diffutils
+Requires:	m4 >= 1:1.4p-0.pre2.2
+Requires:	mktemp
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	autoconf252
@@ -244,11 +244,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog ChangeLog.2 NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/*
-
+%{_libdir}/autoconf
 %{_infodir}/*.info*
 %{_mandir}/man1/*
-
-%{_libdir}/autoconf
 
 %if 0%{!?_without_emacs:1}
 %files -n emacs-autoconf-mode-pkg
