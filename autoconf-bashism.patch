@@ -1,0 +1,21 @@
+diff -Nru autoconf-2.58.orig/configure autoconf-2.58/configure
+--- autoconf-2.58.orig/configure	2003-11-04 09:47:21.000000000 +0100
++++ autoconf-2.58/configure	2003-11-05 09:35:17.144712072 +0100
+@@ -23,7 +23,7 @@
+ fi
+ 
+ # Support unset when possible.
+-if ((MAIL=60; unset MAIL) || exit) >/dev/null 2>&1; then
++if ( (MAIL=60; unset MAIL) || exit) >/dev/null 2>&1; then
+   as_unset=unset
+ else
+   as_unset=false
+@@ -2180,7 +2180,7 @@
+ fi
+ 
+ # Support unset when possible.
+-if ((MAIL=60; unset MAIL) || exit) >/dev/null 2>&1; then
++if ( (MAIL=60; unset MAIL) || exit) >/dev/null 2>&1; then
+   as_unset=unset
+ else
+   as_unset=false
