@@ -1,6 +1,5 @@
-diff -Nur autoconf-2.56.orig/doc/autoconf.texi autoconf-2.56/doc/autoconf.texi
---- autoconf-2.56.orig/doc/autoconf.texi	Mon Nov 18 21:47:10 2002
-+++ autoconf-2.56/doc/autoconf.texi	Mon Nov 18 21:52:44 2002
+--- autoconf-2.57/doc/autoconf.texi.wiget	Wed Dec  4 17:25:14 2002
++++ autoconf-2.57/doc/autoconf.texi	Wed Dec  4 17:25:14 2002
 @@ -95,33 +95,19 @@
  
  
@@ -441,9 +440,8 @@ diff -Nur autoconf-2.56.orig/doc/autoconf.texi autoconf-2.56/doc/autoconf.texi
  a specific demand, stores additional information in
  @file{autom4te.cache} for future runs.  For instance, if you run
  @command{autoconf}, behind the scenes, @command{autom4te} will also
-diff -Nur autoconf-2.56.orig/doc/install.texi autoconf-2.56/doc/install.texi
---- autoconf-2.56.orig/doc/install.texi	Tue Aug 27 10:28:06 2002
-+++ autoconf-2.56/doc/install.texi	Mon Nov 18 21:48:00 2002
+--- autoconf-2.57/doc/install.texi.wiget	Mon Jul 29 10:20:52 2002
++++ autoconf-2.57/doc/install.texi	Wed Dec  4 17:25:14 2002
 @@ -225,7 +225,7 @@
  overridden in the site shell script).
  
@@ -453,20 +451,14 @@ diff -Nur autoconf-2.56.orig/doc/install.texi autoconf-2.56/doc/install.texi
  @section @command{configure} Invocation
  
  @command{configure} recognizes the following options to control how it
-diff -Nur autoconf-2.56.orig/doc/standards.texi autoconf-2.56/doc/standards.texi
---- autoconf-2.56.orig/doc/standards.texi	Thu Nov  7 15:22:24 2002
-+++ autoconf-2.56/doc/standards.texi	Mon Nov 18 21:48:00 2002
-@@ -8,9 +8,10 @@
+--- autoconf-2.57/doc/standards.texi.wiget	Sat Nov 23 06:08:33 2002
++++ autoconf-2.57/doc/standards.texi	Wed Dec  4 17:26:51 2002
+@@ -6,7 +6,7 @@
+ @set lastupdate November 23, 2002
+ @c %**end of header
  
- @ifinfo
- @format
--START-INFO-DIR-ENTRY
--* Standards: (standards).        GNU coding standards.
--END-INFO-DIR-ENTRY
+-@dircategory GNU organization
 +@dircategory Miscellaneous:
-+@direntry
-+* Standards: (standards).		GNU coding standards.
-+@end direntry
- @end format
- @end ifinfo
- 
+ @direntry
+ * Standards: (standards).        GNU coding standards.
+ @end direntry

@@ -13,7 +13,7 @@ Summary(pt_BR):	GNU autoconf - ferramentas de configuraГЦo de fontes
 Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
-Version:	2.56
+Version:	2.57
 Release:	1
 License:	GPL
 Group:		Development/Building
