@@ -7,11 +7,11 @@ Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codi
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Summary(pt_BR):	GNU autoconf - ferramentas de configuração de fontes
 Name:		autoconf
-Version:	2.53
+Version:	2.53a
 Release:	1
 License:	GPL
 Group:		Development/Building
-Source0:	ftp://ftp.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
+Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-mawk.patch
 Patch2:		%{name}-fhs.patch
