@@ -24,7 +24,7 @@ Requires:	gawk
 Requires:	m4
 Requires:	mktemp
 Prereq:		/usr/sbin/fix-info-dir
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
 %define		_libdir		%{_datadir}
