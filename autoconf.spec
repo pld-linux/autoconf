@@ -61,8 +61,7 @@ various configuration options.
 
 You should install Autoconf if you are developing software and you'd
 like to use it to create shell scripts which will configure your
-source code packages. If you are installing Autoconf, you will also
-need to install the GNU m4 package.
+source code packages.
 
 Note that the Autoconf package is not required for the end user who
 may be configuring software with an Autoconf-generated script;
@@ -78,8 +77,7 @@ zu spezifizieren.
 
 Sie sollten Autoconf installieren, wenn Sie Software entwickeln und
 Sie sie benutzen möchten, um Shellindexe zu erstellen, die Ihre
-Quellencodepakete konfigurieren. Wenn Sie Autoconf installieren,
-müssen Sie auch das Paket GNU m4 installieren.
+Quellencodepakete konfigurieren.
 
 Beachten Sie, daß das Paket Autoconf nicht für den Endbenutzer
 angefordert wird, der Software mit einem Autoconf-festgelegten Index
@@ -95,8 +93,7 @@ configuración.
 
 Usted debe instalar Autoconf si está desarrollando software y quisiera
 utilizarlo para crear los shell scriptes que configurarán sus
-conjuntos del código fuente. Si usted está instalando Autoconf,
-también necesitará instalar el conjunto de GNU m4.
+conjuntos del código fuente.
 
 Observe que el conjunto de Autoconf no está requerido para el
 utilizador del extremo que puede configurar software con una escritura
@@ -112,9 +109,7 @@ configuration.
 
 Vous devriez installer Autoconf si vous développez le logiciel et vous
 voudriez l'employer pour créer les séquences type d'interpréteur de
-commandes interactif qui configureront vos modules de code source. Si
-vous installez Autoconf, vous devrez également installer le module de
-GNU m4.
+commandes interactif qui configureront vos modules de code source.
 
 Notez que le module d'Autoconf n'est pas exigé pour l'utilisateur qui
 peut configurer le logiciel avec une séquence type Autoconf-produite;
@@ -130,8 +125,7 @@ configurazione.
 
 Dovreste installare Autoconf se state sviluppando il software e
 voleste usarli per creare gli scritti di coperture che configureranno
-i vostri pacchetti di codice sorgente. Se state installando Autoconf,
-egualmente dovrete installare il pacchetto di GNU m4.
+i vostri pacchetti di codice sorgente.
 
 Si noti che il pacchetto di Autoconf non è richiesto per l'
 utilizzatore finale che può configurare il software con uno scritto
