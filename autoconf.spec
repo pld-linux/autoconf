@@ -54,17 +54,17 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 
 %build
 ./configure \
-	--prefix=/usr \
+	--prefix=%{_prefix} \
 	--infodir=%{_infodir} \
 	--mandir=%{_mandir}
 make datadir=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/{info,man/man1}
+install -d $RPM_BUILD_ROOT{%{_infodir},%{_mandir}/man1}
 
 make install \
-	prefix=$RPM_BUILD_ROOT/usr \
+	prefix=$RPM_BUILD_ROOT%{_prefix} \
 	datadir=$RPM_BUILD_ROOT%{_libdir} \
 	infodir=$RPM_BUILD_ROOT%{_infodir} \
 	mandir=$RPM_BUILD_ROOT%{_mandir} \
