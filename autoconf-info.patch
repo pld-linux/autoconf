@@ -460,5 +460,6 @@
 -@dircategory GNU organization
 +@dircategory Miscellaneous:
  @direntry
- * Standards: (standards).        GNU coding standards.
+-* Standards: (standards).        GNU coding standards.
++* Standards: (standards).		GNU coding standards
  @end direntry
