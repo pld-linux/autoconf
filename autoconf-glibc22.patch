@@ -1,0 +1,11 @@
+--- autoconf-2.13/acgeneral.m4.sux	Wed Nov 29 17:47:41 2000
++++ autoconf-2.13/acgeneral.m4	Wed Nov 29 17:48:02 2000
+@@ -1818,7 +1818,7 @@
+ [#]line __oline__ "configure"
+ #include "confdefs.h"
+ ifelse(AC_LANG, CPLUSPLUS, [#ifdef __cplusplus
+-extern "C" void exit(int);
++extern "C" void exit(int) throw();
+ #endif
+ ])dnl
+ [$1]
