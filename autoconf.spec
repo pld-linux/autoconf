@@ -111,7 +111,7 @@ uso.
 %description -l pl
 GNU autoconf jest narzêdziem wykorzystywanym do automatycznego
 konfigurowania kodów ¼ród³owych pakietów programów oraz do generowania na
-podstawie automatycznie rozpoznanego ¶rodowiska plików Makefile i innch
+podstawie automatycznie rozpoznanego ¶rodowiska plików Makefile i innych
 zale¿nych od zawarto¶ci systemu, w którym ma przebiegaæ proces kompilacji.
 Pomaga programi¶cie w konfigurowaniu i tworzeniu opragramowania daj±cego siê
 przenie¶æ na ró¿ne platformy. Umo¿liwia wybór wielu opcji podczas procesu
