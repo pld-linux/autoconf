@@ -10,7 +10,7 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.54
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Building
 # full releases:
@@ -20,6 +20,7 @@ Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
 Patch1:		%{name}-fhs.patch
 Patch2:		%{name}-version.patch
+Patch3:		%{name}-info.patch
 URL:		http://www.gnu.org/software/autoconf/
 Requires:	diffutils
 Requires:	/bin/awk
@@ -164,6 +165,7 @@ GNU autoconf - це ╕нструмент для автоматично╖ конф╕гурац╕╖ вих╕дних
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %configure
