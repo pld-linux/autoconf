@@ -1,11 +1,11 @@
 #
 # Conditional build:
-# _without_emacs	- without emacs autoconf-mode
-# _without_xemacs	- without XEmacs autoconf-mode
+%bcond_without	emacs	# without emacs autoconf-mode
+%bcond_without	xemacs	# without XEmacs autoconf-mode
 #
-%define		_without_emacs	yes
-%define		_without_xemacs	yes
-
+%undefine	with_emacs
+%undefine	with_xemacs
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
 Summary(de):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
@@ -35,20 +35,20 @@ Patch4:		%{name}-cxxcpp-warnonly.patch
 Patch5:		%{name}-sh.patch
 URL:		http://www.gnu.org/software/autoconf/
 BuildConflicts:	m4 = 1.4o
-%{!?_without_emacs:BuildRequires:	emacs}
+%{?with_emacs:BuildRequires:	emacs}
 BuildRequires:	m4 >= 1:1.4p-0.pre2.2
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.2
-%{!?_without_xemacs:BuildRequires:	xemacs}
+%{?with_xemacs:BuildRequires:	xemacs}
 Conflicts:	gettext < 0.10.38-3
 Requires:	/bin/awk
 Requires:	diffutils
 Requires:	m4 >= 1:1.4p-0.pre2.2
 Requires:	mktemp
 BuildArch:	noarch
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	autoconf252
 Obsoletes:	autoconf253
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libdir		%{_datadir}
 
@@ -209,7 +209,7 @@ Tryb edycji autoconf dla emacsa.
 
 %build
 %configure \
-	%{!?_without_xemacs:EMACS=xemacs}
+	%{?with_xemacs:EMACS=xemacs}
 %{__make}
 
 %install
@@ -217,18 +217,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-%if 0%{!?_without_xemacs:1}
+%if %{with xemacs}
 	lispdir=%{_datadir}/xemacs-packages/autoconf
 %endif
 
-%if 0%{!?_without_xemacs:1}
+%if %{with xemacs}
 xemacs -batch -no-autoloads -l autoload -f batch-update-directory \
 	$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/autoconf
 xemacs -batch -vanilla -f batch-byte-compile \
 	$RPM_BUILD_ROOT%{_datadir}/xemacs-packages/autoconf/auto-autoloads.el
 %endif
 
-%if 0%{!?_without_emacs:%{!?_without_xemacs:1}}
+%if %{with emacs} && %{with xemacs}
 rm lib/emacs/*.elc
 %{__make} -C lib/emacs install-dist_lispLISP \
 	DESTDIR=$RPM_BUILD_ROOT \
@@ -253,13 +253,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/*.info*
 %{_mandir}/man1/*
 
-%if 0%{!?_without_emacs:1}
+%if %{with emacs}
 %files -n emacs-autoconf-mode-pkg
 %defattr(644,root,root,755)
 %{_emacs_lispdir}/autoconf/*.elc
 %endif
 
-%if 0%{!?_without_xemacs:1}
+%if %{with xemacs}
 %files -n xemacs-autoconf-mode-pkg
 %defattr(644,root,root,755)
 %dir %{_datadir}/xemacs-packages/autoconf
