@@ -5,21 +5,21 @@ Summary(es):	Una herramienta de GNU para automáticamente configurar código de fu
 Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
-Version:	2.13
-Release:	13
+Version:	2.50
+Release:	0.1
 License:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
-Source0:	ftp://prep.ai.mit.edu/pub/gnu/autoconf/%{name}-%{version}.tar.gz
-Patch0:		%{name}-tmprace.patch
+Source0:	ftp://ftp.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.gz
+#Patch0:		%{name}-tmprace.patch
 Patch1:		%{name}-info.patch
 Patch2:		%{name}-mawk.patch
 Patch3:		%{name}-man.patch
-Patch4:		%{name}-notmp.patch
-Patch5:		%{name}-pinard.patch
+#Patch4:		%{name}-notmp.patch
+#Patch5:		%{name}-pinard.patch
 Patch6:		%{name}-fhs.patch
-Patch7:		%{name}-DESTDIR.patch
-Patch8:		%{name}-glibc22.patch
+#Patch7:		%{name}-DESTDIR.patch
+#Patch8:		%{name}-glibc22.patch
 URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	/bin/awk
 Requires:	m4
@@ -131,33 +131,25 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+#%patch0 -p1
+#%patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
-%patch5 -p1
+#%patch4 -p1
+#%patch5 -p1
 %patch6 -p1
-%patch7 -p1
-%patch8 -p1
+#%patch7 -p1
+#%patch8 -p1
 
 %build
-%configure
+%configure2_50
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
+install -d $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-install install-sh $RPM_BUILD_ROOT%{_libdir}/autoconf
-
-install {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1 \
-	$RPM_BUILD_ROOT%{_mandir}/man1
-
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/autoconf.info* \
-	$RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -172,7 +164,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 
-%{_infodir}/autoconf.info*
+%{_infodir}/*.info*
 %{_mandir}/man1/*
 
 %{_libdir}/autoconf
