@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
 Summary(de):	Ein GNU-Hilfsmittel fЭr Quellencode automatisch konfigurieren
 Summary(es):	Una herramienta de GNU para automАticamente configurar cСdigo de fuente
@@ -5,17 +6,18 @@ Summary(fr):	Un outil de GNU pour configurer automatiquement le code source
 Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
 Summary(pl):	GNU autoconf - narzЙdzie do automatycznego konfigurowania ╪rСdeЁ
 Summary(pt_BR):	GNU autoconf - ferramentas de configuraГЦo de fontes
+Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
+Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
-Version:	2.52
-Release:	7
+Version:	2.53a
+Release:	1
 License:	GPL
 Group:		Development/Building
-Source0:	ftp://ftp.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.gz
+Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-mawk.patch
-Patch2:		%{name}-man.patch
-Patch3:		%{name}-fhs.patch
-Patch4:		%{name}-version.patch
+Patch2:		%{name}-fhs.patch
+Patch3:		%{name}-version.patch
 URL:		http://sourceware.cygnus.com/autoconf/
 Requires:	diffutils
 Requires:	/bin/awk
@@ -23,11 +25,13 @@ Requires:	m4
 Requires:	mktemp
 Conflicts:	gettext < 0.10.38-3
 BuildRequires:	m4
-BuildRequires:	/usr/bin/makeinfo
+BuildRequires:	rpm-perlprov
+BuildRequires:	texinfo
 BuildConflicts:	m4 = 1.4o
-Buildarch:	noarch
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	autoconf252
+Obsoletes:	autoconf253
 
 %define		_libdir		%{_datadir}
 
@@ -135,13 +139,30 @@ configurАveis, permitindo que a pessoa que programa o pacote
 especifique vАrias opГУes de configuraГЦo. Autoconf И necessАrio
 somente para gerar scripts de configuraГЦo.
 
+%description -l ru
+GNU autoconf - инструмент для автоконфигурации исходных текстов и
+генерации Makefile'ов. Помогает программисту создавать портируемые и
+конфигурируемые пакеты, позволяя тому, кто эти пакеты собирает,
+задавать различные опции конфигурации.
+
+"autoconf" не является необходимым для конечного пользователя, его
+используют только для генерации конфигурационных скриптов.
+
+%description -l uk
+GNU autoconf - це ╕нструмент для автоматично╖ конф╕гурац╕╖ вих╕дних
+текст╕в та генерац╕╖ Makefile'╕в. Допомога╓ програм╕сту створювати
+моб╕льн╕ пакети, що дозволяють конф╕гурац╕ю. Це дозволя╓ тому, хто
+займа╓ться зборкою таких пакет╕в, задавати р╕зн╕ опц╕╖ конф╕гурац╕╖.
+
+"autoconf" не ╓ необх╕дним для к╕нцевого користувача, його
+використовують т╕льки для генерац╕╖ конф╕гурац╕йних скрипт╕в.
+
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 %configure
