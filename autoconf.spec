@@ -1,3 +1,7 @@
+#
+# Conditional build:
+# _without_emacs - without emacs autoconf-mode
+
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
 Summary(de):	Ein GNU-Hilfsmittel fЭr Quellencode automatisch konfigurieren
@@ -29,7 +33,7 @@ Conflicts:	gettext < 0.10.38-3
 BuildRequires:	m4
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.2
-BuildRequires:	emacs
+%{!?_without_emacs:BuildRequires:	emacs}
 BuildConflicts:	m4 = 1.4o
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -160,6 +164,7 @@ GNU autoconf - це ╕нструмент для автоматично╖ конф╕гурац╕╖ вих╕дних
 "autoconf" не ╓ необх╕дним для к╕нцевого користувача, його
 використовують т╕льки для генерац╕╖ конф╕гурац╕йних скрипт╕в.
 
+%if%{!?_without_emacs:1}%{?_without_emacs:0}
 %package -n emacs-autoconf-mode-pkg
 Summary:        emacs autoconf-mode
 Summary(pl):    Tryb autoconf dla emacsa
@@ -171,6 +176,7 @@ Emacs autoconf-mode.
 
 %description -n emacs-autoconf-mode-pkg -l pl
 Tryb edycji autoconf dla emacsa.
+%endif
 
 %prep
 %setup -q
@@ -206,6 +212,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_libdir}/autoconf
 
+%if%{!?_without_emacs:1}%{?_without_emacs:0}
 %files -n emacs-autoconf-mode-pkg
 %defattr(644,root,root,755)
 %{_datadir}/emacs/site-lisp/*.elc
+%endif
