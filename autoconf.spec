@@ -1,8 +1,8 @@
 Summary:     GNU autoconf - source configuration tools
 Summary(pl): GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:        autoconf
-Version:     2.12
-Release:     7
+Version:     2.13
+Release:     1
 Copyright:   GPL
 Group:       Development/Building
 Source:      ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
