@@ -19,13 +19,12 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.59
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Building
 # stable releases:
-#Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
-Source0:	http://www.lrde.epita.fr/~akim/download/%{name}-%{version}.tar.gz
-# Source0-md5:	d4d45eaa1769d45e59dcb131a4af17a0
+Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
+# Source0-md5:	1ee40f7a676b3cfdc0e3f7cd81551b5f
 # devel releases:
 #Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
