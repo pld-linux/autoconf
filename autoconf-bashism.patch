@@ -31,25 +31,3 @@ diff -Nru autoconf-2.58.orig/tests/wrapper.in autoconf-2.58/tests/wrapper.in
    as_unset=unset
  else
    as_unset=false
---- autoconf-2.58/lib/autoconf/general.m4.orig	Thu Nov 13 14:02:49 2003
-+++ autoconf-2.58/lib/autoconf/general.m4	Thu Nov 13 14:03:30 2003
-@@ -2157,8 +2157,7 @@
- [m4_ifvaln([$1], [AC_LANG_CONFTEST([$1])])dnl
- rm -f conftest.$ac_objext
- AS_IF([_AC_EVAL_STDERR($ac_compile) &&
--	 AC_TRY_COMMAND([test -z "$ac_[]_AC_LANG_ABBREV[]_werror_flag"
--			 || test ! -s conftest.err]) &&
-+	 AC_TRY_COMMAND([test -z "$ac_[]_AC_LANG_ABBREV[]_werror_flag" || test ! -s conftest.err]) &&
- 	 AC_TRY_COMMAND([test -s conftest.$ac_objext])],
-       [$2],
-       [_AC_MSG_LOG_CONFTEST
-@@ -2198,8 +2197,7 @@
- [m4_ifvaln([$1], [AC_LANG_CONFTEST([$1])])dnl
- rm -f conftest.$ac_objext conftest$ac_exeext
- AS_IF([_AC_EVAL_STDERR($ac_link) &&
--	 AC_TRY_COMMAND([test -z "$ac_[]_AC_LANG_ABBREV[]_werror_flag"
--			 || test ! -s conftest.err]) &&
-+	 AC_TRY_COMMAND([test -z "$ac_[]_AC_LANG_ABBREV[]_werror_flag" || test ! -s conftest.err]) &&
- 	 AC_TRY_COMMAND([test -s conftest$ac_exeext])],
-       [$2],
-       [_AC_MSG_LOG_CONFTEST
