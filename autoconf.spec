@@ -138,7 +138,7 @@ tylko podczas generowania samych skryptów autokonfiguracyjnych.
 
 %build
 %configure
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
