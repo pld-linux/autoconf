@@ -1,7 +1,12 @@
-diff -ur autoconf-2.13.old/acgeneral.m4 autoconf-2.13/acgeneral.m4
---- autoconf-2.13.old/acgeneral.m4	Tue Jan  5 14:27:37 1999
-+++ autoconf-2.13/acgeneral.m4	Fri May  7 00:39:23 1999
-@@ -202,8 +202,8 @@
+diff -Nru autoconf-2.13/acgeneral.m4 autoconf-2.13.new/acgeneral.m4
+--- autoconf-2.13/acgeneral.m4	Wed Aug 16 19:24:11 2000
++++ autoconf-2.13.new/acgeneral.m4	Wed Aug 16 19:25:11 2000
+@@ -198,12 +198,12 @@
+ datadir='${prefix}/share'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+-localstatedir='${prefix}/var'
++localstatedir='/var/lib'
  libdir='${exec_prefix}/lib'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
