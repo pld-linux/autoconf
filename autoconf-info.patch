@@ -1,6 +1,5 @@
-diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
---- autoconf-2.53b.orig/doc/autoconf.texi	Thu Jul 18 13:24:04 2002
-+++ autoconf-2.53b/doc/autoconf.texi	Sun Jul 28 23:08:03 2002
+--- autoconf-2.54/doc/autoconf.texi.wiget	Fri Oct 18 10:49:14 2002
++++ autoconf-2.54/doc/autoconf.texi	Fri Oct 18 10:50:52 2002
 @@ -94,33 +94,19 @@
  
  
@@ -50,12 +49,12 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
 @@ -160,7 +146,7 @@
  * Manual Configuration::        Selecting features that can't be guessed
  * Site Configuration::          Local defaults for @command{configure}
- * Running configure scripts::   How to use the Autoconf output
+ * Running configure Scripts::   How to use the Autoconf output
 -* config.status Invocation::    Recreating a configuration
 +* config.status::               Recreating a configuration
  * Obsolete Constructs::         Kept for backward compatibility
  * Using Autotest::              Creating portable test suites
- * Questions::                   Questions about Autoconf, with answers
+ * FAQ::                         Frequent Autoconf Questions, with answers
 @@ -180,10 +166,10 @@
  Making @command{configure} Scripts
  
@@ -87,7 +86,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
 -* Invoking autom4te::           The Autoconf executables backbone
 +* autom4te::                    The Autoconf executables backbone
  * Programming in M4sugar::      Convenient pure M4 macros
- * Programming in M4sh::         Common Shell Constructs
+ * Programming in M4sh::         Common shell constructs
  
 @@ -388,13 +374,13 @@
  * System Type::                 Specifying the system type
@@ -114,7 +113,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  * Making testsuite Scripts::    Using autom4te to create @command{testsuite}
  
  Using an Autotest Test Suite
-@@ -728,7 +714,7 @@
+@@ -729,7 +715,7 @@
  
  @item
  a shell script called @file{config.status} that, when run, will recreate
@@ -123,7 +122,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  
  @item
  an optional shell script normally called @file{config.cache}
-@@ -788,10 +774,10 @@
+@@ -789,10 +775,10 @@
  
  @menu
  * Writing configure.ac::        What to put in an Autoconf input file
@@ -138,7 +137,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @end menu
  
  @node Writing configure.ac
-@@ -807,7 +793,7 @@
+@@ -808,7 +794,7 @@
  or specialized features, @file{configure.ac} might need to contain some
  hand-crafted shell commands; see @ref{Portable Shell}.  The
  @command{autoscan} program can give you a good start in writing
@@ -146,8 +145,8 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
 +@file{configure.ac} (@pxref{autoscan}, for more information).
  
  Previous versions of Autoconf promoted the name @file{configure.in},
- which is somewhat ambiguous (the tool needed to produce this file is not
-@@ -1035,7 +1021,7 @@
+ which is somewhat ambiguous (the tool needed to process this file is not
+@@ -1036,7 +1022,7 @@
  @end display
  
  
@@ -156,7 +155,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @section Using @command{autoscan} to Create @file{configure.ac}
  @cindex @command{autoscan}
  
-@@ -1057,7 +1043,7 @@
+@@ -1058,7 +1044,7 @@
  use a configuration header file, you must add a call to
  @code{AC_CONFIG_HEADERS} (@pxref{Configuration Headers}).  You might
  also have to change or add some @code{#if} directives to your program in
@@ -165,7 +164,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  information about a program that can help with that job).
  
  When using @command{autoscan} to maintain a @file{configure.ac}, simply
-@@ -1096,7 +1082,7 @@
+@@ -1097,7 +1083,7 @@
  Prepend @var{dir} to the include path.  Multiple invocations accumulate.
  @end table
  
@@ -174,7 +173,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @section Using @command{ifnames} to List Conditionals
  @cindex @command{ifnames}
  
-@@ -1105,8 +1091,7 @@
+@@ -1106,8 +1092,7 @@
  preprocessor conditionals.  If a package has already been set up to have
  some portability, @command{ifnames} can thus help you figure out what its
  @command{configure} needs to check for.  It may help fill in some gaps in a
@@ -184,7 +183,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  
  @command{ifnames} scans all of the C source files named on the command line
  (or the standard input, if none are given) and writes to the standard
-@@ -1128,7 +1113,7 @@
+@@ -1129,7 +1114,7 @@
  Print the version number of Autoconf and exit.
  @end table
  
@@ -193,7 +192,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @section Using @command{autoconf} to Create @command{configure}
  @cindex @command{autoconf}
  
-@@ -1395,7 +1380,7 @@
+@@ -1389,7 +1374,7 @@
  @end group
  @end example
  
@@ -202,7 +201,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @section Using @command{autoreconf} to Update @command{configure} Scripts
  @cindex @command{autoreconf}
  
-@@ -1627,8 +1612,8 @@
+@@ -1623,8 +1608,8 @@
  source directory; @command{configure} checks for this file's existence to
  make sure that the directory that it is told contains the source code in
  fact does.  Occasionally people accidentally specify the wrong directory
@@ -213,7 +212,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @end defmac
  
  
-@@ -1794,7 +1779,7 @@
+@@ -1790,7 +1775,7 @@
  when used in @var{output}, or the standard input when used in the
  @var{inputs}.  You most probably don't need to use this in
  @file{configure.ac}, but it is convenient when using the command line
@@ -222,7 +221,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  for more details.
  
  The @var{inputs} may be absolute or relative filenames.  In the latter
-@@ -2366,7 +2351,7 @@
+@@ -2387,7 +2372,7 @@
  @file{config.h} is considered up to date.  @xref{Output}, for more
  information about @code{AC_OUTPUT}.
  
@@ -231,7 +230,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  configuration-related dependencies.
  
  @node Configuration Headers
-@@ -2427,7 +2412,7 @@
+@@ -2448,7 +2433,7 @@
  
  @menu
  * Header Templates::            Input for the configuration headers
@@ -240,7 +239,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  * Autoheader Macros::           How to specify CPP templates
  @end menu
  
-@@ -2478,10 +2463,10 @@
+@@ -2499,10 +2484,10 @@
  @samp{#undef} is strongly discouraged.
  
  Since it is a tedious task to keep a template header up to date, you may
@@ -253,16 +252,16 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @subsection Using @command{autoheader} to Create @file{config.h.in}
  @cindex @command{autoheader}
  
-@@ -6185,7 +6170,7 @@
+@@ -6215,7 +6200,7 @@
  files will depend upon @command{bizarre-cc} being the C compiler.  If
- for some reason the user runs @command{/configure} again, or if it is
+ for some reason the user runs @command{./configure} again, or if it is
  run via @samp{./config.status --recheck}, (@xref{Automatic Remaking},
 -and @pxref{config.status Invocation}), then the configuration can be
 +and @pxref{config.status}), then the configuration can be
  inconsistent, composed of results depending upon two different
  compilers.
  
-@@ -6229,7 +6214,7 @@
+@@ -6267,7 +6252,7 @@
  
  @item
  @var{variable} is kept during automatic reconfiguration
@@ -271,16 +270,16 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  line argument, including when no cache is used:
  
  @example
-@@ -6570,7 +6555,7 @@
+@@ -6608,7 +6593,7 @@
  
  @menu
  * M4 Quotation::                Protecting macros from unwanted expansion
 -* Invoking autom4te::           The Autoconf executables backbone
 +* autom4te::                    The Autoconf executables backbone
  * Programming in M4sugar::      Convenient pure M4 macros
- * Programming in M4sh::         Common Shell Constructs
+ * Programming in M4sh::         Common shell Constructs
  @end menu
-@@ -7073,7 +7058,7 @@
+@@ -7111,7 +7096,7 @@
  unexpanded macros.  The @command{autoconf} program checks for this problem
  by doing @samp{grep AC_ configure}.
  
@@ -288,8 +287,8 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
 +@node autom4te
  @section Invoking @command{autom4te}
  
- The Autoconf suite, including M4sugar, M4sh, and Autotest in addition to
-@@ -7356,7 +7341,7 @@
+ The Autoconf suite, including M4sugar, M4sh, and Autotest, in addition to
+@@ -7394,7 +7379,7 @@
  not.
  @end table
  
@@ -298,7 +297,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  
  @item --preselect=@var{macro}
  @itemx -p @var{macro}
-@@ -7793,7 +7778,7 @@
+@@ -7845,7 +7830,7 @@
  
  When the user runs @samp{autoconf -W error}, warnings from
  @code{AC_DIAGNOSE} and @code{AC_WARNING} are reported as error, see
@@ -307,7 +306,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  
  @node Dependencies Between Macros
  @section Dependencies Between Macros
-@@ -11271,7 +11256,7 @@
+@@ -11642,7 +11627,7 @@
  * System Type::                 Specifying the system type
  * Sharing Defaults::            Setting site-wide defaults for @command{configure}
  * Defining Variables::          Specifying the compiler etc.
@@ -316,7 +315,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @end menu
  
  @set autoconf
-@@ -11280,7 +11265,7 @@
+@@ -11651,7 +11636,7 @@
  
  @c ============================================== Recreating a Configuration
  
@@ -325,7 +324,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @chapter Recreating a Configuration
  @cindex @command{config.status}
  
-@@ -11414,7 +11399,7 @@
+@@ -11785,7 +11770,7 @@
  @menu
  * Obsolete config.status Use::  Different calling convention
  * acconfig.h::                  Additional entries in @file{config.h.in}
@@ -334,16 +333,16 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  * Obsolete Macros::             Backward compatibility macros
  * Autoconf 1::                  Tips for upgrading your files
  * Autoconf 2.13::               Some fresher tips
-@@ -11424,7 +11409,7 @@
+@@ -11795,7 +11780,7 @@
  @section Obsolete @file{config.status} Invocation
  
  @file{config.status} now supports arguments to specify the files to
--instantiate, see @ref{config.status Invocation}, for more details.
-+instantiate, see @ref{config.status}, for more details.
+-instantiate; see @ref{config.status Invocation}, for more details.
++instantiate; see @ref{config.status}, for more details.
  Before, environment variables had to be used.
  
  @defvar CONFIG_COMMANDS
-@@ -11455,7 +11440,7 @@
+@@ -11826,7 +11811,7 @@
  @file{config.status} ignores this variable.
  @end defvar
  
@@ -352,7 +351,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  would be:
  
  @example
-@@ -11529,7 +11514,7 @@
+@@ -11900,7 +11885,7 @@
  self-contained, and should not depend upon @file{acconfig.h} etc.
  
  
@@ -361,7 +360,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @section Using @command{autoupdate} to Modernize @file{configure.ac}
  @cindex @command{autoupdate}
  
-@@ -12381,7 +12366,7 @@
+@@ -12750,7 +12735,7 @@
  
  If you have an @file{aclocal.m4} installed with Autoconf (as opposed to
  in a particular package's source directory), you must rename it to
@@ -370,7 +369,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  
  If you distribute @file{install.sh} with your package, rename it to
  @file{install-sh} so @code{make} builtin rules won't inadvertently
-@@ -12436,7 +12421,7 @@
+@@ -12805,7 +12790,7 @@
  the documentation for them.  @xref{Obsolete Macros}, for a table showing the
  new names for the old macros.  Use the @command{autoupdate} program to
  convert your @file{configure.ac} to using the new macro names.
@@ -379,7 +378,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  
  Some macros have been superseded by similar ones that do the job better,
  but are not call-compatible.  If you get warnings about calling obsolete
-@@ -12929,7 +12914,7 @@
+@@ -13302,7 +13287,7 @@
  @menu
  * Using an Autotest Test Suite::  Autotest and the user
  * Writing testsuite.at::        Autotest macros
@@ -388,7 +387,7 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  * Making testsuite Scripts::    Using autom4te to create @command{testsuite}
  @end menu
  
-@@ -13191,7 +13176,7 @@
+@@ -13564,7 +13549,7 @@
  @end defmac
  
  
@@ -397,9 +396,8 @@ diff -Nur autoconf-2.53b.orig/doc/autoconf.texi autoconf-2.53b/doc/autoconf.texi
  @section Running @command{testsuite} Scripts
  @cindex @command{testsuite}
  
-diff -Nur autoconf-2.53b.orig/doc/install.texi autoconf-2.53b/doc/install.texi
---- autoconf-2.53b.orig/doc/install.texi	Mon Apr 29 15:29:36 2002
-+++ autoconf-2.53b/doc/install.texi	Sun Jul 28 23:04:34 2002
+--- autoconf-2.54/doc/install.texi.wiget	Tue Aug 27 10:28:06 2002
++++ autoconf-2.54/doc/install.texi	Fri Oct 18 10:49:15 2002
 @@ -225,7 +225,7 @@
  overridden in the site shell script).
  
@@ -409,9 +407,8 @@ diff -Nur autoconf-2.53b.orig/doc/install.texi autoconf-2.53b/doc/install.texi
  @section @command{configure} Invocation
  
  @command{configure} recognizes the following options to control how it
-diff -Nur autoconf-2.53b.orig/doc/standards.texi autoconf-2.53b/doc/standards.texi
---- autoconf-2.53b.orig/doc/standards.texi	Wed Apr 10 10:13:19 2002
-+++ autoconf-2.53b/doc/standards.texi	Sun Jul 28 23:04:34 2002
+--- autoconf-2.54/doc/standards.texi.wiget	Wed Apr 10 10:13:19 2002
++++ autoconf-2.54/doc/standards.texi	Fri Oct 18 10:49:15 2002
 @@ -8,9 +8,10 @@
  
  @ifinfo
