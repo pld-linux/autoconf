@@ -9,6 +9,7 @@ Version:	2.50
 Release:	2
 License:	GPL
 Group:		Development/Building
+Group(de):	Entwicklung/Bauen
 Group(pl):	Programowanie/Budowanie
 Source0:	ftp://ftp.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
