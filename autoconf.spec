@@ -2,7 +2,7 @@ Summary:	GNU autoconf - source configuration tools
 Summary(pl):	GNU autoconf - narzêdzie do automatycznego konfigurowania ¼róde³
 Name:		autoconf
 Version:	2.14.1
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -80,7 +80,7 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/autoconf.info* \
 %post
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%preun
+%postun
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
