@@ -43,7 +43,8 @@ BuildRequires:	texinfo >= 4.2
 Conflicts:	gettext < 0.10.38-3
 Requires:	/bin/awk
 Requires:	diffutils
-Requires:	m4 >= 1:1.4p-0.pre2.2
+#Requires:	m4 >= 1:1.4p-0.pre2.2
+%requires_eq	m4
 Requires:	mktemp
 BuildArch:	noarch
 Obsoletes:	autoconf252
