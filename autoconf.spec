@@ -1,8 +1,8 @@
 #
 # Conditional build:
-# _without_emacs - without emacs autoconf-mode
-# _without_xemacs - without XEmacs autoconf-mode
-
+# _without_emacs	- without emacs autoconf-mode
+# _without_xemacs	- without XEmacs autoconf-mode
+#
 %define		_without_emacs	yes
 
 %include	/usr/lib/rpm/macros.perl
@@ -18,7 +18,7 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.57
-Release:	5 
+Release:	6
 License:	GPL
 Group:		Development/Building
 # stable releases:
@@ -241,7 +241,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS BUGS NEWS README THANKS TODO
+%doc AUTHORS BUGS ChangeLog ChangeLog.2 NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/*
 
 %{_infodir}/*.info*
