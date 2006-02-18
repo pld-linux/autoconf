@@ -19,7 +19,7 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
 Version:	2.59
-Release:	8
+Release:	9
 License:	GPL
 Group:		Development/Building
 # stable releases:
@@ -33,6 +33,7 @@ Patch2:		%{name}-info.patch
 Patch3:		%{name}-AC_EGREP.patch
 Patch4:		%{name}-cxxcpp-warnonly.patch
 Patch5:		%{name}-sh.patch
+Patch6:		%{name}-x.patch
 URL:		http://www.gnu.org/software/autoconf/
 BuildConflicts:	m4 = 1.4o
 %{?with_emacs:BuildRequires:	emacs}
@@ -201,6 +202,7 @@ Tryb edycji autoconf dla emacsa.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p0
+%patch6 -p1
 
 %build
 %configure \
