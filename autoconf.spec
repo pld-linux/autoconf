@@ -18,22 +18,20 @@ Summary(pt_BR):	GNU autoconf - ferramentas de configuraГЦo de fontes
 Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf
-Version:	2.59
-Release:	9
+Version:	2.60
+Release:	1
 License:	GPL
 Group:		Development/Building
 # stable releases:
 Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
-# Source0-md5:	1ee40f7a676b3cfdc0e3f7cd81551b5f
+# Source0-md5:	019609c29d0cbd9110c38480304aafc8
 # devel releases:
 #Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
-Patch1:		%{name}-version.patch
-Patch2:		%{name}-info.patch
-Patch3:		%{name}-AC_EGREP.patch
-Patch4:		%{name}-cxxcpp-warnonly.patch
-Patch5:		%{name}-sh.patch
-Patch6:		%{name}-x.patch
+Patch1:		%{name}-info.patch
+Patch2:		%{name}-AC_EGREP.patch
+Patch3:		%{name}-cxxcpp-warnonly.patch
+Patch4:		%{name}-x.patch
 URL:		http://www.gnu.org/software/autoconf/
 BuildConflicts:	m4 = 1.4o
 %{?with_emacs:BuildRequires:	emacs}
@@ -201,8 +199,6 @@ Tryb edycji autoconf dla emacsa.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
-%patch5 -p0
-%patch6 -p1
 
 %build
 %configure \
