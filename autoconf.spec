@@ -203,12 +203,12 @@ Tryb edycji autoconf dla emacsa.
 %build
 %configure \
 	%{?with_xemacs:EMACS=xemacs}
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT \
 %if %{with xemacs}
 	lispdir=%{_datadir}/xemacs-packages/autoconf
