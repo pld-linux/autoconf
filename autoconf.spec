@@ -8,15 +8,15 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
-Summary(de):	Ein GNU-Hilfsmittel fЭr Quellencode automatisch konfigurieren
-Summary(es):	Una herramienta GNU para configurar automАticamente el cСdigo fuente
-Summary(fr):	Un outil de GNU pour configurer automatiquement le code source
-Summary(it):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
-Summary(ko):	╫╨╫╨╥н х╞╟Ф©║ ╣Ш╤С ╪р╫╨ дз╣Е╦╕ ╦бцГаж╢б GNU ╣╣╠╦
-Summary(pl):	GNU autoconf - narzЙdzie do automatycznego konfigurowania ╪rСdeЁ
-Summary(pt_BR):	GNU autoconf - ferramentas de configuraГЦo de fontes
-Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
-Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
+Summary(de.UTF-8):   Ein GNU-Hilfsmittel fц╪r Quellencode automatisch konfigurieren
+Summary(es.UTF-8):   Una herramienta GNU para configurar automц║ticamente el cцЁdigo fuente
+Summary(fr.UTF-8):   Un outil de GNU pour configurer automatiquement le code source
+Summary(it.UTF-8):   Uno strumento di GNU per automaticamente la configurazione del codice sorgente
+Summary(ko.UTF-8):   Л┼╓Л┼╓К║° М≥≤Й╡╫Л≈░ К■╟К²╪ Л├▄Л┼╓ Л╫■К⌠°К╔╪ К╖·Л╤╟Лё╪К┼■ GNU К▐└Й╣╛
+Summary(pl.UTF-8):   GNU autoconf - narzд≥dzie do automatycznego konfigurowania е╨rцЁdeе┌
+Summary(pt_BR.UTF-8):   GNU autoconf - ferramentas de configuraц╖цёo de fontes
+Summary(ru.UTF-8):   GNU autoconf - п╟п╡я┌п╬п╨п╬п╫я└п╦пЁя┐я─п╟я┌п╬я─ п╦я│я┘п╬п╢п╫я▀я┘ я┌п╣п╨я│я┌п╬п╡
+Summary(uk.UTF-8):   GNU autoconf - п╟п╡я┌п╬п╨п╬п╫я└я√пЁя┐я─п╟я┌п╬я─ п╡п╦я┘я√п╢п╫п╦я┘ я┌п╣п╨я│я┌я√п╡
 Name:		autoconf
 Version:	2.61
 Release:	3
@@ -68,129 +68,129 @@ may be configuring software with an Autoconf-generated script;
 Autoconf is only required for the generation of the scripts, not their
 use.
 
-%description -l de
-GNU's Autoconf ist eines Hilfsmittels fЭr das Konfigurieren des
-Quellencodes und der Makefiles. Mit Autoconf kЖnnen Programmierer die
+%description -l de.UTF-8
+GNU's Autoconf ist eines Hilfsmittels fц╪r das Konfigurieren des
+Quellencodes und der Makefiles. Mit Autoconf kц╤nnen Programmierer die
 beweglichen und konfigurierbaren Pakete erstellen, da der Person, die
 das Paket aufbaut, erlaubt wird, verschiedene Konfiguration Optionen
 zu spezifizieren.
 
 Sie sollten Autoconf installieren, wenn Sie Software entwickeln und
-Sie sie benutzen mЖchten, um Shellindexe zu erstellen, die Ihre
+Sie sie benutzen mц╤chten, um Shellindexe zu erstellen, die Ihre
 Quellencodepakete konfigurieren.
 
-Beachten Sie, daъ das Paket Autoconf nicht fЭr den Endbenutzer
+Beachten Sie, daц÷ das Paket Autoconf nicht fц╪r den Endbenutzer
 angefordert wird, der Software mit einem Autoconf-festgelegten Index
-konfigurieren kann; Autoconf wird nur fЭr das Erzeugung der Indexe,
+konfigurieren kann; Autoconf wird nur fц╪r das Erzeugung der Indexe,
 nicht ihr Gebrauch angefordert.
 
-%description -l es
-Autoconf de GNU es una herramienta para configurar cСdigo y makefiles
+%description -l es.UTF-8
+Autoconf de GNU es una herramienta para configurar cцЁdigo y makefiles
 de fuente. Usando Autoconf, los programadores pueden crear los
 conjuntos portables y configurables, puesto que se permite a la
 persona que construye el conjunto especificar varias opciones de la
-configuraciСn.
+configuraciцЁn.
 
-Usted debe instalar Autoconf si estА desarrollando software y quisiera
-utilizarlo para crear los shell scriptes que configurarАn sus
-conjuntos del cСdigo fuente.
+Usted debe instalar Autoconf si estц║ desarrollando software y quisiera
+utilizarlo para crear los shell scriptes que configurarц║n sus
+conjuntos del cцЁdigo fuente.
 
-Observe que el conjunto de Autoconf no estА requerido para el
+Observe que el conjunto de Autoconf no estц║ requerido para el
 utilizador del extremo que puede configurar software con una escritura
-Autoconf-generada; Autoconf se requiere solamente para la generaciСn
+Autoconf-generada; Autoconf se requiere solamente para la generaciцЁn
 de las escrituras, no su uso.
 
-%description -l fr
+%description -l fr.UTF-8
 GNU's Autoconf est un outil pour configurer le code source et les
 fichiers makefile. En utilisant Autoconf, les programmeurs peuvent
-crИer les modules portatifs et configurables, puisqu'on permet Ю la la
-personne Иtablissant le module d'indiquer de diverses options de
+crц╘er les modules portatifs et configurables, puisqu'on permet ц═ la la
+personne ц╘tablissant le module d'indiquer de diverses options de
 configuration.
 
-Vous devriez installer Autoconf si vous dИveloppez le logiciel et vous
-voudriez l'employer pour crИer les sИquences type d'interprИteur de
+Vous devriez installer Autoconf si vous dц╘veloppez le logiciel et vous
+voudriez l'employer pour crц╘er les sц╘quences type d'interprц╘teur de
 commandes interactif qui configureront vos modules de code source.
 
-Notez que le module d'Autoconf n'est pas exigИ pour l'utilisateur qui
-peut configurer le logiciel avec une sИquence type Autoconf-produite;
-Autoconf est seulement exigИ pour la gИnИration des sИquences type,
+Notez que le module d'Autoconf n'est pas exigц╘ pour l'utilisateur qui
+peut configurer le logiciel avec une sц╘quence type Autoconf-produite;
+Autoconf est seulement exigц╘ pour la gц╘nц╘ration des sц╘quences type,
 non leur utilisation.
 
-%description -l it
-GNU's Autoconf Х uno strumento per la configurazione il codice e dei
+%description -l it.UTF-8
+GNU's Autoconf ц╗ uno strumento per la configurazione il codice e dei
 makefiles sorgente. Usando Autoconf, i programmatori possono creare i
-pacchetti portatili e configurabili, poichИ alla persona che sviluppa
-il pacchetto Х permessa specificare le varie opzioni di
+pacchetti portatili e configurabili, poichц╘ alla persona che sviluppa
+il pacchetto ц╗ permessa specificare le varie opzioni di
 configurazione.
 
 Dovreste installare Autoconf se state sviluppando il software e
 voleste usarli per creare gli scritti di coperture che configureranno
 i vostri pacchetti di codice sorgente.
 
-Si noti che il pacchetto di Autoconf non Х richiesto per l'
-utilizzatore finale che puР configurare il software con uno scritto
-Autoconf-generato; Autoconf Х richiesto soltanto per la generazione
+Si noti che il pacchetto di Autoconf non ц╗ richiesto per l'
+utilizzatore finale che puц╡ configurare il software con uno scritto
+Autoconf-generato; Autoconf ц╗ richiesto soltanto per la generazione
 degli scritti, il non loro uso.
 
-%description -l pl
-GNU autoconf jest narzЙdziem wykorzystywanym do automatycznego
-konfigurowania kodСw ╪rСdЁowych pakietСw programСw oraz do generowania
-na podstawie automatycznie rozpoznanego ╤rodowiska plikСw Makefile i
-innych zale©nych od zawarto╤ci systemu, w ktСrym ma przebiegaФ proces
-kompilacji. Pomaga programi╤cie w konfigurowaniu i tworzeniu
-oprogramowania daj╠cego siЙ przenie╤Ф na rС©ne platformy. Umo©liwia
-wybСr wielu opcji podczas procesu przygotowania do kompilacji.
+%description -l pl.UTF-8
+GNU autoconf jest narzд≥dziem wykorzystywanym do automatycznego
+konfigurowania kodцЁw е╨rцЁdе┌owych pakietцЁw programцЁw oraz do generowania
+na podstawie automatycznie rozpoznanego е⌡rodowiska plikцЁw Makefile i
+innych zaleе╪nych od zawartoе⌡ci systemu, w ktцЁrym ma przebiegaд┤ proces
+kompilacji. Pomaga programiе⌡cie w konfigurowaniu i tworzeniu
+oprogramowania dajд┘cego siд≥ przenieе⌡д┤ na rцЁе╪ne platformy. Umoе╪liwia
+wybцЁr wielu opcji podczas procesu przygotowania do kompilacji.
 
-GNU autoconf nie jest generalnie potrzebny koЯcowemu u©ytkownikowi, a
-tylko podczas generowania samych skryptСw autokonfiguracyjnych.
+GNU autoconf nie jest generalnie potrzebny koе└cowemu uе╪ytkownikowi, a
+tylko podczas generowania samych skryptцЁw autokonfiguracyjnych.
 
-%description -l pt_BR
-GNU "autoconf" И uma ferramenta para configuraГЦo de fontes e
-Makefiles. Ele ajuda o programador na criaГЦo de pacotes portАveis e
-configurАveis, permitindo que a pessoa que programa o pacote
-especifique vАrias opГУes de configuraГЦo. Autoconf И necessАrio
-somente para gerar scripts de configuraГЦo.
+%description -l pt_BR.UTF-8
+GNU "autoconf" ц╘ uma ferramenta para configuraц╖цёo de fontes e
+Makefiles. Ele ajuda o programador na criaц╖цёo de pacotes portц║veis e
+configurц║veis, permitindo que a pessoa que programa o pacote
+especifique vц║rias opц╖ц╣es de configuraц╖цёo. Autoconf ц╘ necessц║rio
+somente para gerar scripts de configuraц╖цёo.
 
-%description -l ru
-GNU autoconf - инструмент для автоконфигурации исходных текстов и
-генерации Makefile'ов. Помогает программисту создавать портируемые и
-конфигурируемые пакеты, позволяя тому, кто эти пакеты собирает,
-задавать различные опции конфигурации.
+%description -l ru.UTF-8
+GNU autoconf - п╦п╫я│я┌я─я┐п╪п╣п╫я┌ п╢п╩я▐ п╟п╡я┌п╬п╨п╬п╫я└п╦пЁя┐я─п╟я├п╦п╦ п╦я│я┘п╬п╢п╫я▀я┘ я┌п╣п╨я│я┌п╬п╡ п╦
+пЁп╣п╫п╣я─п╟я├п╦п╦ Makefile'п╬п╡. п÷п╬п╪п╬пЁп╟п╣я┌ п©я─п╬пЁя─п╟п╪п╪п╦я│я┌я┐ я│п╬п╥п╢п╟п╡п╟я┌я▄ п©п╬я─я┌п╦я─я┐п╣п╪я▀п╣ п╦
+п╨п╬п╫я└п╦пЁя┐я─п╦я─я┐п╣п╪я▀п╣ п©п╟п╨п╣я┌я▀, п©п╬п╥п╡п╬п╩я▐я▐ я┌п╬п╪я┐, п╨я┌п╬ я█я┌п╦ п©п╟п╨п╣я┌я▀ я│п╬п╠п╦я─п╟п╣я┌,
+п╥п╟п╢п╟п╡п╟я┌я▄ я─п╟п╥п╩п╦я┤п╫я▀п╣ п╬п©я├п╦п╦ п╨п╬п╫я└п╦пЁя┐я─п╟я├п╦п╦.
 
-"autoconf" не является необходимым для конечного пользователя, его
-используют только для генерации конфигурационных скриптов.
+"autoconf" п╫п╣ я▐п╡п╩я▐п╣я┌я│я▐ п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╪ п╢п╩я▐ п╨п╬п╫п╣я┤п╫п╬пЁп╬ п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩я▐, п╣пЁп╬
+п╦я│п©п╬п╩я▄п╥я┐я▌я┌ я┌п╬п╩я▄п╨п╬ п╢п╩я▐ пЁп╣п╫п╣я─п╟я├п╦п╦ п╨п╬п╫я└п╦пЁя┐я─п╟я├п╦п╬п╫п╫я▀я┘ я│п╨я─п╦п©я┌п╬п╡.
 
-%description -l uk
-GNU autoconf - це ╕нструмент для автоматично╖ конф╕гурац╕╖ вих╕дних
-текст╕в та генерац╕╖ Makefile'╕в. Допомога╓ програм╕сту створювати
-моб╕льн╕ пакети, що дозволяють конф╕гурац╕ю. Це дозволя╓ тому, хто
-займа╓ться зборкою таких пакет╕в, задавати р╕зн╕ опц╕╖ конф╕гурац╕╖.
+%description -l uk.UTF-8
+GNU autoconf - я├п╣ я√п╫я│я┌я─я┐п╪п╣п╫я┌ п╢п╩я▐ п╟п╡я┌п╬п╪п╟я┌п╦я┤п╫п╬я≈ п╨п╬п╫я└я√пЁя┐я─п╟я├я√я≈ п╡п╦я┘я√п╢п╫п╦я┘
+я┌п╣п╨я│я┌я√п╡ я┌п╟ пЁп╣п╫п╣я─п╟я├я√я≈ Makefile'я√п╡. п■п╬п©п╬п╪п╬пЁп╟я■ п©я─п╬пЁя─п╟п╪я√я│я┌я┐ я│я┌п╡п╬я─я▌п╡п╟я┌п╦
+п╪п╬п╠я√п╩я▄п╫я√ п©п╟п╨п╣я┌п╦, я┴п╬ п╢п╬п╥п╡п╬п╩я▐я▌я┌я▄ п╨п╬п╫я└я√пЁя┐я─п╟я├я√я▌. п╕п╣ п╢п╬п╥п╡п╬п╩я▐я■ я┌п╬п╪я┐, я┘я┌п╬
+п╥п╟п╧п╪п╟я■я┌я▄я│я▐ п╥п╠п╬я─п╨п╬я▌ я┌п╟п╨п╦я┘ п©п╟п╨п╣я┌я√п╡, п╥п╟п╢п╟п╡п╟я┌п╦ я─я√п╥п╫я√ п╬п©я├я√я≈ п╨п╬п╫я└я√пЁя┐я─п╟я├я√я≈.
 
-"autoconf" не ╓ необх╕дним для к╕нцевого користувача, його
-використовують т╕льки для генерац╕╖ конф╕гурац╕йних скрипт╕в.
+"autoconf" п╫п╣ я■ п╫п╣п╬п╠я┘я√п╢п╫п╦п╪ п╢п╩я▐ п╨я√п╫я├п╣п╡п╬пЁп╬ п╨п╬я─п╦я│я┌я┐п╡п╟я┤п╟, п╧п╬пЁп╬
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ я┌я√п╩я▄п╨п╦ п╢п╩я▐ пЁп╣п╫п╣я─п╟я├я√я≈ п╨п╬п╫я└я√пЁя┐я─п╟я├я√п╧п╫п╦я┘ я│п╨я─п╦п©я┌я√п╡.
 
 %package -n emacs-autoconf-mode-pkg
 Summary:	emacs autoconf-mode
-Summary(pl):	Tryb autoconf dla emacsa
+Summary(pl.UTF-8):   Tryb autoconf dla emacsa
 Group:		Applications/Editors/Emacs
 Requires:	emacs
 
 %description -n emacs-autoconf-mode-pkg
 Emacs autoconf-mode.
 
-%description -n emacs-autoconf-mode-pkg -l pl
+%description -n emacs-autoconf-mode-pkg -l pl.UTF-8
 Tryb edycji autoconf dla emacsa.
 
 %package -n xemacs-autoconf-mode-pkg
 Summary:	xemacs autoconf-mode
-Summary(pl):	Tryb autoconf dla emacsa
+Summary(pl.UTF-8):   Tryb autoconf dla emacsa
 Group:		Applications/Editors/Emacs
 Requires:	xemacs
 
 %description -n xemacs-autoconf-mode-pkg
 Emacs autoconf-mode.
 
-%description -n xemacs-autoconf-mode-pkg -l pl
+%description -n xemacs-autoconf-mode-pkg -l pl.UTF-8
 Tryb edycji autoconf dla emacsa.
 
 %prep
