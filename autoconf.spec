@@ -19,7 +19,7 @@ Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходн�
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
 Version:	2.61
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Building
 # stable releases:
