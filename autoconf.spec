@@ -19,7 +19,7 @@ Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходн�
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
 Version:	2.61
-Release:	8
+Release:	9
 License:	GPL
 Group:		Development/Building
 # stable releases:
@@ -36,14 +36,13 @@ Patch5:		%{name}-define.patch
 URL:		http://www.gnu.org/software/autoconf/
 BuildConflicts:	m4 = 1.4o
 %{?with_emacs:BuildRequires:	emacs}
-BuildRequires:	m4 >= 1:1.4p-0.pre2.2
+BuildRequires:	m4 >= 3:1.4.10-2
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.2
 %{?with_xemacs:BuildRequires:	xemacs}
 Conflicts:	gettext < 0.10.38-3
 Requires:	/bin/awk
 Requires:	diffutils
-#Requires:	m4 >= 1:1.4p-0.pre2.2
 %requires_eq	m4
 Requires:	mktemp
 BuildArch:	noarch
