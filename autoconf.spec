@@ -31,7 +31,7 @@ Patch0:		%{name}-mawk.patch
 Patch1:		%{name}-info.patch
 Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
-Patch4:		%{name}-gettext.patch
+Patch4:		%{name}-define.patch
 URL:		http://www.gnu.org/software/autoconf/
 BuildConflicts:	m4 = 1.4o
 %{?with_emacs:BuildRequires:	emacs}
