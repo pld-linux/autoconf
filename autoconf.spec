@@ -23,7 +23,7 @@ Release:	10
 License:	GPL
 Group:		Development/Building
 # stable releases:
-Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 # Source0-md5:	36d3fe706ad0950f1be10c46a429efe0
 # devel releases:
 #Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
