@@ -20,7 +20,7 @@ Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідн�
 Name:		autoconf
 Version:	2.62
 Release:	1
-License:	GPL
+License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
 Source0:	http://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.lzma
