@@ -18,28 +18,28 @@ Summary(pt_BR.UTF-8):	GNU autoconf - ferramentas de configuração de fontes
 Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
-Version:	2.61
-Release:	11
+Version:	2.62
+Release:	1
 License:	GPL
 Group:		Development/Building
 # stable releases:
-Source0:	http://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
-# Source0-md5:	36d3fe706ad0950f1be10c46a429efe0
+Source0:	http://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.lzma
+# Source0-md5:	9a72634a023ebdf3186e8fd50901abb7
 # devel releases:
-#Source0:	ftp://alpha.gnu.org/pub/gnu/autoconf/%{name}-%{version}.tar.bz2
+#Source0:	http://alpha.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
 Patch1:		%{name}-info.patch
 Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
 Patch4:		%{name}-gettext.patch
-Patch5:		%{name}-define.patch
 URL:		http://www.gnu.org/software/autoconf/
-BuildConflicts:	m4 = 1.4o
 %{?with_emacs:BuildRequires:	emacs}
+BuildRequires:	lzma >= 1:4.42
 BuildRequires:	m4 >= 3:1.4.10-2
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.2
 %{?with_xemacs:BuildRequires:	xemacs}
+BuildConflicts:	m4 = 1.4o
 Conflicts:	gettext < 0.10.38-3
 Requires:	/bin/awk
 Requires:	diffutils
@@ -193,13 +193,13 @@ Emacs autoconf-mode.
 Tryb edycji autoconf dla emacsa.
 
 %prep
-%setup -q
+%setup -q -c -T
+lzma -dc %{SOURCE0} | tar xf - -C ..
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
-%patch5 -p1
 
 %build
 %configure \
