@@ -18,13 +18,13 @@ Summary(pt_BR.UTF-8):	GNU autoconf - ferramentas de configuração de fontes
 Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
-Version:	2.62
-Release:	2
+Version:	2.63
+Release:	1
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
 Source0:	http://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.lzma
-# Source0-md5:	9a72634a023ebdf3186e8fd50901abb7
+# Source0-md5:	670b25f8b42118d2313f7593d9d89fda
 # devel releases:
 #Source0:	http://alpha.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
@@ -32,7 +32,6 @@ Patch1:		%{name}-info.patch
 Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
 Patch4:		%{name}-gettext.patch
-Patch5:		%{name}-bigendian.patch
 URL:		http://www.gnu.org/software/autoconf/
 %{?with_emacs:BuildRequires:	emacs}
 BuildRequires:	lzma >= 1:4.42
@@ -201,7 +200,6 @@ lzma -dc %{SOURCE0} | tar xf - -C ..
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
-%patch5 -p1
 
 %build
 %configure \
@@ -235,19 +233,24 @@ rm lib/emacs/*.elc
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog ChangeLog.2 NEWS README THANKS TODO
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/auto*
+%attr(755,root,root) %{_bindir}/ifnames
 %{_libdir}/autoconf
-%{_infodir}/*.info*
-%{_mandir}/man1/*
+%{_infodir}/autoconf.info*
+%{_infodir}/standards.info*
+%{_mandir}/man1/auto*.1*
+%{_mandir}/man1/config.sub.1*
+%{_mandir}/man1/config.guess.1*
+%{_mandir}/man1/ifnames.1*
 
 %if %{with emacs}
 %files -n emacs-autoconf-mode-pkg
