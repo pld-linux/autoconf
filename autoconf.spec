@@ -40,14 +40,14 @@ BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.2
 %{?with_xemacs:BuildRequires:	xemacs}
 BuildConflicts:	m4 = 1.4o
-Conflicts:	gettext < 0.10.38-3
 Requires:	/bin/awk
 Requires:	diffutils
+Conflicts:	gettext < 0.10.38-3
 %requires_eq	m4
 Requires:	mktemp
-BuildArch:	noarch
 Obsoletes:	autoconf252
 Obsoletes:	autoconf253
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libdir		%{_datadir}
@@ -229,6 +229,8 @@ rm lib/emacs/*.elc
 	EMACS=emacs \
 	lispdir=%{_emacs_lispdir}
 %endif
+
+rm -f $RPM_BUILD_ROOT%{_infodir}/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
