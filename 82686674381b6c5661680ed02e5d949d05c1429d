@@ -1,0 +1,5 @@
+- back to 2.13 (again) - release 9,
+- added usibg %configure macro,
+- added de, fr, es, it translation from mandrake spec,
+- added DESTDIR style install (DESTDIR patch),
+- updated Source url.
