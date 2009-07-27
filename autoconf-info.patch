@@ -133,15 +133,15 @@
  @end menu
  
  @node Writing Autoconf Input
-@@ -1027,7 +1017,7 @@
+@@ -1029,7 +1029,7 @@
  or specialized features, @file{configure.ac} might need to contain some
- hand-crafted shell commands; see @ref{Portable Shell}.  The
- @command{autoscan} program can give you a good start in writing
--@file{configure.ac} (@pxref{autoscan Invocation}, for more information).
-+@file{configure.ac} (@pxref{autoscan}, for more information).
+ hand-crafted shell commands; see @ref{Portable Shell, , Portable Shell
+ Programming}.  The @command{autoscan} program can give you a good start
+-in writing @file{configure.ac} (@pxref{autoscan Invocation}, for more
++in writing @file{configure.ac} (@pxref{autoscan} Invocation, for more
+ information).
  
  Previous versions of Autoconf promoted the name @file{configure.in},
- which is somewhat ambiguous (the tool needed to process this file is not
 @@ -1283,7 +1273,7 @@
  @end display
  
