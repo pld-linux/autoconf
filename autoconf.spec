@@ -2,6 +2,7 @@
 # Conditional build:
 %bcond_without	emacs	# without emacs autoconf-mode
 %bcond_without	xemacs	# without XEmacs autoconf-mode
+%bcond_without	tests
 #
 %undefine	with_emacs
 %undefine	with_xemacs
@@ -205,6 +206,8 @@ lzma -dc %{SOURCE0} | tar xf - -C ..
 %configure \
 	%{?with_xemacs:EMACS=xemacs}
 %{__make} -j1
+
+%{?with_tests:%{__make} check}
 
 %install
 rm -rf $RPM_BUILD_ROOT
