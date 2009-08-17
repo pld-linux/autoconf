@@ -20,7 +20,7 @@ Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходн�
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
 Version:	2.64
-Release:	1
+Release:	2
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
@@ -33,6 +33,7 @@ Patch1:		%{name}-info.patch
 Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
 Patch4:		%{name}-gettext.patch
+Patch5:		%{name}-git.patch
 URL:		http://www.gnu.org/software/autoconf/
 %{?with_emacs:BuildRequires:	emacs}
 BuildRequires:	xz
@@ -201,6 +202,7 @@ lzma -dc %{SOURCE0} | tar xf - -C ..
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 %configure \
