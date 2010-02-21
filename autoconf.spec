@@ -20,7 +20,7 @@ Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходн�
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
 Version:	2.65
-Release:	2
+Release:	3
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
@@ -39,6 +39,7 @@ URL:		http://www.gnu.org/software/autoconf/
 BuildRequires:	xz
 BuildRequires:	m4 >= 3:1.4.13
 BuildRequires:	rpm-perlprov
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.2
 %{?with_xemacs:BuildRequires:	xemacs}
 BuildConflicts:	m4 = 1.4o
@@ -195,8 +196,7 @@ Emacs autoconf-mode.
 Tryb edycji autoconf dla emacsa.
 
 %prep
-%setup -q -c -T
-xz -dc %{SOURCE0} | tar xf - -C ..
+%setup -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
