@@ -19,13 +19,13 @@ Summary(pt_BR.UTF-8):	GNU autoconf - ferramentas de configuração de fontes
 Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
-Version:	2.64
-Release:	3
+Version:	2.65
+Release:	1
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
 Source0:	http://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.xz
-# Source0-md5:	9decdd5c672fd403ea467bb0789bc194
+# Source0-md5:	dfb23a46ecb73a0abade39c053a6c5a1
 # devel releases:
 #Source0:	http://alpha.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
@@ -203,7 +203,7 @@ lzma -dc %{SOURCE0} | tar xf - -C ..
 %patch2 -p1
 %patch3 -p1
 #%patch4 -p1
-%patch5 -p1
+#%patch5 -p1 # seems obsolete
 
 %build
 %configure \
