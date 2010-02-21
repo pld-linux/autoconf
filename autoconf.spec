@@ -197,7 +197,7 @@ Tryb edycji autoconf dla emacsa.
 
 %prep
 %setup -q -c -T
-lzma -dc %{SOURCE0} | tar xf - -C ..
+xz -dc %{SOURCE0} | tar xf - -C ..
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
