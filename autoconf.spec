@@ -34,7 +34,6 @@ Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
 # it's unknown why this patch is here but it causes testsuite to fail
 Patch4:		%{name}-gettext.patch
-Patch5:		%{name}-git.patch
 URL:		http://www.gnu.org/software/autoconf/
 %{?with_emacs:BuildRequires:	emacs}
 BuildRequires:	xz
@@ -203,7 +202,6 @@ xz -dc %{SOURCE0} | tar xf - -C ..
 %patch2 -p1
 %patch3 -p1
 #%patch4 -p1
-#%patch5 -p1 # seems obsolete
 
 %build
 %configure \
