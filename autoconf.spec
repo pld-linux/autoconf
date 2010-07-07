@@ -20,7 +20,8 @@ Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходн�
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
 Version:	2.66
-Release:	1
+# wait until http://lists.gnu.org/archive/html/autoconf/2010-07/msg00004.html is fixed in upstream git tree
+Release:	1.1
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
