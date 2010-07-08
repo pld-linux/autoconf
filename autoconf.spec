@@ -37,11 +37,12 @@ Patch4:		%{name}-gettext.patch
 Patch5:		%{name}-git.patch
 URL:		http://www.gnu.org/software/autoconf/
 %{?with_emacs:BuildRequires:	emacs}
-BuildRequires:	xz
 BuildRequires:	m4 >= 3:1.4.13
 BuildRequires:	rpm-perlprov
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.2
 %{?with_xemacs:BuildRequires:	xemacs}
+BuildRequires:	xz
 BuildConflicts:	m4 = 1.4o
 Requires:	/bin/awk
 Requires:	diffutils
@@ -197,7 +198,7 @@ Tryb edycji autoconf dla emacsa.
 
 %prep
 %setup -q -c -T
-lzma -dc %{SOURCE0} | tar xf - -C ..
+xz -dc %{SOURCE0} | tar xf - -C ..
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
