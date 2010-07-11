@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	emacs	# without emacs autoconf-mode
 %bcond_without	xemacs	# without XEmacs autoconf-mode
-%bcond_without	tests
+%bcond_without	tests	# do not perform "make check"
 #
 %undefine	with_emacs
 %undefine	with_xemacs
@@ -20,8 +20,7 @@ Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходн�
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
 Version:	2.66
-# wait until http://lists.gnu.org/archive/html/autoconf/2010-07/msg00004.html is fixed in upstream git tree
-Release:	1.1
+Release:	2
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
@@ -33,8 +32,8 @@ Patch0:		%{name}-mawk.patch
 Patch1:		%{name}-info.patch
 Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
-# it's unknown why this patch is here but it causes testsuite to fail
-Patch4:		%{name}-gettext.patch
+Patch4:		%{name}-subdirs.patch
+Patch5:		%{name}-sizeof.patch
 URL:		http://www.gnu.org/software/autoconf/
 %{?with_emacs:BuildRequires:	emacs}
 BuildRequires:	xz
@@ -202,7 +201,8 @@ Tryb edycji autoconf dla emacsa.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-#%patch4 -p1
+%patch4 -p1
+%patch5 -p1
 
 %build
 %configure \
