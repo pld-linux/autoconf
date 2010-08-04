@@ -19,21 +19,19 @@ Summary(pt_BR.UTF-8):	GNU autoconf - ferramentas de configuração de fontes
 Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
-Version:	2.66
-Release:	2
+Version:	2.67
+Release:	1
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
 Source0:	http://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.xz
-# Source0-md5:	adbe7e7fde3c34a400d33a8ac631c877
+# Source0-md5:	1da24eebe4e6a774e4039242a4f06aad
 # devel releases:
 #Source0:	http://alpha.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
 Patch1:		%{name}-info.patch
 Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
-Patch4:		%{name}-subdirs.patch
-Patch5:		%{name}-sizeof.patch
 URL:		http://www.gnu.org/software/autoconf/
 %{?with_emacs:BuildRequires:	emacs}
 BuildRequires:	xz
@@ -201,8 +199,6 @@ Tryb edycji autoconf dla emacsa.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
-%patch5 -p1
 
 %build
 %configure \
