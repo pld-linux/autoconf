@@ -3,10 +3,11 @@
 %bcond_without	emacs	# without emacs autoconf-mode
 %bcond_without	xemacs	# without XEmacs autoconf-mode
 %bcond_without	tests	# do not perform "make check"
-#
+
+# ???
 %undefine	with_emacs
 %undefine	with_xemacs
-#
+
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
 Summary(de.UTF-8):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
@@ -20,7 +21,7 @@ Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходн�
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
 Version:	2.67
-Release:	1
+Release:	2
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
