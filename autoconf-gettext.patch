@@ -1,0 +1,10 @@
+--- autoconf-2.61/lib/autom4te.in.orig	2006-10-03 08:27:17.000000000 +0200
++++ autoconf-2.61/lib/autom4te.in	2006-11-22 23:31:59.210553250 +0100
+@@ -59,7 +59,6 @@
+ args: --preselect AM_CONDITIONAL
+ args: --preselect AM_ENABLE_MULTILIB
+ args: --preselect AM_GNU_GETTEXT
+-args: --preselect AM_GNU_GETTEXT_INTL_SUBDIR
+ args: --preselect AM_INIT_AUTOMAKE
+ args: --preselect AM_MAINTAINER_MODE
+ args: --preselect AM_PROG_CC_C_O

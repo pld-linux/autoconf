@@ -1,0 +1,12 @@
+diff -urN autoconf-2.61.org/lib/autoconf/functions.m4 autoconf-2.61/lib/autoconf/functions.m4
+--- autoconf-2.61.org/lib/autoconf/functions.m4	2006-10-15 03:12:02.000000000 +0200
++++ autoconf-2.61/lib/autoconf/functions.m4	2006-12-21 01:45:53.141722500 +0100
+@@ -799,7 +799,7 @@
+ # -lseq on Dynix/PTX, -lgen on Unixware.
+ AC_SEARCH_LIBS(getmntent, [sun seq gen],
+ 	       [ac_cv_func_getmntent=yes
+-		AC_DEFINE([HAVE_GETMNTENT], [],
++		AC_DEFINE([HAVE_GETMNTENT], 1,
+ 			  [Define to 1 if you have the `getmntent' function.])],
+ 	       [ac_cv_func_getmntent=no])
+ ])
