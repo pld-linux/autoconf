@@ -21,7 +21,7 @@ Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходн�
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
 Version:	2.67
-Release:	3
+Release:	4
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
@@ -46,6 +46,7 @@ BuildConflicts:	m4 = 1.4o
 Requires:	/bin/awk
 Requires:	diffutils
 Conflicts:	gettext < 0.10.38-3
+Conflicts:	pkgconfig < 1:0.25-2
 %requires_eq	m4
 Requires:	mktemp
 Obsoletes:	autoconf252
