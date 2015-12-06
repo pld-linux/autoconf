@@ -55,6 +55,12 @@ Obsoletes:	autoconf253
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%if %{_host_cpu} == "x32"
+%define	build_arch %{_target_platform}
+%else
+%define	build_arch %{_host}
+%endif
+
 %define		_libdir		%{_datadir}
 
 %description
@@ -208,8 +214,8 @@ Tryb edycji autoconf dla emacsa.
 
 %build
 %configure \
-	--host=%{_host} \
-	--build=%{_host} \
+	--host=%{build_arch} \
+	--build=%{build_arch} \
 	%{?with_xemacs:EMACS=xemacs}
 %{__make} -j1
 
