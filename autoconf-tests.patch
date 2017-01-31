@@ -9,3 +9,33 @@
  AT_CHECK([test -f "`sed -n 1p stdout`"])
  
  # Older libtoolize installed everything but install-sh...
+--- autoconf-2.69/tests/local.at.orig	2017-01-31 19:18:28.760150997 +0100
++++ autoconf-2.69/tests/local.at	2017-01-31 19:35:48.663569282 +0100
+@@ -324,7 +324,7 @@
+       [AWK|LEX|LEXLIB|LEX_OUTPUT_ROOT|LN_S|M4|MKDIR_P|RANLIB|SET_MAKE|YACC],
+       [GREP|[EF]GREP|SED],
+       [[_@]|.[*#?$].],
+-      [argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS|BASHPID|EPOCHREALTIME]))=' \
++      [argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS|BASHPID|EPOCHREALTIME|KSH_MATCH]))=' \
+      $act_file ||
+        test $? -eq 1 || echo failed >&2
+     ) 2>stderr-$act_file |
+@@ -381,6 +381,7 @@
+ 	/^RANDOM=/ d
+ 	/^SECONDS=/ d
+ 	/^BASHPID=/ d
++	/^KSH_MATCH=/ d
+ 	/^EPOCHREALTIME=/ d
+ 	/'\'\\\$\''=/ d
+ 	/^argv=/ d
+--- autoconf-2.69/tests/m4sh.at.orig	2012-03-07 18:35:26.000000000 +0100
++++ autoconf-2.69/tests/m4sh.at	2017-01-31 21:50:56.350739217 +0100
+@@ -237,7 +237,7 @@
+ [[AS@&t@_INIT
+ m4@&t@_divert_text([], [
+ if $2; then
+-  AS@&t@_UNSET([LINENO])
++  { LINENO=0; unset LINENO;}
+ fi
+ ])
+ AS@&t@_LINENO_PREPARE
