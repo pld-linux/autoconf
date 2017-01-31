@@ -1,0 +1,11 @@
+--- autoconf-2.69/tests/foreign.at.orig	2012-03-07 18:35:26.000000000 +0100
++++ autoconf-2.69/tests/foreign.at	2017-01-31 16:34:36.105261591 +0100
+@@ -57,7 +57,7 @@
+ # Make sure at-path contains something valid, and let the test suite
+ # display it when verbose.  And fail, skipping would too easily hide
+ # problems.
+-AT_CHECK([sed -n ["s,^.*\`\\(/[^']*\\)'.*,\\1,p"] stdout], [0], [stdout])
++AT_CHECK([sed -n ["s,^.*[\`']\\(/[^']*\\)'.*,\\1,p"] stdout], [0], [stdout])
+ AT_CHECK([test -f "`sed -n 1p stdout`"])
+ 
+ # Older libtoolize installed everything but install-sh...

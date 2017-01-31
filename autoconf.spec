@@ -35,6 +35,7 @@ Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
 Patch4:		%{name}-mksh.patch
 Patch5:		autoconf-2.69-perl-5.22-autoscan.patch
+Patch6:		%{name}-tests.patch
 URL:		http://www.gnu.org/software/autoconf/
 %{?with_emacs:BuildRequires:	emacs}
 BuildRequires:	xz
@@ -211,6 +212,7 @@ Tryb edycji autoconf dla emacsa.
 %patch3 -p1
 %patch4 -p0
 %patch5 -p1
+%patch6 -p1
 
 %build
 %configure \
