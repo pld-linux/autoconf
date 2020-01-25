@@ -8,7 +8,6 @@
 %undefine	with_emacs
 %undefine	with_xemacs
 
-%include	/usr/lib/rpm/macros.perl
 Summary:	GNU autoconf - source configuration tools
 Summary(de.UTF-8):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
 Summary(es.UTF-8):	Una herramienta GNU para configurar automáticamente el código fuente
