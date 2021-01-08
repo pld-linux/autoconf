@@ -1,45 +1,49 @@
---- tests/local.at~	2013-10-15 13:49:09.403970117 +0200
-+++ tests/local.at	2013-10-15 13:50:05.868721901 +0200
-@@ -274,7 +274,7 @@ m4_define([AT_CHECK_CONFIGURE],
+--- autoconf-2.70/tests/local.at.orig	2021-01-07 20:29:32.906519857 +0100
++++ autoconf-2.70/tests/local.at	2021-01-07 20:51:45.695966183 +0100
+@@ -351,7 +351,7 @@
  #   Set by AC_OUTPUT.
  # - AC_SUBST'ed variables
  #   (FIXME: Generate a list of these automatically.)
 -# - _|@|.[*#?$].|argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS
-+# - _|@|.[*#?$].|argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS|BASHPID|EPOCHREALTIME
++# - _|@|.[*#?$].|argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS|BASHPID|EPOCHREALTIME|KSH_MATCH
+ #   |START_TIME|ToD|_AST_FEATURES
  #   Some variables some shells use and change.
  #   `.[*#?$].' catches `$#' etc. which are displayed like this:
- #      | '!'=18186
-@@ -324,7 +324,7 @@ if test -f state-env.before && test -f s
+@@ -402,7 +402,7 @@
        [AWK|LEX|LEXLIB|LEX_OUTPUT_ROOT|LN_S|M4|MKDIR_P|RANLIB|SET_MAKE|YACC],
        [GREP|[EF]GREP|SED],
-       [[_@]|.[*#?$].],
--      [argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS]))=' \
-+      [argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS|BASHPID|EPOCHREALTIME]))=' \
+       [[_@]|.[*@%:@?$].],
+-      [argv|ARGC|LINENO|BASH_ARGC|BASH_ARGV|OLDPWD|PIPESTATUS|RANDOM],
++      [argv|ARGC|LINENO|BASH_ARGC|BASH_ARGV|OLDPWD|PIPESTATUS|RANDOM|BASHPID|EPOCHREALTIME|KSH_MATCH],
+       [SECONDS|START_TIME|ToD|_AST_FEATURES]))=' \
       $act_file ||
         test $? -eq 1 || echo failed >&2
-     ) 2>stderr-$act_file |
-@@ -351,11 +351,13 @@ fi
- # - ^ac_, excluding ^ac_cv_
- #   Autoconf's private shell name space.
- # - PPID [bash, zsh]
--# - RANDOM [zsh]
-+# - RANDOM [zsh, mksh]
- # - SECONDS [zsh]
- # - '$' [zsh]
- # - argv [zsh]
- # - ARGC [zsh]
-+# - BASHPID [bash, mksh]
-+# - EPOCHREALTIME [zsh, mksh]
- #
- # Furthermore, it is okay for a non-cache variable initialized to empty in one
- # run to be unset in another run.  This happens when, for example, cache update
-@@ -378,6 +380,8 @@ do
+@@ -432,7 +432,7 @@
+ # - Variables with unstable values in at least some shells:
+ #   - OLDPWD [bash, zsh]
+ #   - PPID [bash, zsh]
+-#   - RANDOM [bash, zsh]
++#   - RANDOM [bash, zsh, mksh]
+ #   - SECONDS [bash, zsh]
+ #   - START_TIME [NetBSD sh]
+ #   - ToD [NetBSD sh]
+@@ -443,6 +443,9 @@
+ #   - BASH_ARGV [bash]
+ #   - LINENO [Posix]
+ #   - _AST_FEATURES [ksh93]
++#   - BASHPID [bash, mksh]
++#   - EPOCHREALTIME [zsh, mksh]
++#   - KSH_MATCH [mksh]
+ # - Optionally, variables that are expected to vary in a particular test.
+ #   This is controlled by the EXTRA-VARIANCE argument, which is a
+ #   whitespace-separated sequence of tokens.  Each token means to ignore
+@@ -481,6 +484,9 @@
  	/^PPID=/ d
  	/^RANDOM=/ d
  	/^SECONDS=/ d
 +	/^BASHPID=/ d
 +	/^EPOCHREALTIME=/ d
++	/^KSH_MATCH=/ d
+ 	/^START_TIME=/ d
+ 	/^ToD=/ d
  	/'\'\\\$\''=/ d
- 	/^argv=/ d
- 	/^ARGC=/ d
-

@@ -19,13 +19,13 @@ Summary(pt_BR.UTF-8):	GNU autoconf - ferramentas de configuração de fontes
 Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
-Version:	2.69
-Release:	5
+Version:	2.70
+Release:	1
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
-Source0:	http://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.xz
-# Source0-md5:	50f97f4159805e374639a73e2636f22e
+Source0:	https://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.xz
+# Source0-md5:	e4453011b18da194b565bf282948f997
 # devel releases:
 #Source0:	http://alpha.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
@@ -33,7 +33,6 @@ Patch1:		%{name}-info.patch
 Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
 Patch4:		%{name}-mksh.patch
-Patch5:		autoconf-2.69-perl-5.22-autoscan.patch
 Patch6:		%{name}-tests.patch
 URL:		http://www.gnu.org/software/autoconf/
 %{?with_emacs:BuildRequires:	emacs}
@@ -46,6 +45,7 @@ BuildRequires:	texinfo >= 4.2
 BuildConflicts:	m4 = 1.4o
 Requires:	/bin/awk
 Requires:	diffutils
+Conflicts:	automake < 1:1.8
 Conflicts:	gettext < 0.10.38-3
 Conflicts:	pkgconfig < 1:0.25-2
 %requires_eq	m4
@@ -209,8 +209,7 @@ Tryb edycji autoconf dla emacsa.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p0
-%patch5 -p1
+%patch4 -p1
 %patch6 -p1
 
 %build
@@ -239,7 +238,7 @@ xemacs -batch -vanilla -f batch-byte-compile \
 %endif
 
 %if %{with emacs} && %{with xemacs}
-rm lib/emacs/*.elc
+%{__rm} lib/emacs/*.elc
 %{__make} -C lib/emacs install-dist_lispLISP \
 	DESTDIR=$RPM_BUILD_ROOT \
 	EMACS=emacs \
@@ -260,14 +259,22 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS ChangeLog ChangeLog.2 NEWS README THANKS TODO
-%attr(755,root,root) %{_bindir}/auto*
+%attr(755,root,root) %{_bindir}/autoconf
+%attr(755,root,root) %{_bindir}/autoheader
+%attr(755,root,root) %{_bindir}/autom4te
+%attr(755,root,root) %{_bindir}/autoreconf
+%attr(755,root,root) %{_bindir}/autoscan
+%attr(755,root,root) %{_bindir}/autoupdate
 %attr(755,root,root) %{_bindir}/ifnames
 %{_libdir}/autoconf
 %{_infodir}/autoconf.info*
 %{_infodir}/standards.info*
-%{_mandir}/man1/auto*.1*
-%{_mandir}/man1/config.sub.1*
-%{_mandir}/man1/config.guess.1*
+%{_mandir}/man1/autoconf.1*
+%{_mandir}/man1/autoheader.1*
+%{_mandir}/man1/autom4te.1*
+%{_mandir}/man1/autoreconf.1*
+%{_mandir}/man1/autoscan.1*
+%{_mandir}/man1/autoupdate.1*
 %{_mandir}/man1/ifnames.1*
 
 %if %{with emacs}
