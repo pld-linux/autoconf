@@ -505,3 +505,17 @@
  @section @command{configure} Invocation
  
  @command{configure} recognizes the following options to control how it
+--- autoconf-2.70/doc/standards.texi.orig	2020-12-02 16:26:23.000000000 +0100
++++ autoconf-2.70/doc/standards.texi	2021-01-09 21:01:18.586724643 +0100
+@@ -6,9 +6,9 @@
+ @set lastupdate June 12, 2020
+ @c %**end of header
+ 
+-@dircategory GNU organization
++@dircategory GNU organization:
+ @direntry
+-* Standards: (standards).       GNU coding standards.
++* Standards: (standards).		GNU coding standards
+ @end direntry
+ 
+ @c @setchapternewpage odd
