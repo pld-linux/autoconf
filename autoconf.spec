@@ -19,13 +19,13 @@ Summary(pt_BR.UTF-8):	GNU autoconf - ferramentas de configuração de fontes
 Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
-Version:	2.70
+Version:	2.71
 Release:	1
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
 Source0:	https://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.xz
-# Source0-md5:	e4453011b18da194b565bf282948f997
+# Source0-md5:	12cfa1687ffa2606337efe1a64416106
 # devel releases:
 #Source0:	http://alpha.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
