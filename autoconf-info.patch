@@ -1,6 +1,6 @@
---- autoconf-2.70/doc/autoconf.texi.orig	2021-01-07 21:55:44.435169949 +0100
-+++ autoconf-2.70/doc/autoconf.texi	2021-01-07 21:57:55.634459181 +0100
-@@ -225,29 +225,19 @@
+--- autoconf-2.72/doc/autoconf.texi.orig	2023-12-25 17:45:48.441111910 +0100
++++ autoconf-2.72/doc/autoconf.texi	2023-12-25 17:49:20.953293966 +0100
+@@ -225,29 +225,19 @@ entitled ``GNU Free Documentation Licens
  
  
  
@@ -42,7 +42,7 @@
  @end direntry
  
  @titlepage
-@@ -290,7 +280,7 @@
+@@ -290,7 +280,7 @@ entitled ``GNU Free Documentation Licens
  * Manual Configuration::        Selecting features that can't be guessed
  * Site Configuration::          Local defaults for @command{configure}
  * Running configure Scripts::   How to use the Autoconf output
@@ -51,7 +51,7 @@
  * Obsolete Constructs::         Kept for backward compatibility
  * Using Autotest::              Creating portable test suites
  * FAQ::                         Frequent Autoconf Questions, with answers
-@@ -311,10 +301,10 @@
+@@ -311,10 +301,10 @@ The GNU Build System
  Making @command{configure} Scripts
  
  * Writing Autoconf Input::      What to put in an Autoconf input file
@@ -66,7 +66,7 @@
  
  Writing @file{configure.ac}
  
-@@ -349,7 +339,7 @@
+@@ -349,7 +339,7 @@ Substitutions in Makefiles
  Configuration Header Files
  
  * Header Templates::            Input for the configuration headers
@@ -75,7 +75,7 @@
  * Autoheader Macros::           How to specify CPP templates
  
  Existing Tests
-@@ -468,7 +458,7 @@
+@@ -468,7 +458,7 @@ M4 Quotation
  
  Using @command{autom4te}
  
@@ -84,8 +84,8 @@
  * Customizing autom4te::        Customizing the Autoconf package
  
  Programming in M4sugar
-@@ -608,13 +598,13 @@
- * System Type::                 Specifying the system type
+@@ -607,13 +597,13 @@ Running @command{configure} Scripts
+ * System Types::                Specifying a system type
  * Sharing Defaults::            Setting site-wide defaults for @command{configure}
  * Defining Variables::          Specifying the compiler etc.
 -* configure Invocation::        Changing how @command{configure} runs
@@ -100,7 +100,7 @@
  * Obsolete Macros::             Backward compatibility macros
  * Autoconf 1::                  Tips for upgrading your files
  * Autoconf 2.13::               Some fresher tips
-@@ -639,7 +629,7 @@
+@@ -638,7 +628,7 @@ Generating Test Suites with Autotest
  
  * Using an Autotest Test Suite::  Autotest and the user
  * Writing Testsuites::          Autotest macros
@@ -109,7 +109,7 @@
  * Making testsuite Scripts::    Using autom4te to create @command{testsuite}
  
  Using an Autotest Test Suite
-@@ -1000,7 +990,7 @@
+@@ -999,7 +989,7 @@ containing @code{#define} directives (@p
  
  @item
  a shell script called @file{config.status} that, when run, recreates
@@ -118,7 +118,7 @@
  
  @item
  an optional shell script normally called @file{config.cache}
-@@ -1080,10 +1070,10 @@
+@@ -1079,10 +1069,10 @@ Makefile.in ---'                    `->
  
  @menu
  * Writing Autoconf Input::      What to put in an Autoconf input file
@@ -133,7 +133,7 @@
  @end menu
  
  @node Writing Autoconf Input
-@@ -1099,7 +1089,7 @@
+@@ -1098,7 +1088,7 @@ you can use Autoconf template macros to
  or specialized features, @file{configure.ac} might need to contain some
  hand-crafted shell commands; see @ref{Portable Shell, , Portable Shell
  Programming}.  The @command{autoscan} program can give you a good start
@@ -142,7 +142,7 @@
  information).
  
  @cindex @file{configure.in}
-@@ -1398,7 +1388,7 @@
+@@ -1397,7 +1387,7 @@ checks for system services
  @end display
  
  
@@ -151,7 +151,7 @@
  @section Using @command{autoscan} to Create @file{configure.ac}
  @cindex @command{autoscan}
  
-@@ -1420,7 +1410,7 @@
+@@ -1419,7 +1409,7 @@ you need to move such macros manually.
  use a configuration header file, you must add a call to
  @code{AC_CONFIG_HEADERS} (@pxref{Configuration Headers}).  You might
  also have to change or add some @code{#if} directives to your program in
@@ -160,7 +160,7 @@
  information about a program that can help with that job).
  
  When using @command{autoscan} to maintain a @file{configure.ac}, simply
-@@ -1463,7 +1453,7 @@
+@@ -1462,7 +1452,7 @@ Append @var{dir} to the include path.  M
  Prepend @var{dir} to the include path.  Multiple invocations accumulate.
  @end table
  
@@ -169,7 +169,7 @@
  @section Using @command{ifnames} to List Conditionals
  @cindex @command{ifnames}
  
-@@ -1472,8 +1462,7 @@
+@@ -1471,8 +1461,7 @@ package.  It prints the identifiers that
  preprocessor conditionals.  If a package has already been set up to have
  some portability, @command{ifnames} can thus help you figure out what its
  @command{configure} needs to check for.  It may help fill in some gaps in a
@@ -179,7 +179,7 @@
  
  @command{ifnames} scans all of the C source files named on the command line
  (or the standard input, if none are given) and writes to the standard
-@@ -1495,7 +1484,7 @@
+@@ -1494,7 +1483,7 @@ Print a summary of the command line opti
  Print the version number of Autoconf and exit.
  @end table
  
@@ -188,7 +188,7 @@
  @section Using @command{autoconf} to Create @command{configure}
  @cindex @command{autoconf}
  
-@@ -1597,7 +1586,7 @@
+@@ -1596,7 +1585,7 @@ just make @var{format} as long as needed
  
  The @var{format} is a regular string, with newlines if desired, and
  several special escape codes.  It defaults to @samp{$f:$l:$n:$%}; see
@@ -197,7 +197,7 @@
  
  @item --initialization
  @itemx -i
-@@ -1671,7 +1660,7 @@
+@@ -1670,7 +1659,7 @@ AUTOMAKE|:::::|automake|:::::|$missing_d
  @end group
  @end example
  
@@ -206,7 +206,7 @@
  @section Using @command{autoreconf} to Update @command{configure} Scripts
  @cindex @command{autoreconf}
  
-@@ -1710,7 +1699,7 @@
+@@ -1709,7 +1698,7 @@ infrastructure to a source package.  If
  your @file{configure.ac} should invoke @code{AM_GNU_GETTEXT} and
  one of @code{AM_GNU_GETTEXT_VERSION(@var{gettext-version})} or
  @code{AM_GNU_GETTEXT_REQUIRE_VERSION(@var{min-gettext-version})}.
@@ -215,7 +215,7 @@
  gettext, GNU @code{gettext} utilities}, for further details.
  
  @noindent
-@@ -2125,7 +2114,7 @@
+@@ -2124,7 +2113,7 @@ this package.  @command{configure} will
  
  Use of this macro is strongly recommended.  It protects against people
  accidentally specifying the wrong directory with @option{--srcdir}.
@@ -224,7 +224,7 @@
  @end defmac
  
  Packages that use @command{aclocal} to generate @file{aclocal.m4}
-@@ -2380,7 +2369,7 @@
+@@ -2379,7 +2368,7 @@ The special value @samp{-} might be used
  when used in @var{output}, or the standard input when used in the
  @var{inputs}.  You most probably don't need to use this in
  @file{configure.ac}, but it is convenient when using the command line
@@ -233,7 +233,7 @@
  for more details.
  
  The @var{inputs} may be absolute or relative file names.  In the latter
-@@ -3341,7 +3330,7 @@
+@@ -3340,7 +3329,7 @@ AC_CONFIG_FILES([stamp-h], [echo timesta
  so @file{config.status} ensures that @file{config.h} is considered up to
  date.  @xref{Output}, for more information about @code{AC_OUTPUT}.
  
@@ -242,7 +242,7 @@
  configuration-related dependencies.
  
  @node Configuration Headers
-@@ -3428,7 +3417,7 @@
+@@ -3427,7 +3416,7 @@ AC_CONFIG_COMMANDS_PRE(
  
  @menu
  * Header Templates::            Input for the configuration headers
@@ -251,7 +251,7 @@
  * Autoheader Macros::           How to specify CPP templates
  @end menu
  
-@@ -3470,7 +3459,7 @@
+@@ -3469,7 +3458,7 @@ once.  Other preprocessor lines, such as
  generated header.
  
  Since it is a tedious task to keep a template header up to date, you may
@@ -260,7 +260,7 @@
  
  During the instantiation of the header, each @samp{#undef} line in the
  template file for each symbol defined by @samp{AC_DEFINE} is changed to an
-@@ -3508,7 +3497,7 @@
+@@ -3507,7 +3496,7 @@ config header template.  If you are usin
  probably use @samp{AH_BOTTOM} to append the @samp{#include} directive.
  
  
@@ -269,7 +269,7 @@
  @subsection Using @command{autoheader} to Create @file{config.h.in}
  @cindex @command{autoheader}
  
-@@ -7630,7 +7619,7 @@
+@@ -7559,7 +7548,7 @@ abort configure and tell the installer h
  And finally, the default for @var{action-if-universal} is to ensure that
  @samp{WORDS_BIGENDIAN} is defined if and only if a universal build is
  detected and the current code is big-endian; this default works only if
@@ -278,7 +278,7 @@
  
  If you use this macro without specifying @var{action-if-universal}, you
  should also use @code{AC_CONFIG_HEADERS}; otherwise
-@@ -8460,10 +8449,8 @@
+@@ -8373,10 +8362,8 @@ information other than through the C pre
  to call Fortran routines from some language other than C/C++.
  @end defmac
  
@@ -291,7 +291,7 @@
  @acindex{FC_SRCEXT}
  @acindex{FC_PP_SRCEXT}
  @caindex fc_srcext_@var{ext}
-@@ -8634,10 +8621,8 @@
+@@ -8547,10 +8534,8 @@ The result of the macro is cached in the
  variable.
  @end defmac
  
@@ -304,7 +304,7 @@
  @acindex{F77_IMPLICIT_NONE}
  @acindex{FC_IMPLICIT_NONE}
  @caindex f77_implicit_none
-@@ -10266,7 +10251,7 @@
+@@ -10331,7 +10316,7 @@ dangerous.  If for instance the user run
  files depend upon @command{bizarre-cc} being the C compiler.  If
  for some reason the user runs @command{./configure} again, or if it is
  run via @samp{./config.status --recheck}, (@xref{Automatic Remaking},
@@ -313,7 +313,7 @@
  inconsistent, composed of results depending upon two different
  compilers.
  
-@@ -10319,7 +10304,7 @@
+@@ -10384,7 +10369,7 @@ to a warning only, but the old value is
  
  @item
  @var{variable} is kept during automatic reconfiguration
@@ -322,7 +322,7 @@
  line argument, including when no cache is used:
  
  @example
-@@ -11480,11 +11465,11 @@
+@@ -11546,11 +11531,11 @@ Yet another great name from Lars J. Aas.
  It supports M4 extensions designed for use in tools like Autoconf.
  
  @menu
@@ -336,7 +336,7 @@
  @subsection Invoking @command{autom4te}
  
  The command line arguments are modeled after M4's:
-@@ -11734,7 +11719,7 @@
+@@ -11800,7 +11785,7 @@ newlines in the @samp{separator}), while
  not.
  @end table
  
@@ -345,7 +345,7 @@
  
  @item --preselect=@var{macro}
  @itemx -p @var{macro}
-@@ -11822,8 +11807,8 @@
+@@ -11888,8 +11873,8 @@ lines are ignored.  Customization is per
  wrapped in between a @samp{begin-language: "@var{language}"},
  @samp{end-language: "@var{language}"} pair.
  
@@ -356,8 +356,8 @@
  more generally arguments, are introduced by @samp{args:
  @var{arguments}}.  You may use the traditional shell syntax to quote the
  @var{arguments}.
-@@ -23211,16 +23196,16 @@
- * System Type::                 Specifying the system type
+@@ -23306,7 +23291,7 @@ may use comes with Autoconf.
+ * System Types::                Specifying a system type
  * Sharing Defaults::            Setting site-wide defaults for @command{configure}
  * Defining Variables::          Specifying the compiler etc.
 -* configure Invocation::        Changing how @command{configure} runs
@@ -365,18 +365,16 @@
  @end menu
  
  @set autoconf
- @include install.texi
+@@ -23315,7 +23300,7 @@ may use comes with Autoconf.
  
- 
--@c ============================================== config.status Invocation
-+@c ============================================== config.status
+ @c ============================================== config.status Invocation
  
 -@node config.status Invocation
 +@node config.status
  @chapter config.status Invocation
  @cindex @command{config.status}
  
-@@ -23389,7 +23374,7 @@
+@@ -23484,7 +23469,7 @@ understanding how to move to more modern
  @menu
  * Obsolete config.status Use::  Obsolete convention for @command{config.status}
  * acconfig Header::             Additional entries in @file{config.h.in}
@@ -385,7 +383,7 @@
  * Obsolete Macros::             Backward compatibility macros
  * Autoconf 1::                  Tips for upgrading your files
  * Autoconf 2.13::               Some fresher tips
-@@ -23399,7 +23384,7 @@
+@@ -23494,7 +23479,7 @@ understanding how to move to more modern
  @section Obsolete @file{config.status} Invocation
  
  @file{config.status} now supports arguments to specify the files to
@@ -394,7 +392,7 @@
  Before, environment variables had to be used.
  
  @defvar CONFIG_COMMANDS
-@@ -23430,7 +23415,7 @@
+@@ -23525,7 +23510,7 @@ The symbolic links to establish.  The de
  @file{config.status} ignores this variable.
  @end defvar
  
@@ -403,7 +401,7 @@
  would be:
  
  @example
-@@ -23504,7 +23489,7 @@
+@@ -23599,7 +23584,7 @@ Using only the @code{AH_} macros, @file{
  self-contained, and should not depend upon @file{acconfig.h} etc.
  
  
@@ -412,7 +410,7 @@
  @section Using @command{autoupdate} to Modernize @file{configure.ac}
  @cindex @command{autoupdate}
  
-@@ -24741,7 +24726,7 @@
+@@ -24836,7 +24821,7 @@ Autoconf distribution.
  
  If you have an @file{aclocal.m4} installed with Autoconf (as opposed to
  in a particular package's source directory), you must rename it to
@@ -421,7 +419,7 @@
  
  If you distribute @file{install.sh} with your package, rename it to
  @file{install-sh} so @command{make} builtin rules don't inadvertently
-@@ -24796,7 +24781,7 @@
+@@ -24891,7 +24876,7 @@ use the old names, but the new ones are
  the documentation for them.  @xref{Obsolete Macros}, for a table showing the
  new names for the old macros.  Use the @command{autoupdate} program to
  convert your @file{configure.ac} to using the new macro names.
@@ -430,7 +428,7 @@
  
  Some macros have been superseded by similar ones that do the job better,
  but are not call-compatible.  If you get warnings about calling obsolete
-@@ -25333,7 +25318,7 @@
+@@ -25428,7 +25413,7 @@ interactive tool testing, which is proba
  @menu
  * Using an Autotest Test Suite::  Autotest and the user
  * Writing Testsuites::          Autotest macros
@@ -439,7 +437,7 @@
  * Making testsuite Scripts::    Using autom4te to create @command{testsuite}
  @end menu
  
-@@ -25395,7 +25380,7 @@
+@@ -25490,7 +25475,7 @@ the test group, and they include:
  
  @itemize @bullet
  @item a debugging script named @file{run} which reruns the test in
@@ -448,7 +446,7 @@
  of debugging scripts has the purpose of easing the chase for bugs.
  
  @item all the files created with @code{AT_DATA}
-@@ -25667,7 +25652,7 @@
+@@ -25762,7 +25747,7 @@ variables or reset them to safe values i
  @var{shell-code} is only executed if at least one test is going to be
  run.  In particular, it will not be executed if any of the @option{--help},
  @option{--version}, @option{--list}, or @option{--clean} options are
@@ -457,7 +455,7 @@
  @end defmac
  
  @defmac AT_PREPARE_EACH_TEST (@var{shell-code})
-@@ -25802,8 +25787,7 @@
+@@ -25897,8 +25882,7 @@ command substitution (@samp{`}), and bac
  on @var{contents}.
  @end defmac
  
@@ -467,7 +465,7 @@
  @defmacx AT_CHECK_UNQUOTED (@var{commands}, @dvar{status, 0}, @ovar{stdout}, @
    @ovar{stderr}, @ovar{run-if-fail}, @ovar{run-if-pass})
  @atindex{CHECK}
-@@ -25963,7 +25947,7 @@
+@@ -26058,7 +26042,7 @@ individual unit tests.
  @end defmac
  
  
@@ -476,7 +474,7 @@
  @section Running @command{testsuite} Scripts
  @cindex @command{testsuite}
  
-@@ -26158,7 +26142,7 @@
+@@ -26253,7 +26237,7 @@ Invoke @code{AC_CONFIG_TESTDIR} in your
  An Autotest test suite is to be configured in @var{directory}.  This
  macro causes @file{@var{directory}/atconfig} to be created by
  @command{config.status} and sets the default @code{AUTOTEST_PATH} to
@@ -485,7 +483,7 @@
  @end defmac
  
  @item
-@@ -26572,7 +26556,7 @@
+@@ -26668,7 +26652,7 @@ check the GNU Build System components th
  which can be a long process for complex @file{configure.ac}.
  
  This is why all these tools, instead of running directly M4, invoke
@@ -505,10 +503,10 @@
  @section @command{configure} Invocation
  
  @command{configure} recognizes the following options to control how it
---- autoconf-2.70/doc/standards.texi.orig	2020-12-02 16:26:23.000000000 +0100
-+++ autoconf-2.70/doc/standards.texi	2021-01-09 21:01:18.586724643 +0100
+--- autoconf-2.72/doc/standards.texi.orig	2023-12-25 17:45:48.491111639 +0100
++++ autoconf-2.72/doc/standards.texi	2023-12-25 17:49:44.189834749 +0100
 @@ -6,9 +6,9 @@
- @set lastupdate June 12, 2020
+ @set lastupdate August 17, 2021
  @c %**end of header
  
 -@dircategory GNU organization

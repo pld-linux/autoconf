@@ -1,33 +1,33 @@
---- autoconf-2.70/tests/local.at.orig	2021-01-07 20:29:32.906519857 +0100
-+++ autoconf-2.70/tests/local.at	2021-01-07 20:51:45.695966183 +0100
-@@ -351,7 +351,7 @@
+--- autoconf-2.72/tests/local.at.orig	2023-12-22 16:05:20.000000000 +0100
++++ autoconf-2.72/tests/local.at	2023-12-25 17:58:47.286892540 +0100
+@@ -558,7 +558,7 @@ m4_define([AT_CHECK_CONFIGURE],
  #   Set by AC_OUTPUT.
  # - AC_SUBST'ed variables
  #   (FIXME: Generate a list of these automatically.)
 -# - _|@|.[*#?$].|argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS
 +# - _|@|.[*#?$].|argv|ARGC|LINENO|OLDPWD|PIPESTATUS|RANDOM|SECONDS|BASHPID|EPOCHREALTIME|KSH_MATCH
- #   |START_TIME|ToD|_AST_FEATURES
+ #   |SHLVL|START_TIME|ToD|_AST_FEATURES
  #   Some variables some shells use and change.
- #   `.[*#?$].' catches `$#' etc. which are displayed like this:
-@@ -402,7 +402,7 @@
-       [AWK|LEX|LEXLIB|LEX_OUTPUT_ROOT|LN_S|M4|MKDIR_P|RANLIB|SET_MAKE|YACC],
+ #   '.[*#?$].' catches '$#' etc. which are displayed like this:
+@@ -611,7 +611,7 @@ if test -f state-env.before && test -f s
+       [EGREP_TRADITIONAL],
        [GREP|[EF]GREP|SED],
        [[_@]|.[*@%:@?$].],
 -      [argv|ARGC|LINENO|BASH_ARGC|BASH_ARGV|OLDPWD|PIPESTATUS|RANDOM],
 +      [argv|ARGC|LINENO|BASH_ARGC|BASH_ARGV|OLDPWD|PIPESTATUS|RANDOM|BASHPID|EPOCHREALTIME|KSH_MATCH],
-       [SECONDS|START_TIME|ToD|_AST_FEATURES]))=' \
+       [SECONDS|SHLVL|START_TIME|ToD|_AST_FEATURES]))=' \
       $act_file ||
         test $? -eq 1 || echo failed >&2
-@@ -432,7 +432,7 @@
+@@ -641,7 +641,7 @@ fi
  # - Variables with unstable values in at least some shells:
  #   - OLDPWD [bash, zsh]
  #   - PPID [bash, zsh]
 -#   - RANDOM [bash, zsh]
 +#   - RANDOM [bash, zsh, mksh]
  #   - SECONDS [bash, zsh]
+ #   - SHLVL [bash]
  #   - START_TIME [NetBSD sh]
- #   - ToD [NetBSD sh]
-@@ -443,6 +443,9 @@
+@@ -653,6 +653,9 @@ fi
  #   - BASH_ARGV [bash]
  #   - LINENO [Posix]
  #   - _AST_FEATURES [ksh93]
@@ -37,13 +37,13 @@
  # - Optionally, variables that are expected to vary in a particular test.
  #   This is controlled by the EXTRA-VARIANCE argument, which is a
  #   whitespace-separated sequence of tokens.  Each token means to ignore
-@@ -481,6 +484,9 @@
+@@ -692,6 +695,9 @@ do
  	/^PPID=/ d
  	/^RANDOM=/ d
  	/^SECONDS=/ d
 +	/^BASHPID=/ d
 +	/^EPOCHREALTIME=/ d
 +	/^KSH_MATCH=/ d
+ 	/^SHLVL=/ d
  	/^START_TIME=/ d
  	/^ToD=/ d
- 	/'\'\\\$\''=/ d

@@ -1,12 +1,9 @@
+# TODO: https://savannah.gnu.org/support/index.php?110983 (AC_SYS_LARGEFILE/AC_SYS_YEAR2038 test failures on ix86)
 #
 # Conditional build:
-%bcond_without	emacs	# without emacs autoconf-mode
-%bcond_without	xemacs	# without XEmacs autoconf-mode
+%bcond_with	emacs	# emacs autoconf-mode
+%bcond_with	xemacs	# XEmacs autoconf-mode
 %bcond_without	tests	# do not perform "make check"
-
-# ???
-%undefine	with_emacs
-%undefine	with_xemacs
 
 Summary:	GNU autoconf - source configuration tools
 Summary(de.UTF-8):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
@@ -19,13 +16,13 @@ Summary(pt_BR.UTF-8):	GNU autoconf - ferramentas de configuração de fontes
 Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf
-Version:	2.71
-Release:	3
+Version:	2.72
+Release:	0.1
 License:	GPL v2+/v3+
 Group:		Development/Building
 # stable releases:
 Source0:	https://ftp.gnu.org/gnu/autoconf/%{name}-%{version}.tar.xz
-# Source0-md5:	12cfa1687ffa2606337efe1a64416106
+# Source0-md5:	1be79f7106ab6767f18391c5e22be701
 # devel releases:
 #Source0:	http://alpha.gnu.org/gnu/autoconf/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-mawk.patch
@@ -50,8 +47,8 @@ Conflicts:	gettext < 0.10.38-3
 Conflicts:	pkgconfig < 1:0.25-2
 %requires_eq	m4
 Requires:	mktemp
-Obsoletes:	autoconf252
-Obsoletes:	autoconf253
+Obsoletes:	autoconf252 < 2.53
+Obsoletes:	autoconf253 < 2.54
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
