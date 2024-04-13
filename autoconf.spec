@@ -1,4 +1,3 @@
-# TODO: https://savannah.gnu.org/support/index.php?110983 (AC_SYS_LARGEFILE/AC_SYS_YEAR2038 test failures on ix86)
 #
 # Conditional build:
 %bcond_with	emacs	# emacs autoconf-mode
@@ -30,6 +29,8 @@ Patch1:		%{name}-info.patch
 Patch2:		%{name}-AC_EGREP.patch
 Patch3:		%{name}-cxxcpp-warnonly.patch
 Patch4:		%{name}-mksh.patch
+# https://savannah.gnu.org/support/index.php?110983 (AC_SYS_LARGEFILE/AC_SYS_YEAR2038 test failures on ix86)
+Patch5:		%{name}-largefile.patch
 Patch6:		%{name}-tests.patch
 URL:		http://www.gnu.org/software/autoconf/
 %{?with_emacs:BuildRequires:	emacs}
@@ -207,6 +208,7 @@ Tryb edycji autoconf dla emacsa.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 %patch6 -p1
 
 %build
