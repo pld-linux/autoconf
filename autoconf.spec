@@ -37,6 +37,7 @@ URL:		http://www.gnu.org/software/autoconf/
 BuildRequires:	xz
 BuildRequires:	m4 >= 3:1.4.13
 BuildRequires:	rpm-perlprov
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.2
 %{?with_xemacs:BuildRequires:	xemacs}
