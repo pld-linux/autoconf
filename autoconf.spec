@@ -219,7 +219,10 @@ Tryb edycji autoconf dla emacsa.
 	%{?with_xemacs:EMACS=xemacs}
 %{__make} -j1
 
-%{?with_tests:%{__make} check}
+%if %{with tests}
+unset CPP
+%{__make} check
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
