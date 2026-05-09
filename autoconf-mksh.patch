@@ -1,6 +1,6 @@
---- autoconf-2.72/tests/local.at.orig	2023-12-22 16:05:20.000000000 +0100
-+++ autoconf-2.72/tests/local.at	2023-12-25 17:58:47.286892540 +0100
-@@ -558,7 +558,7 @@ m4_define([AT_CHECK_CONFIGURE],
+--- autoconf-2.73/tests/local.at.orig	2026-03-17 18:04:31.000000000 +0100
++++ autoconf-2.73/tests/local.at	2026-05-09 18:09:01.222391340 +0200
+@@ -666,7 +666,7 @@ m4_define([AT_CHECK_CONFIGURE],
  #   Set by AC_OUTPUT.
  # - AC_SUBST'ed variables
  #   (FIXME: Generate a list of these automatically.)
@@ -9,7 +9,7 @@
  #   |SHLVL|START_TIME|ToD|_AST_FEATURES
  #   Some variables some shells use and change.
  #   '.[*#?$].' catches '$#' etc. which are displayed like this:
-@@ -611,7 +611,7 @@ if test -f state-env.before && test -f s
+@@ -719,7 +719,7 @@ if test -f state-env.before && test -f s
        [EGREP_TRADITIONAL],
        [GREP|[EF]GREP|SED],
        [[_@]|.[*@%:@?$].],
@@ -18,7 +18,7 @@
        [SECONDS|SHLVL|START_TIME|ToD|_AST_FEATURES]))=' \
       $act_file ||
         test $? -eq 1 || echo failed >&2
-@@ -641,7 +641,7 @@ fi
+@@ -749,7 +749,7 @@ fi
  # - Variables with unstable values in at least some shells:
  #   - OLDPWD [bash, zsh]
  #   - PPID [bash, zsh]
@@ -27,9 +27,9 @@
  #   - SECONDS [bash, zsh]
  #   - SHLVL [bash]
  #   - START_TIME [NetBSD sh]
-@@ -653,6 +653,9 @@ fi
+@@ -761,6 +761,9 @@ fi
  #   - BASH_ARGV [bash]
- #   - LINENO [Posix]
+ #   - LINENO [POSIX]
  #   - _AST_FEATURES [ksh93]
 +#   - BASHPID [bash, mksh]
 +#   - EPOCHREALTIME [zsh, mksh]
@@ -37,7 +37,7 @@
  # - Optionally, variables that are expected to vary in a particular test.
  #   This is controlled by the EXTRA-VARIANCE argument, which is a
  #   whitespace-separated sequence of tokens.  Each token means to ignore
-@@ -692,6 +695,9 @@ do
+@@ -800,6 +803,9 @@ do
  	/^PPID=/ d
  	/^RANDOM=/ d
  	/^SECONDS=/ d

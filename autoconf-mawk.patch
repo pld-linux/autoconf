@@ -1,41 +1,39 @@
-diff -urNp -x '*.orig' autoconf-2.71.org/configure autoconf-2.71/configure
---- autoconf-2.71.org/configure	2021-01-28 22:06:02.000000000 +0100
-+++ autoconf-2.71/configure	2021-08-29 21:35:09.656146150 +0200
-@@ -2277,7 +2277,7 @@ fi
- { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $MKDIR_P" >&5
- printf "%s\n" "$MKDIR_P" >&6; }
+--- autoconf-2.73/configure.orig	2026-03-20 20:09:37.000000000 +0100
++++ autoconf-2.73/configure	2026-05-09 17:42:12.467773378 +0200
+@@ -2463,7 +2463,7 @@ fi
+ { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $MKDIR_P" >&5
+ printf '%s\n' "$MKDIR_P" >&6; }
  
--for ac_prog in gawk mawk nawk awk
-+for ac_prog in mawk gawk nawk awk
+-for ac_prog in gawk mawk nawk awk 'busybox awk'
++for ac_prog in mawk gawk nawk awk 'busybox awk'
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-diff -urNp -x '*.orig' autoconf-2.71.org/doc/autoconf.texi autoconf-2.71/doc/autoconf.texi
---- autoconf-2.71.org/doc/autoconf.texi	2021-01-28 21:46:48.000000000 +0100
-+++ autoconf-2.71/doc/autoconf.texi	2021-08-29 21:35:09.659479478 +0200
-@@ -4162,10 +4162,10 @@ in some cases whether they support certa
+--- autoconf-2.73/doc/autoconf.texi.orig	2026-03-17 18:04:30.000000000 +0100
++++ autoconf-2.73/doc/autoconf.texi	2026-05-09 17:46:07.513166695 +0200
+@@ -4202,11 +4202,11 @@ otherwise to @samp{:} (do nothing).
  @acindex{PROG_AWK}
  @ovindex AWK
  @caindex prog_AWK
--Check for @code{gawk}, @code{mawk}, @code{nawk}, and @code{awk}, in that
-+Check for @code{mawk}, @code{gawk}, @code{nawk}, and @code{awk}, in that
+-Check for the commands @command{gawk}, @command{mawk},
++Check for the commands @command{mawk}, @command{gawk},
+ @command{nawk}, @command{awk}, and @code{busybox awk}, in that
  order, and set output variable @code{AWK} to the first one that is found.
--It tries @code{gawk} first because that is reported to be the
+-Try @code{gawk} first because that is reported to be the
 -best implementation.  The result can be overridden by setting the
-+It tries @code{mawk} first because that is reported to be the
++Try @code{mawk} first because that is reported to be the
 +implementation that our system usually runs.  The result can be overridden by setting the
  variable @code{AWK} or the cache variable @code{ac_cv_prog_AWK}.
  
- Using this macro is sufficient to avoid the pitfalls of traditional
-diff -urNp -x '*.orig' autoconf-2.71.org/lib/autoconf/programs.m4 autoconf-2.71/lib/autoconf/programs.m4
---- autoconf-2.71.org/lib/autoconf/programs.m4	2021-01-28 21:46:48.000000000 +0100
-+++ autoconf-2.71/lib/autoconf/programs.m4	2021-08-29 21:35:09.656146150 +0200
-@@ -348,7 +348,7 @@ AN_PROGRAM([gawk], [AC_PROG_AWK])
+ Using this macro avoids some pitfalls of older systems that have both
+--- autoconf-2.73/lib/autoconf/programs.m4.orig	2026-03-02 15:46:12.000000000 +0100
++++ autoconf-2.73/lib/autoconf/programs.m4	2026-05-09 17:43:30.607350060 +0200
+@@ -357,7 +357,7 @@ AN_PROGRAM([gawk], [AC_PROG_AWK])
  AN_PROGRAM([mawk], [AC_PROG_AWK])
  AN_PROGRAM([nawk], [AC_PROG_AWK])
  AC_DEFUN([AC_PROG_AWK],
--[AC_CHECK_PROGS(AWK, gawk mawk nawk awk, )])
-+[AC_CHECK_PROGS(AWK, mawk gawk nawk awk, )])
+-[AC_CHECK_PROGS([AWK], [gawk mawk nawk awk 'busybox awk'])])
++[AC_CHECK_PROGS([AWK], [mawk gawk nawk awk 'busybox awk'])])
  
  
  # AC_PROG_EGREP
